@@ -1,0 +1,5 @@
+LIVING — TV-ACCENTWAND — WE M187 Botanical Green van Colora / BOSS paints.
+Bron: https://colora.be/nl/kleuren/we-m187-botanical-green
+De officiële pagina publiceert RGB #445940 in props.pageProps.color.rgb. Deze sRGB-kleur is naar lineaire Blender-waarden omgerekend en als matte verf toegepast.
+De verflaag is beperkt tot het wanddeel achter de tv: vanaf de straatzijde tot aan het begin van de hoge Camber-opbouw (Camber S 5,395–8,297 m). De Camber-kast, het witte tv-meubel en de overige livingwanden behouden hun materialen. De uiteindelijke waarneming wordt mede bepaald door de scèneverlichting.
+Scene 53 toont de accentwand. Bron: living_botanical_green.py. Reservekopie: Huis_before_living_botanical_green.blend.

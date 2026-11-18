@@ -1,0 +1,10 @@
+<!doctype html><html><head><meta charset="UTF-8"><style>body{margin:0}canvas{display:block}</style></head><body><script type="module">
+import * as THREE from 'three';
+import {createHouse} from '@huis/house/client/world';
+import {PaintBatch} from '../src/client/paintBatch';
+import {GameSimulation} from '../src/server/simulation';
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setSize(960,720);renderer.setPixelRatio(1);renderer.toneMapping=THREE.AgXToneMapping;document.body.append(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#cccccc');const camera=new THREE.PerspectiveCamera(65,960/720,.04,80);camera.position.set(5,3.8,-7.1);camera.lookAt(1.035,4.65,-7.1);camera.updateMatrixWorld();
+const house=createHouse(scene,renderer);await house.ready;const paint=new PaintBatch(scene);const game=new GameSimulation(()=>.5);
+window.review={show(ink){paint.reconcile([]);game.paints.length=0;for(const [y,z] of [[5.4,-7.75],[5.1,-6],[4,-8.4]]){game.projectiles.push({id:game.paints.length+1,owner:'test',color:'#f27654',position:{x:3,y,z},velocity:{x:-90,y:0,z:0},bornAt:game.time});game.update(.04);}if(ink)paint.reconcile(game.paints);renderer.render(scene,camera);return game.paints;}};window.review.show(false);window.reviewReady=true;
+</script></body></html>

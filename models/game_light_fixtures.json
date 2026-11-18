@@ -1,0 +1,361 @@
+{
+  "note": "Lamps added for the game, in game units (3 per metre, Y up). output/blender/game_light_fixtures.py builds them as 'Game lighting /' objects; toy-flight/scripts/export-reference-lights.py writes their lights to src/client/house-light-fixtures.json. New proposals start in toy-flight/src/client/house-light-drafts.json (same schema) and move here once accepted.",
+  "lamps": [
+    {
+      "name": "blue bedroom spiral spots",
+      "fixture": "spiral-spots",
+      "type": "spot",
+      "position": [
+        15.08,
+        24.32,
+        -20.73
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "heads": [
+        {
+          "offset": [
+            -0.1362,
+            -0.42,
+            -0.2895
+          ],
+          "direction": [
+            -0.21906,
+            -0.85749,
+            -0.46553
+          ]
+        },
+        {
+          "offset": [
+            0.4699,
+            -0.42,
+            0.0074
+          ],
+          "direction": [
+            0.51443,
+            -0.85749,
+            0.00808
+          ]
+        },
+        {
+          "offset": [
+            -0.2815,
+            -0.42,
+            0.5524
+          ],
+          "direction": [
+            -0.23358,
+            -0.85749,
+            0.45842
+          ]
+        }
+      ],
+      "color": [
+        1,
+        0.88,
+        0.69
+      ],
+      "intensity": 30,
+      "distance": 9,
+      "angle": 0.45,
+      "penumbra": 0.55
+    },
+    {
+      "name": "ground bedroom spiral spots",
+      "fixture": "spiral-spots",
+      "type": "spot",
+      "position": [
+        17.88,
+        6.66,
+        -21.3
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "heads": [
+        {
+          "offset": [
+            -0.1362,
+            -0.42,
+            -0.2895
+          ],
+          "direction": [
+            -0.21906,
+            -0.85749,
+            -0.46553
+          ]
+        },
+        {
+          "offset": [
+            0.4699,
+            -0.42,
+            0.0074
+          ],
+          "direction": [
+            0.51443,
+            -0.85749,
+            0.00808
+          ]
+        },
+        {
+          "offset": [
+            -0.2815,
+            -0.42,
+            0.5524
+          ],
+          "direction": [
+            -0.23358,
+            -0.85749,
+            0.45842
+          ]
+        }
+      ],
+      "color": [
+        1,
+        0.88,
+        0.69
+      ],
+      "intensity": 30,
+      "distance": 9,
+      "angle": 0.45,
+      "penumbra": 0.55
+    },
+    {
+      "name": "small bedroom spiral spots",
+      "fixture": "spiral-spots",
+      "type": "spot",
+      "position": [
+        4.65,
+        24.32,
+        -5.31
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "heads": [
+        {
+          "offset": [
+            -0.1362,
+            -0.42,
+            -0.2895
+          ],
+          "direction": [
+            -0.21906,
+            -0.85749,
+            -0.46553
+          ]
+        },
+        {
+          "offset": [
+            0.4699,
+            -0.42,
+            0.0074
+          ],
+          "direction": [
+            0.51443,
+            -0.85749,
+            0.00808
+          ]
+        },
+        {
+          "offset": [
+            -0.2815,
+            -0.42,
+            0.5524
+          ],
+          "direction": [
+            -0.23358,
+            -0.85749,
+            0.45842
+          ]
+        }
+      ],
+      "color": [
+        1,
+        0.88,
+        0.69
+      ],
+      "intensity": 30,
+      "distance": 9,
+      "angle": 0.45,
+      "penumbra": 0.55
+    },
+    {
+      "name": "dressing spot west",
+      "fixture": "recessed-spot",
+      "type": "spot",
+      "position": [
+        16.8,
+        6.58,
+        -14.55
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "color": [
+        1,
+        0.88,
+        0.69
+      ],
+      "intensity": 36.8,
+      "distance": 9.3,
+      "angle": 0.663,
+      "penumbra": 0.65
+    },
+    {
+      "name": "dressing spot east",
+      "fixture": "recessed-spot",
+      "type": "spot",
+      "position": [
+        19.8,
+        6.58,
+        -14.55
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "color": [
+        1,
+        0.88,
+        0.69
+      ],
+      "intensity": 36.8,
+      "distance": 9.3,
+      "angle": 0.663,
+      "penumbra": 0.65
+    },
+    {
+      "name": "upper storage spot",
+      "fixture": "recessed-spot",
+      "type": "spot",
+      "position": [
+        3.15,
+        24.25,
+        -17.65
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "color": [
+        1,
+        0.88,
+        0.69
+      ],
+      "intensity": 36.8,
+      "distance": 9.3,
+      "angle": 0.663,
+      "penumbra": 0.65
+    },
+    {
+      "name": "office wall washer",
+      "fixture": "wall-washer",
+      "type": "spot",
+      "position": [
+        1.015,
+        13.0,
+        -5.5
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "mountNormal": [
+        1,
+        0,
+        0
+      ],
+      "heads": [
+        {
+          "offset": [
+            0.1,
+            0.25,
+            0
+          ],
+          "direction": [
+            0.14834,
+            0.98894,
+            0.0
+          ]
+        },
+        {
+          "offset": [
+            0.1,
+            -0.25,
+            0
+          ],
+          "direction": [
+            0.14834,
+            -0.98894,
+            0.0
+          ]
+        }
+      ],
+      "color": [
+        1,
+        0.88,
+        0.69
+      ],
+      "intensity": 16,
+      "distance": 6,
+      "angle": 0.85,
+      "penumbra": 0.7
+    },
+    {
+      "name": "veranda toy kitchen sconce",
+      "fixture": "torch-sconce",
+      "type": "spot",
+      "position": [
+        9.331,
+        12.3,
+        -31.2
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "mountNormal": [
+        1,
+        0,
+        0
+      ],
+      "heads": [
+        {
+          "offset": [
+            0.45,
+            0.55,
+            0
+          ],
+          "direction": [
+            0.33035,
+            0.94386,
+            0.0
+          ]
+        }
+      ],
+      "color": [
+        1,
+        0.88,
+        0.69
+      ],
+      "intensity": 22,
+      "distance": 7,
+      "angle": 0.95,
+      "penumbra": 0.7
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "source": "camber.pdf pp.5-12; user cabinet-only render references",
+  "overall_length_m": 8.297,
+  "height_m": 2.579,
+  "bench_and_tv_top_height_m": 0.489,
+  "plinth_m": 0.07,
+  "A_depth_m": 0.53,
+  "B_upper_depth_m": 0.371,
+  "B_tall_depth_m": 0.391,
+  "C_depth_m": 0.491,
+  "bench_drawer_fronts": 6,
+  "upper_white_doors": 6,
+  "upper_open_cells": 2,
+  "single_book_recess": true,
+  "tall_white_doors": 2,
+  "tower_drawer_fronts": 4,
+  "tower_open_cells": 5,
+  "tv_fronts": 4,
+  "tv_top": "premium white matt",
+  "C_upper_opening_direction": "sideways towards TV; closed white front",
+  "unrelated_objects_preserved": 6410,
+  "slat_profile": "visual estimate; six Tocca panels",
+  "module_fittings": "overall plan divisions retained; narrow fillers reconciled with clear dimensions",
+  "raycast_checks": {
+    "small_book_niche_open": {
+      "hit": "Camber drawing / B single book display recess oak back",
+      "depth_m": 0.019
+    },
+    "book_column_upper_closed": {
+      "hit": "Camber drawing / B book column upper white door",
+      "depth_m": 0.391
+    },
+    "book_column_lower_closed": {
+      "hit": "Camber drawing / B book column lower white door",
+      "depth_m": 0.391
+    },
+    "upper_open_niche_lower_cell": {
+      "hit": "Camber drawing / B upper two-cell open niche oak back",
+      "depth_m": 0.019
+    },
+    "upper_open_niche_upper_cell": {
+      "hit": "Camber drawing / B upper two-cell open niche oak back",
+      "depth_m": 0.019
+    },
+    "double_door_left": {
+      "hit": "Camber drawing / B full height double door 1",
+      "depth_m": 0.391
+    },
+    "double_door_right": {
+      "hit": "Camber drawing / B full height double door 2",
+      "depth_m": 0.391
+    },
+    "tower_open_cell_1": {
+      "hit": "Camber drawing / B five-cell open oak tower oak back",
+      "depth_m": 0.019
+    },
+    "tower_open_cell_2": {
+      "hit": "Camber drawing / B five-cell open oak tower oak back",
+      "depth_m": 0.019
+    },
+    "tower_open_cell_3": {
+      "hit": "Camber drawing / B five-cell open oak tower oak back",
+      "depth_m": 0.019
+    },
+    "tower_open_cell_4": {
+      "hit": "Camber drawing / B five-cell open oak tower oak back",
+      "depth_m": 0.019
+    },
+    "tower_open_cell_5": {
+      "hit": "Camber drawing / B five-cell open oak tower oak back",
+      "depth_m": 0.019
+    },
+    "side_unit_front_closed": {
+      "hit": "Camber drawing / C side opening front white return",
+      "depth_m": 0.391
+    },
+    "side_unit_opens_towards_TV": {
+      "hit": "Camber drawing / C side opening rear cheek"
+    },
+    "tv_top_white": {
+      "hit": "Camber drawing / C white 19 mm TV top",
+      "depth_m": 0.491
+    }
+  }
+}

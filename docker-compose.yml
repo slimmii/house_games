@@ -1,0 +1,22 @@
+services:
+  drone:
+    build: .
+    container_name: little-rotors
+    restart: unless-stopped
+    expose:
+      - "2567"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik_default"
+      - "traefik.http.routers.drone.rule=Host(`drone.assimilate.be`)"
+      - "traefik.http.routers.drone.entrypoints=web,websecure"
+      - "traefik.http.routers.drone.tls=true"
+      - "traefik.http.routers.drone.tls.certresolver=production"
+      - "traefik.http.services.drone.loadbalancer.server.port=2567"
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
+    name: traefik_default

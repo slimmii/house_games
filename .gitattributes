@@ -1,0 +1,9 @@
+# Blender sources and renders
+*.blend filter=lfs diff=lfs merge=lfs -text
+models/**/*.png filter=lfs diff=lfs merge=lfs -text
+# Exported house assets (house.glb is larger than GitHub's 100 MB file limit)
+packages/house/public/models/*.glb filter=lfs diff=lfs merge=lfs -text
+packages/house/public/models/*.bin filter=lfs diff=lfs merge=lfs -text
+packages/house/public/models/*.gz filter=lfs diff=lfs merge=lfs -text
+# 52 MB collision source (GitHub warns above 50 MB)
+packages/house/src/shared/house-collision.json filter=lfs diff=lfs merge=lfs -text

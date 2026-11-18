@@ -1,0 +1,95 @@
+{
+  "preserved_object_transforms": 7678,
+  "WC_bounds": [
+    [
+      0.36,
+      1.03
+    ],
+    [
+      5.66,
+      6.04
+    ],
+    [
+      2.41,
+      3.4
+    ]
+  ],
+  "WC_back_wall_clearance_m": 0.005,
+  "mat_dimensions_m": [
+    1.5,
+    1.0,
+    0.006
+  ],
+  "mat_bounds_xy": [
+    [
+      4.65,
+      6.15
+    ],
+    [
+      9.31,
+      10.31
+    ]
+  ],
+  "mat_size_estimated": true,
+  "Hedwig_bounds": [
+    [
+      6.642,
+      6.8
+    ],
+    [
+      3.3071,
+      3.5421
+    ],
+    [
+      4.553,
+      4.84441
+    ]
+  ],
+  "Hedwig_model": "Editable modeled approximation from product reference; no external mesh asset",
+  "name_trains": {
+    "HANNA": [
+      [
+        6.6112,
+        6.665
+      ],
+      [
+        3.2721,
+        3.6301
+      ],
+      [
+        4.297,
+        4.377
+      ]
+    ],
+    "LOTTE": [
+      [
+        6.6112,
+        6.665
+      ],
+      [
+        3.2721,
+        3.6301
+      ],
+      [
+        4.041,
+        4.121
+      ]
+    ],
+    "LIENE": [
+      [
+        6.6112,
+        6.665
+      ],
+      [
+        3.2721,
+        3.6301
+      ],
+      [
+        3.625,
+        3.705
+      ]
+    ]
+  },
+  "train_material": "All components natural unpainted beech",
+  "backup": "/Users/slimmii/Downloads/HUIS/output/blender/Huis_before_toilet_mat_shelf_decor.blend"
+}

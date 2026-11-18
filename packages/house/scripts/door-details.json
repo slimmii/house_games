@@ -1,0 +1,14 @@
+[
+  "^Ground room doors / Laundry / reveal$",
+  "^Ground room doors / Laundry / (handle|hinge|silver lever|key)",
+  "^Ground straight doorway / (handle|horizontal lever|key|door hinge)",
+  "^Ground bathroom photo / bathroom door (handle|hinge|lever|privacy)",
+  "^Upper reference door / .+ / (handle|right hinge|round handle|straight satin lever|dark round key)",
+  "^Entrance photo / (inside|outside) (handle|lever|key)",
+  "^Upper reference door / .+ / key slot",
+  "^Ground straight doorway / privacy rose",
+  "^Stair photo / (handle spindle|key slot|left hinge|round handle rose|round key escutcheon|silver lever)",
+  "^Rear photo / (black door hinge|door handle rosette|door lever)",
+  "^Entrance photo / (hinge fixing tab|white hinge barrel)",
+  "^Street photo / (pull handle stand-off|long vertical stainless door pull)"
+]

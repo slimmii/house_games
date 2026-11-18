@@ -1,0 +1,7 @@
+TRAPHAL — ronde lichtkoepel volgens gebruikersfoto.
+Nieuwe scenes 32 (omhoog kijken vanuit de traphal) en 33 (dakdetail).
+Ronde, transparante, licht gebogen koepel met brede witte onderrand en taps toelopende witte opstand. Rond de opening is het plafond warm taupe, zoals op de foto. De bestaande bakstenen traphal blijft behouden.
+De koepel is geplaatst op de as van de gebogen trapomsluiting: x 1.24 m, y 4.25 m. Onderzijde dak +8.11 m, bovenzijde plat dak +8.31 m, koepeltop +8.691 m. Geschatte vrije diameter circa 121 cm, buitenmaat witte onderrand circa 164 cm. Geen opgemeten productmaten.
+Het echte dakvlak heeft een ronde opening. De beglazing is een transparante gebogen schaal; het is geen geschilderde hemel. De opening en het intacte omliggende dak zijn met raycasts gecontroleerd.
+De koepel hoort bij de verwijderbare dakcollectie en is ook zichtbaar in de volledige woning en de traphaldetailscene. In opengewerkte verdiepingsplannen blijft het dak weggelaten.
+Bron: stair_roof_dome.py. Reservekopie: Huis_before_stair_roof_dome.blend.

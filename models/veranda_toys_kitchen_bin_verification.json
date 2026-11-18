@@ -1,0 +1,25 @@
+{
+  "bin_center": [
+    3.075,
+    8.427,
+    2.41
+  ],
+  "bin_wall_gap_m": 0.020200000000000884,
+  "bin_location_reason": "Living-side north jamb of kitchen entry, table visible through opening to its left in photo.",
+  "volcano_base_center": [
+    5.019999980926514,
+    8.880000114440918,
+    2.8940000534057617
+  ],
+  "volcano_footprint_m": [
+    0.56,
+    0.455
+  ],
+  "tower_center": [
+    4.159999847412109,
+    8.75,
+    2.4100000858306885
+  ],
+  "dimensions": "Estimated from user photographs",
+  "preserved_objects": 8296
+}

@@ -1,0 +1,29 @@
+{
+  "room": "ground-floor douchecel",
+  "clear_plan_size_m": [
+    1.8,
+    1.62
+  ],
+  "door_opening_m": 0.8,
+  "door_operable": true,
+  "default_open_angle_deg": 72,
+  "shower_m": [
+    0.9,
+    0.9
+  ],
+  "fixtures": [
+    "corner shower",
+    "wall-hung WC",
+    "floating vanity",
+    "vessel basin",
+    "mirror cabinet",
+    "towel radiator"
+  ],
+  "photo_reconstructed": true,
+  "unsupplied_dimensions_estimated": true,
+  "scenes": [
+    "56 | GROUND BATHROOM - photo reconstruction",
+    "57 | GROUND BATHROOM - complete overhead",
+    "58 | GROUND BATHROOM - operable entry door"
+  ]
+}

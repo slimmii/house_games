@@ -1,0 +1,78 @@
+<!doctype html>
+<html><head><meta charset="UTF-8"><title>Closet visual regression</title>
+<style>html,body{margin:0;background:#e4e4df}canvas{display:block}#label{position:fixed;top:16px;left:18px;background:#fff;padding:10px 14px;font:14px system-ui;border-radius:6px}</style>
+</head><body><div id="label">Loading house…</div><script type="module">
+import * as THREE from 'three';
+import {createHouse} from '@huis/house/client/world';
+import {DOORS, createDoorStates, doorWorldPoint, ROOM_DOOR_COUNT} from '@huis/house/shared/doors';
+import {CLOSET_DOORS,CLOSET_UNITS} from '@huis/house/shared/closet-interiors';
+const renderer = new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+renderer.setSize(1280,900);renderer.setPixelRatio(1);renderer.toneMapping=THREE.AgXToneMapping;
+renderer.toneMappingExposure=1;renderer.outputColorSpace=THREE.SRGBColorSpace;
+document.body.append(renderer.domElement);
+const scene = new THREE.Scene();scene.background=new THREE.Color('#d8dcde');
+const camera=new THREE.PerspectiveCamera(62,1280/900,.035,150);
+const house=createHouse(scene,renderer);await house.ready;
+const states=createDoorStates();
+window.closetReview={
+ diagnostics: scene.getObjectByName('blender-house').children.find(o=>o.userData.closetDiagnostics)?.userData.closetDiagnostics,
+ entries:CLOSET_DOORS.map(d=>({id:d.id,label:d.label,unitId:d.unitId,kind:d.kind})),
+ show(id, fraction=1, offset=0){
+   const entry=CLOSET_DOORS.find(d=>d.id===id);if(!entry)throw Error(id);
+   const index=DOORS.findIndex(d=>d.id===id),unit=CLOSET_UNITS.find(u=>u.id===entry.unitId);
+   for(const state of states){state.fraction=0;state.opening=false;}
+   // Show all fronts in the same cabinet together to reveal its interior.
+   for(const d of CLOSET_DOORS.filter(d=>d.unitId===entry.unitId))states[DOORS.findIndex(x=>x.id===d.id)].fraction=fraction;
+   house.updateDoors(states);
+   const center=new THREE.Vector3().fromArray(entry.min).add(new THREE.Vector3().fromArray(entry.max)).multiplyScalar(.5);
+   const size=new THREE.Vector3().fromArray(entry.max).sub(new THREE.Vector3().fromArray(entry.min));
+   const outward=new THREE.Vector3().fromArray(entry.outward);
+   const tangent=new THREE.Vector3(outward.z,0,-outward.x);
+   const distance=Math.max(2.4,Math.max(size.x,size.y,size.z)*.94);
+   camera.fov=62;camera.updateProjectionMatrix();
+   camera.position.copy(center).addScaledVector(outward,distance).addScaledVector(tangent,offset||distance*.18);
+   camera.position.y+=Math.min(1.2,distance*.24);
+   camera.lookAt(center);camera.updateMatrixWorld();scene.updateMatrixWorld(true);
+   renderer.render(scene,camera);
+   document.getElementById('label').textContent=entry.label+' · '+(fraction?'open':'closed');
+   return {id,index,camera:camera.position.toArray(),target:center.toArray()};
+ },
+ fixed(id, fraction, cameraPosition, target, fov=62, overrides={}){
+   const entry=CLOSET_DOORS.find(d=>d.id===id);if(!entry)throw Error(id);
+   for(const state of states){state.fraction=0;state.opening=false;}
+   for(const d of CLOSET_DOORS.filter(d=>d.unitId===entry.unitId))states[DOORS.findIndex(x=>x.id===d.id)].fraction=fraction;
+   for(const [overrideId,overrideFraction] of Object.entries(overrides)){
+     const overrideIndex=DOORS.findIndex(d=>d.id===overrideId);if(overrideIndex<0)throw Error(overrideId);
+     states[overrideIndex].fraction=overrideFraction;
+   }
+   house.updateDoors(states);scene.updateMatrixWorld(true);
+   camera.fov=fov;camera.updateProjectionMatrix();
+   camera.position.fromArray(cameraPosition);camera.lookAt(new THREE.Vector3().fromArray(target));camera.updateMatrixWorld();
+   renderer.render(scene,camera);
+   document.getElementById('label').textContent=entry.label+' · fixed indoor '+(fraction?'open':'closed');
+   return {id,camera:camera.position.toArray(),target};
+ },
+ isolated(id, fraction=1){
+   const entry=CLOSET_DOORS.find(d=>d.id===id),unit=CLOSET_UNITS.find(u=>u.id===entry.unitId);
+   const root=scene.getObjectByName('operable-closets'),architecture=root.parent;
+   const ids=new Set(CLOSET_DOORS.filter(d=>d.unitId===entry.unitId).map(d=>d.id));
+   for(const child of architecture.children)child.visible=child===root;
+   for(const child of root.children)child.visible=child.userData.closetUnitId===unit.id||ids.has(child.userData.closetId);
+   for(const state of states)state.fraction=0;
+   for(const id of ids)states[DOORS.findIndex(d=>d.id===id)].fraction=fraction;
+   house.updateDoors(states);scene.updateMatrixWorld(true);
+   const bounds=new THREE.Box3();
+   for(const child of root.children)if(child.visible)bounds.expandByObject(child);
+   const size=bounds.getSize(new THREE.Vector3()),center=bounds.getCenter(new THREE.Vector3());
+   const outward=new THREE.Vector3().fromArray(entry.outward),tangent=new THREE.Vector3(outward.z,0,-outward.x);
+   const distance=Math.max(3,Math.max(size.x,size.y,size.z)*1.05);
+   camera.position.copy(center).addScaledVector(outward,distance).addScaledVector(tangent,distance*.18);
+   camera.position.y+=entry.kind==='drawer'?distance*.7:distance*.12;
+   camera.lookAt(center);camera.updateMatrixWorld();renderer.render(scene,camera);
+   document.getElementById('label').textContent=entry.label+' · isolated '+(fraction?'open':'closed');
+ },
+ render(){renderer.render(scene,camera);},
+};
+window.closetReview.show(CLOSET_DOORS[0].id,0);
+window.reviewReady=true;
+</script></body></html>

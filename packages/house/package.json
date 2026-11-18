@@ -1,0 +1,50 @@
+{
+  "name": "@huis/house",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "The house shared by the games: Three.js world, lighting, doors, closets, collision, the exported assets in public/models and the Blender → asset pipeline in scripts/.",
+  "exports": {
+    "./client/*.json": "./src/client/*.json",
+    "./client/*": "./src/client/*.ts",
+    "./shared/*.json": "./src/shared/*.json",
+    "./shared/*": "./src/shared/*.ts",
+    "./node/*": "./src/node/*.ts",
+    "./scripts/*": "./scripts/*",
+    "./vite": "./vite-plugin.ts"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 5175",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && npm run verify",
+    "test": "node --import tsx --import ./src/node/setupCollision.ts --test tests/*.test.ts tests/*.test.mjs",
+    "test:lighting": "node --test tests/baked-ambient.test.mjs && node --import tsx scripts/verify-baked-lighting-runtime.ts",
+    "verify": "npm run verify:paint && npm run verify:collision && npm run verify:textures && npm run verify:backfaces && npm run verify:ceilings && npm run verify:volume && npm run verify:visibility",
+    "pipeline:house": "node scripts/pipeline-house.mjs",
+    "audit:house": "node scripts/audit-house-export.mjs",
+    "optimize:house": "node --import tsx scripts/optimize-house.ts",
+    "compress:house": "node scripts/compress-house-textures.mjs",
+    "verify:textures": "node scripts/compress-house-textures.mjs --verify",
+    "verify:house": "node scripts/verify-house-surfaces.mjs",
+    "verify:ceilings": "node scripts/verify-ceiling-level.mjs",
+    "bake:lighting": "node --import tsx scripts/bake-static-lighting.mjs",
+    "verify:lighting": "node --import tsx scripts/bake-static-lighting.mjs --verify",
+    "bake:volume": "node --import tsx scripts/bake-light-volume.mjs",
+    "verify:volume": "node --import tsx scripts/bake-light-volume.mjs --verify",
+    "bake:visibility": "node scripts/bake-visibility.mjs",
+    "verify:visibility": "node scripts/bake-visibility.mjs --verify",
+    "derive:emitters": "node scripts/derive-lamp-emitters.mjs",
+    "prepare:windows": "node --import tsx scripts/prepare-window-collision.ts",
+    "prepare:backfaces": "node --import tsx scripts/prepare-architecture-backfaces.ts",
+    "verify:backfaces": "node --import tsx scripts/prepare-architecture-backfaces.ts --verify",
+    "prepare:paint": "node --import tsx scripts/prepare-paint-surfaces.ts",
+    "verify:paint": "node --import tsx scripts/prepare-paint-surfaces.ts --verify",
+    "prepare:collision": "node --import tsx scripts/prepare-house-collision.ts",
+    "verify:collision": "node --import tsx scripts/prepare-house-collision.ts --verify"
+  },
+  "dependencies": {
+    "meshoptimizer": "^1.3.0",
+    "three": "^0.180.0",
+    "three-mesh-bvh": "^0.9.15"
+  }
+}

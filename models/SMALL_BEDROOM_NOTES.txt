@@ -1,0 +1,7 @@
+KLEINSTE SLAAPKAMER — zes foto’s 24 september 2026
+Scenes 21–23: zicht vanaf inkom, zeteltje/schommelstoel, bovenaanzicht.
+Bestaande kamer behouden: x .28–2.78, y .28–3.24, vloer +5.31 m; circa 2.50 x 2.96 m; hoogte 2.80 m. Dit is de bestaande archiefreconstructie, geen nieuwe opmeting.
+Roze accentwand links op het grondplan (= rechts bij binnenkijken richting raam). Bed dwars voor raam met hoofd aan vakkenkastzijde en gebogen stoffen tent aan roze wand. Bruin tweezitszeteltje langs roze wand, 2x3 kunststof kubuskast in achterhoek, witte schommelstoel. Speelgoed, knuffels, poppenbedje en bijbehorende speelaccessoires zijn op verzoek verwijderd.
+Gebruiker bevestigt dat de vakkenkast vijf vakken hoog is; vier kolommen behouden. Geschatte buitenmaat nu 147 cm breed x 182 cm hoog x 39 cm diep, met één extra bovenste rij witte bakken. KALLAX-achtige vakverhoudingen, geen bevestigde productidentificatie. De overige meubelmaten en precieze typen zijn geschat. Bed buitenmaat circa 180 x 78 cm. Zeteltje circa 130 x 75 cm. Modulaire kunststofkast circa 71 x 37 x 107 cm. Bestaande raamopening en licht-eiken slaapkamerdeur behouden.
+Tent en prints, teddy-muursticker, stoffering, witte radiator, rolgordijn, laminaat en schommelstoel volledig in bewerkbare geometrie/materialen. Speelgoed en knuffels volledig verwijderd op verzoek. Vloerrommel weggelaten. Alle nieuwe materialen procedureel; geen externe afbeeldingen nodig.
+Herbouwscript: small_bedroom_photo.py. Voorafgaande versie: Huis_before_small_bedroom_photo.blend.

@@ -1,0 +1,27 @@
+{
+  "glass_panes": 4,
+  "frost_hole_ray_samples": 530,
+  "frost_surface_ray_samples": 2470,
+  "clear_glass_behind_all_hole_samples": true,
+  "opening_m": [
+    1.82,
+    2.01
+  ],
+  "number_height_m": 0.175,
+  "glyph_bounds_before_width_correction": [
+    [
+      0.9471777081489563,
+      1.1778223514556885
+    ],
+    [
+      0.10499999672174454,
+      0.1550000011920929
+    ],
+    [
+      1.627500057220459,
+      1.8025000095367432
+    ]
+  ],
+  "number_readable_from": "outside",
+  "dimensions_estimated": true
+}

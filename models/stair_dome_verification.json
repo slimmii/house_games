@@ -1,0 +1,13 @@
+{
+  "roof_center_open": true,
+  "roof_surround_intact": true,
+  "center_m": [
+    1.24,
+    4.25
+  ],
+  "clear_diameter_m": 1.21,
+  "outer_trim_diameter_m": 1.64,
+  "apex_z_m": 8.691,
+  "dimensions_estimated": true,
+  "bedroom_wall_preserved": true
+}

@@ -1,0 +1,75 @@
+<!doctype html>
+<html><head><meta charset="UTF-8"><title>Moving paint visual regression</title>
+<style>html,body{margin:0;background:#d8dcde}canvas{display:block}#label{position:fixed;top:16px;left:18px;background:#fff;padding:10px 14px;font:14px system-ui;border-radius:6px}</style>
+</head><body><div id="label">Loading moving paint…</div><script type="module">
+import * as THREE from 'three';
+import {createHouse} from '@huis/house/client/world';
+import {PaintBatch} from '../src/client/paintBatch';
+import {DOORS,createDoorStates,doorComponentBoxes,doorComponentCount,doorWorldPoint} from '@huis/house/shared/doors';
+import {createPaintAttachment,doorWorldVector} from '../src/shared/paint';
+
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+renderer.setSize(1280,900);renderer.setPixelRatio(1);renderer.toneMapping=THREE.AgXToneMapping;
+renderer.toneMappingExposure=1;renderer.outputColorSpace=THREE.SRGBColorSpace;
+document.body.append(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#d8dcde');
+const camera=new THREE.PerspectiveCamera(58,1280/900,.035,150);
+const house=createHouse(scene,renderer),paint=new PaintBatch(scene);await house.ready;
+scene.add(new THREE.AmbientLight('#ffffff',1.25));
+const states=createDoorStates();
+const houseRoot=scene.getObjectByName('blender-house');
+const houseMeshes=[];houseRoot.traverse(object=>{if(object.isMesh)houseMeshes.push({object,visible:object.visible});});
+const examples=[
+ {key:'room-hinge',id:'door_0',normal:[0,0,1],color:'#f04c37'},
+ {key:'cupboard-hinge',id:'closet_005',normal:[0,0,-1],color:'#20b89d'},
+ {key:'drawer',id:'closet_017',normal:[-1,0,0],color:'#9b5de5'},
+ {key:'sliding',id:'closet_123',normal:[0,0,-1],color:'#ffb000'},
+ {key:'garage-panel',id:'door_5',normal:[0,0,-1],color:'#2f80ed',middlePart:true},
+];
+function fixture(example){
+ const index=DOORS.findIndex(door=>door.id===example.id),door=DOORS[index];if(index<0)throw Error(example.id);
+ const partIndex=example.middlePart?Math.floor(doorComponentCount(index)/2):0;
+ const bounds=example.middlePart?doorComponentBoxes(index,partIndex,'collision')[0]:door;
+ const normal={x:example.normal[0],y:example.normal[1],z:example.normal[2]};
+ const position={x:(bounds.min[0]+bounds.max[0])/2,y:(bounds.min[1]+bounds.max[1])/2,z:(bounds.min[2]+bounds.max[2])/2};
+ for(const axis of [0,2])if(example.normal[axis])position[axis===0?'x':'z']=example.normal[axis]>0?bounds.max[axis]:bounds.min[axis];
+ const impactFraction=.43,impactPosition=doorWorldPoint(position,index,impactFraction,partIndex);
+ const impactNormal=doorWorldVector(normal,index,impactFraction,partIndex);
+ return {index,door,normal,position,mark:{id:index+1,position:impactPosition,normal:impactNormal,color:example.color,size:.27,
+   attachment:createPaintAttachment(index,impactFraction,impactPosition,impactNormal,partIndex)},partIndex};
+}
+window.paintReview={
+ examples,
+ show(key,fraction){
+  const example=examples.find(value=>value.key===key);if(!example)throw Error(key);
+  const data=fixture(example);
+  for(const state of states){state.fraction=0;state.opening=false;}
+  states[data.index].fraction=fraction;states[data.index].opening=fraction>0;
+  paint.reconcile([data.mark]);house.updateDoors(states);paint.update(states);scene.updateMatrixWorld(true);
+  const selected=example.middlePart
+   ? scene.getObjectByName(`garage-section:${data.partIndex}`)
+   : data.door.kind==='door'
+   ? scene.getObjectByName(data.door.id)
+   : scene.getObjectByName(`closet-pivot:${data.door.id}`);
+  if(!selected)throw Error(`Missing production assembly ${data.door.id}`);
+  const selectedMeshes=new Set();selected.traverse(object=>{if(object.isMesh)selectedMeshes.add(object);});
+  for(const item of houseMeshes)item.object.visible=item.visible&&selectedMeshes.has(item.object);
+  const position=doorWorldPoint(data.position,data.index,fraction,data.partIndex),normal=doorWorldVector(data.normal,data.index,fraction,data.partIndex);
+  const expected=doorWorldPoint({x:data.position.x+data.normal.x*.015,y:data.position.y+data.normal.y*.015,z:data.position.z+data.normal.z*.015},data.index,fraction,data.partIndex);
+  const attribute=scene.getObjectByName('paint-batch').geometry.getAttribute('position');
+  const actual={x:attribute.getX(0),y:attribute.getY(0),z:attribute.getZ(0)};
+  const bounds=new THREE.Box3().setFromObject(selected),size=bounds.getSize(new THREE.Vector3());
+  const outward=new THREE.Vector3(normal.x,normal.y,normal.z).normalize(),tangent=new THREE.Vector3(outward.z,0,-outward.x);
+  const distance=Math.max(2.5,Math.max(size.x,size.y,size.z)*.62);
+  camera.position.set(position.x,position.y,position.z).addScaledVector(outward,distance).addScaledVector(tangent,distance*.1);
+  camera.position.y+=distance*.08;camera.lookAt(position.x,position.y,position.z);camera.updateMatrixWorld();
+  renderer.render(scene,camera);
+  const projected=new THREE.Vector3(actual.x,actual.y,actual.z).project(camera);
+  document.getElementById('label').textContent=`${data.door.label} · ${example.key} · isolated production assembly · ${Math.round(fraction*100)}%`;
+  return {id:example.id,key,fraction,actual,expected,error:Math.hypot(actual.x-expected.x,actual.y-expected.y,actual.z-expected.z),
+   screen:{x:(projected.x*.5+.5)*1280,y:(-projected.y*.5+.5)*900},assemblyMeshes:selectedMeshes.size};
+ },
+ setPaintVisible(visible){scene.getObjectByName('paint-batch').visible=visible;renderer.render(scene,camera);},
+};
+window.paintReview.show('room-hinge',0);window.reviewReady=true;
+</script></body></html>

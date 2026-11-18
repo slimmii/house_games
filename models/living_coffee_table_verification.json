@@ -1,0 +1,55 @@
+{
+  "reference": "17 user photos and corrected measurements, 2026-09-27",
+  "table_body_m": [
+    0.9,
+    0.9,
+    0.33
+  ],
+  "table_user_height_m": 0.33,
+  "verified_table_height_m": 0.330000009536743,
+  "estimated_table_width_depth_m": [
+    0.9,
+    0.9
+  ],
+  "table_bounds_including_handle_m": [
+    [
+      4.330000400543213,
+      5.25600004196167
+    ],
+    [
+      0.9100001454353333,
+      1.8100001811981201
+    ],
+    [
+      2.4100000858306885,
+      2.740000009536743
+    ]
+  ],
+  "sofa_bounds_m": [
+    [
+      2.9800000190734863,
+      5.630000114440918
+    ],
+    [
+      0.8100000023841858,
+      3.1600000858306885
+    ],
+    [
+      2.4100000858306885,
+      3.390000104904175
+    ]
+  ],
+  "clearance_to_sofa_m": {
+    "long_front": 0.35000038146972656,
+    "return_front": 0.34999990463256836
+  },
+  "sofa_footprint_m": [
+    2.6500000953674316,
+    2.3500000834465027
+  ],
+  "sofa_height_m": 0.9800001049041747,
+  "sofa_to_tv_m": 0.8299999237060547,
+  "sofa_to_window_m": 0.6400000005960464,
+  "window_reference_y_m": 0.17000000178813934,
+  "dimension_status": "User: sofa 265 x 235 cm, window gap 64 cm, TV gap 83 cm, table height 33 cm. Table width/depth and sofa height estimated; table gap is a placement choice"
+}

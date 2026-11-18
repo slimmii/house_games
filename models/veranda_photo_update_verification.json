@@ -1,0 +1,56 @@
+{
+  "scene": "69 | VERANDA - kast en kinderkeuken",
+  "cabinet": {
+    "wall": "solid right-hand wall without window",
+    "dimensions_m": [
+      0.39,
+      1.47,
+      1.82
+    ],
+    "bounds_xyz_m": [
+      [
+        6.705,
+        7.095
+      ],
+      [
+        9.2,
+        10.67
+      ],
+      [
+        2.5500000000000003,
+        4.37
+      ]
+    ],
+    "grid": "4 columns x 5 rows, raised on four wooden feet"
+  },
+  "child_kitchen": {
+    "wall": "left wall with kitchen/veranda window, opposite the cabinet",
+    "dimensions_m": [
+      0.4,
+      0.76,
+      1.135
+    ],
+    "bounds_xyz_m": [
+      [
+        3.0,
+        3.58
+      ],
+      [
+        10.0,
+        10.8
+      ],
+      [
+        2.41,
+        3.545
+      ]
+    ]
+  },
+  "source": "three user photos; all furniture dimensions estimated",
+  "living_veranda_transition_furniture": {
+    "status": "restored from pre-update backup",
+    "object_count": 43,
+    "items": "narrow white shelf with metal bins and low play table",
+    "source": "Huis_before_veranda_photo_update.blend",
+    "wall_clearance_correction_m": 0.05
+  }
+}

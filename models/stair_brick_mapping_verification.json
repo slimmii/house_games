@@ -1,0 +1,581 @@
+{
+  "cylindrical_faces": 244,
+  "planar_return_faces": 168,
+  "brick_module_m": [
+    0.225,
+    0.063
+  ],
+  "horizontal_uv_to_wall_edge_ratio_range": [
+    0.9666722331054903,
+    1.0383120809059563
+  ],
+  "fitted_stair_circles": {
+    "upper": [
+      1.24,
+      4.25,
+      0.91
+    ],
+    "slab": [
+      1.2,
+      4.3,
+      0.96
+    ],
+    "first": [
+      1.230712890625,
+      4.2667236328125,
+      0.8726837717359253
+    ],
+    "ground": [
+      1.22564697265625,
+      4.27728271484375,
+      0.9206795821742496
+    ]
+  },
+  "objects": [
+    {
+      "object": "1 / floor finish",
+      "curved_faces": 58,
+      "planar_faces": 0
+    },
+    {
+      "object": "1 / floor slab",
+      "curved_faces": 64,
+      "planar_faces": 0
+    },
+    {
+      "object": "first / source masonry 038",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 039",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 040",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 041",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 042",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 043",
+      "curved_faces": 0,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 044",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 045",
+      "curved_faces": 0,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 046",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 047",
+      "curved_faces": 0,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 048",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 049",
+      "curved_faces": 0,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 050",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 051",
+      "curved_faces": 0,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 052",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 053",
+      "curved_faces": 0,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 054",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 055",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 056",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 057",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 058",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 059",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 060",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 061",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 062",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 063",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 064",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 065",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 066",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 067",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 068",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 069",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 070",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 071",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 072",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 073",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 074",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 075",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 076",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 077",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 078",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 079",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 080",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 081",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 082",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "first / source masonry 083",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 084",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "first / source masonry 085",
+      "curved_faces": 1,
+      "planar_faces": 0
+    },
+    {
+      "object": "first / source masonry 086",
+      "curved_faces": 1,
+      "planar_faces": 0
+    },
+    {
+      "object": "ground / source masonry 036",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 037",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 038",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 039",
+      "curved_faces": 0,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 040",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 041",
+      "curved_faces": 0,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 042",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 043",
+      "curved_faces": 0,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 044",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 045",
+      "curved_faces": 0,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 046",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 047",
+      "curved_faces": 0,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 048",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 049",
+      "curved_faces": 0,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 050",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 051",
+      "curved_faces": 0,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 052",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 053",
+      "curved_faces": 0,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 054",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 055",
+      "curved_faces": 0,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 056",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 057",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 058",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 059",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 060",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 061",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 062",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 063",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 064",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 065",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 066",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 067",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 068",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 069",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 070",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 071",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 072",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 073",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 074",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 075",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 076",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 077",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 078",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 079",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 080",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 081",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 082",
+      "curved_faces": 1,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 083",
+      "curved_faces": 0,
+      "planar_faces": 2
+    },
+    {
+      "object": "ground / source masonry 101",
+      "curved_faces": 0,
+      "planar_faces": 1
+    },
+    {
+      "object": "ground / source masonry 102",
+      "curved_faces": 0,
+      "planar_faces": 1
+    },
+    {
+      "object": "Stair full height / first floor upper left band",
+      "curved_faces": 0,
+      "planar_faces": 4
+    },
+    {
+      "object": "Stair photo / brick lintel above door",
+      "curved_faces": 0,
+      "planar_faces": 4
+    },
+    {
+      "object": "Upper correction / rounded north stair surround",
+      "curved_faces": 40,
+      "planar_faces": 4
+    },
+    {
+      "object": "Upper correction / rounded south stair surround",
+      "curved_faces": 40,
+      "planar_faces": 3
+    },
+    {
+      "object": "Upper correction / solid wall below storage",
+      "curved_faces": 0,
+      "planar_faces": 4
+    },
+    {
+      "object": "Upper correction / storage side door lintel",
+      "curved_faces": 0,
+      "planar_faces": 4
+    },
+    {
+      "object": "Upper correction / storage side front pier",
+      "curved_faces": 0,
+      "planar_faces": 4
+    },
+    {
+      "object": "Upper correction / storage side rear pier",
+      "curved_faces": 0,
+      "planar_faces": 4
+    }
+  ]
+}

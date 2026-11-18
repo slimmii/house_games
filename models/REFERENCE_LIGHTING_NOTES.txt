@@ -1,0 +1,9 @@
+VERLICHTING NAAR FOTO’S — 2 oktober 2026
+
+Traphal: twee gebogen roestvrijstalen wandlampen met opale lichtstrook, plus een vierkant armatuur op de bovenste verdieping. Bevestiging op het bestaande gebogen baksteenwerk.
+Keuken: zes kleine ronde inbouwspots, twee doorlopende profielen onder de bovenkasten. Bestaande hanglamp behouden.
+Toiletten: twee inbouwspots per ruimte, gelijkvloers en eerste verdieping. Oude opbouwlamp in de gelijkvloerse badkamer vervangen.
+Living: bestaande lichtstrip onder de Camber bovenkasten hergebruikt, met bijkomende lichtuitstraling over de akoestische latten.
+
+Aantallen, afmetingen en posities zijn benaderingen op basis van foto’s en bestaande kamergeometrie, geen nieuwe opmetingen. Bron: reference_light_fixtures.py. Reservekopie: Huis_before_reference_lights_20261002.blend. Alle 9.271 overige bestaande objecten zijn ongewijzigd.
+De game gebruikt dezelfde geometrie, geëxporteerde lichtposities en een beperkt aantal lokale schaduwlichten. De trapbaksteentextuur in de game is hersteld naar de bestaande metrische Blender-UV’s, zodat de voegen doorlopen.

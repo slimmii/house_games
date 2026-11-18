@@ -1,0 +1,7 @@
+{
+  "sourceHeight": 5.12,
+  "finishHeight": 5.07,
+  "slabs": ["2 / floor slab", "Reference spiral / 1 flush landing infill"],
+  "removedPanels": ["Game interior finish / living ceiling", "Game interior finish / office ceiling"],
+  "fixturePrefix": "Reference lighting / first WC spot"
+}

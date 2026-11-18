@@ -1,0 +1,76 @@
+OUDE TERELSTSTRAAT 15 - EDITABLE CONCEPT MODEL
+
+Units: metres. Origin: front-left outer corner, ground floor finished level 0.
+2021 floor vectors establish width 7.381 m and depth 10.960 m.
+Levels: GF 0; first +2.41; second +5.31 (inferred: 2.41 + 2.66 clear + .24 slab); roof +8.31.
+Ground/first existing masonry traced directly from filled CAD wall polygons. New ground partitions, opening heights, roof connections and stair details are simplified.
+Second floor uses the archive arrangement fitted to the common building width. It is NOT a new survey. The 60 cm archive zone is indicative storage.
+IMPORTANT: the room beside the second-floor stair is BERGING (storage); the bathroom has a WC visible in the user photos; the separate storage room remains storage.
+Camber 02.05.2025: 8.297 m overall, height 2.579 m, lower units .489 m. Right wall, TV towards street, bench towards veranda. End fitting closes the veranda connection. Detailed carcass construction is schematic, not a workshop specification.
+Dining table 2.60 x 1.00; sofas 2.60 x 1.00 and 2.30 x 1.00: estimated photo-based furniture sizes/placement. Other bedroom and sanitary furnishings are illustrative.
+Facade front is based on the archive, rear on 2021 elevations. Glass roof and external stair connections are interpretive. Garden extent is context only.
+
+SCENES
+01 HOUSE: assembled exterior
+02 FIRST FLOOR: cutaway without front/left wall and upper storeys
+03 EXPLODED FLOORS: collection instances; edits propagate
+04 LIVING: furnished first-floor perspective
+
+Kitchen revised from user reference images: L-shaped pale stone worktop, integrated fridge, oven under hob, ceiling-height upper cupboards, organic pedestal table and shaped corner bench. Side window sill 0.93 m and opening height 1.23 m from section. Kitchen furniture dimensions estimated. Scenes 05 and 06 show both kitchen directions.
+All materials are procedural. Objects and collections are individually editable. No external textures required.
+
+UPDATE: living and veranda form one open room per user photo. Interior sliding glazing and frame removed; beam and piers retained. White open shelving, four empty translucent bins and low play table added with estimated photo-based dimensions. Approved kitchen unchanged. Scene 07 shows the open room.
+
+USER DIMENSIONS: living/veranda beam 44 cm high and 41.5 cm deep. Adjacent transverse wall/piers 44 cm deep. Front plane retained. Beam top unchanged at 2.66 m above first-floor finish; underside at 2.22 m.
+
+USER SKETCH UPDATE: cabinet 76 cm wide x 39 cm deep x 181 cm high, 68.5 cm clear top opening and six 33 cm square cubbies. Four satin metal bins in the bottom two rows have real circular pull holes (diameter estimated 36 mm). Table 118 x 57 x 51 cm with 21 cm front apron. These dimensions supersede earlier furniture estimates.
+
+USER SKETCH UPDATE: cabinet 76 cm wide x 39 cm deep x 181 cm high, 68.5 cm clear top opening and six 33 cm square cubbies. Four satin metal bins in the bottom two rows have real circular pull holes (diameter estimated 36 mm). Table 118 x 57 x 51 cm with 21 cm front apron. These dimensions supersede earlier furniture estimates.
+
+LIVING/OFFICE PHOTO UPDATE: sofas now form an L opposite the Camber TV, with the long run facing the TV. Two mirrored white MICKE 502.507.13 corner desks occupy the left street-side office wall, 100 x 100 x 142 cm per IKEA; open printer shelving between. Buff brick with dark mortar matches the office photograph. Sofa positions and printer shelf dimensions are photo estimates. Scene 08 shows the correction.
+
+STAIR PHOTO UPDATE: buff brick continues around the traced curved stair return and across the door wall, including door lintel and exposed end return. Flush ivory door with matching flat casing, three left hinges, nickel lever handles, round key escutcheons and adjacent switch. Door opening width follows plan; height and hardware dimensions estimated from photograph. Scene 09 shows the detail.
+
+USER-CORRECTED SOFA: overall L footprint 2.65 m along TV axis, 2.35 m along veranda axis. Shared corner counted once. Nearest sofa end 83 cm from Camber low TV drawer-front plane; 64 cm from inner living-window frame (model Y .17 m). These user measurements supersede 250 x 227 cm, 79 cm TV gap and the old estimated street offset. Depth 100 cm, seat height 45 cm and total height 98 cm remain photo estimates. Scenes 10 and 55 show dimensions.
+
+FULL-HEIGHT STAIR HALL: reference brick continues across ground/first stair walls and upper landing walls, from elevation 0.00 to 8.11 m. Inter-storey wall bands and circular slab reveals finished in matching brick. Doors and floors retain their existing finishes. Scene 11 provides a continuous stair-hall view.
+
+UPPER FLOOR REVIEW: complete upper floor retained. Archive confirms the storage door is in the SIDE wall facing the landing, not above the stair. Wrong front door removed; cream side door and smooth curved stair surround restored. Upper dimensions remain fitted archive estimates. Upper-floor PDF wall geometry exported directly from Blender. Scene 12 shows the complete upper floor.
+
+UPPER FLOOR REVIEW: complete upper floor retained. Archive confirms the storage door is in the SIDE wall facing the landing, not above the stair. Wrong front door removed; cream side door and smooth curved stair surround restored. Upper dimensions remain fitted archive estimates. Upper-floor PDF wall geometry exported directly from Blender. Scene 12 shows the complete upper floor.
+
+USER FINISH CORRECTION: upper-floor transverse walls (parallel to X), plus storage side wall containing its doorway, have WHITE PLASTER. Curved stair surround retains brick. This supersedes the previous blanket brick finish for those upper-floor walls.
+
+USER CLARIFICATION: white plaster on upper transverse walls stops at bathroom doorway wall. Storage walls, including the storage doorway side and rear duct wall, and the ENTIRE curved stair surround retain brick. Supersedes the previous overly broad white finish.
+
+USER ADDITION: the upper landing wall containing the TWO BEDROOM DOORS, including both door lintels, is also WHITE PLASTER. Storage walls and the curved stair surround retain brick.
+
+BATHROOM: photo reconstruction with scenes 17-19. Closed former rear window confirmed by user. See BATHROOM_NOTES.txt for estimated dimensions.
+
+SLAAPKAMER 2 PHOTO UPDATE: scenes 24-26; light oak double bed, closed sliding wardrobe, empty storage, navy bed wall and blue-grey other walls. Eight user photographs; furniture dimensions estimated. See BEDROOM2_NOTES.txt.
+
+SLAAPKAMER 2 CLEARANCE REVISION: equal 49 cm bedside carcasses and identical tops. Cabinet block moved 32.5 cm toward door, with about 2 cm conservative clearance for the full 0-90 degree door and handle sweep. Large wardrobe shortened at bed/painting-wall end to 205 cm width, leaving 3.1 cm to bedside top. Adjacent white cabinet remains 75 x 45 x 104 cm. Estimated geometry; inspection scene 27. See BEDROOM2_NOTES.txt.
+
+
+SLAAPKAMER 1 SKETCH CORRECTION: user sketch of 24 September 21:17 supersedes the previous parallel layout. Tent bed along green wall, SMÅSTAD rotated perpendicular and projecting from the same wall; attached cubby divider stops with the loft. Closed cupboard and empty dollhouse stand opposite, with a checked 80 cm connection around the free divider end. Scene 31 uses the sketch orientation and labels. Other furniture sizes remain estimates. Scenes 28-31; bedroom1_split.py; BEDROOM1_NOTES.txt.
+
+STAIR ROOF DOME: user photo confirms a round skylight at the top of the brick stair hall. Genuine circular roof opening, broad white tapered curb, transparent shallow curved cap and taupe ceiling surround. Estimated clear diameter 121 cm, white lower rim 164 cm, apex +8.691 m; centre x 1.24, y 4.25 m. Roof opening verified. Scenes 32-33; stair_roof_dome.py; STAIR_DOME_NOTES.txt.
+
+KITCHEN BRAVE GREEN: Colora / BOSS paints WE M198 wall paint. Official page RGB #74846D converted from sRGB to linear material colour. Paint restricted to kitchen interior masonry; cabinets and terrazzo retained. Scenes 05-06; kitchen_brave_green.py; KITCHEN_BRAVE_GREEN_NOTES.txt.
+
+LIVING TV ACCENT WALL: Colora / BOSS paints WE M187 Botanical Green. Official page RGB #445940 converted from sRGB to linear material colour. Paint restricted to the wall segment behind the TV, from the street side to the start of the tall Camber return. Cabinet and other living walls unchanged. Scene 53; living_botanical_green.py; LIVING_BOTANICAL_GREEN_NOTES.txt.
+
+LIVING PHOTO REFINEMENT: 17 reference photos supersede the initial coffee table. Flat uninterrupted oak-look top and base, four splayed tapered wood legs, white sides, open compartment beside a drawer with wood pull. User confirmed table height 33 cm from floor; width/depth estimated at 90 x 90 cm. Chosen 35 cm gap to both inner sofa fronts. Corrected user sofa footprint 265 x 235 cm, 83 cm TV gap and 64 cm window gap; estimated seat height corrected from 58.5 to 45 cm and total height from 121.5 to 98 cm. Broader arms, joined seats, contrast stitching and low chrome feet. Scenes 54-55; sofa_measured.py; living_coffee_table.py; LIVING_COFFEE_TABLE_NOTES.txt. Dimensions not supplied by user remain estimates.
+
+STAIR BRICK MAPPING: fixed planar world-axis projection that stretched brickwork on curved surfaces. Curved stair walls and circular slab reveals now use metric arc-length UVs, with world-height courses; flat returns use correct planar axes. Existing 22.5 x 6.3 cm brick module retained. Checked UV scale against actual surface edges. stair_brick_mapping.py; STAIR_BRICK_MAPPING_NOTES.txt.
+
+De keukenachterwand onder de bovenkasten behoudt de oorspronkelijke beige/witte kleur; Brave Green geldt voor de geschilderde muren.
+
+REAR PHOTO UPDATE: scenes 42-44; smooth orange-red rear masonry, revised veranda and windows, fourteen-rise curved/straight stone exterior stair with stainless horizontal railing, tiled terrace, dining table and six chairs, black laundry side door. All three existing second-floor exterior window openings now have roller shutters. Former bathroom opening stays closed. See REAR_TERRACE_NOTES.txt.
+
+GARDEN PHOTO UPDATE: right side garden (looking from street), rear lawn connected to existing terrace, chain-link fences and gates, hedges and trees, timber playhouse with two swings, trampoline, picnic bench and sandbox. No cars. All garden extents are photo estimates; scenes 45-47 and GARDEN_PHOTO_NOTES.txt.
+
+SLAAPKAMER 1 ENTRY CORNER: SLAAPKAMER 1 — zeven detailfoto’s 28 september 2026. Poppenhuis direct rechts bij binnenkomst; drie open niveaus, witte zijpanelen, houten frame en lage geveltop. Witte kast dwars erop: één hoge deur, drie laden, ronde witte knoppen en pootjes. Tweede kast met paardenfotocollage aan de zithoekzijde. Blauwe ribstoffen zitzakzetel met losse voetenbank, wit metalen kastje met drie draadmandladen en houten passpiegel. Alle meubelmaten en precieze afstanden zijn foto-inschattingen. Decoratie en miniatuurmeubels zijn vereenvoudigd. Scenes 60–62; bedroom1_entry_corner.py. Deze nieuwe foto-opstelling vervangt de eerdere overlappende kast-/poppenhuisproxy.
+
+BENEDEN — terug naar rechte wanden, zonder nis of hoek. Volledige voorwand waskot 38,5 cm verschoven. Slaapkameropening y 5,86–6,51 m: 65 cm ruwbouw, 58 cm tussen kozijnstijlen, deurblad 55,8 cm. Diepvries en expansievat 10,5 cm verschoven; leidingen achter de toestellen gelegd. Grote kasten, wasmachine en droger onveranderd. Badkamerwand en badkamerdeur behouden, dressing open. Deurblad en beslag gecontroleerd van 0–90 graden. Dit zijn modelmaten, geen uitvoeringsadvies. Vervangt de afgewezen nisoplossing.\n
+WAS KOT BUITENMUUR: open strook op de oude T-aansluiting y 6,20–6,31 m gesloten door beide CAD-driehoeken van de bestaande rechte buitenmuur door te trekken. Geen wijziging aan deur, kamerindeling of toestellen. 366 controlestralen bevestigen een gesloten wand.

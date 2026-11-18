@@ -1,0 +1,9 @@
+{
+  "directExport": [
+    "Reference floor / warm greige oak wide staggered planks"
+  ],
+  "baseColorFactor": {
+    "Reference floor / warm greige oak wide staggered planks": [0.55, 0.55, 0.55, 1],
+    "note": "Browser-reviewed linear multiplier for the photographed oak albedo; applied by optimize-house.ts after export."
+  }
+}

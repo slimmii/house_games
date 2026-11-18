@@ -1,0 +1,438 @@
+{
+  "sourceSha256": "1199183a39d3789bd70a4c8768e33a5f507a82597a41d4370f109781bcf0c0c9",
+  "generatedBy": "scripts/derive-lamp-emitters.mjs",
+  "emitters": [
+    {
+      "name": "Bathroom photo / canopy spotlight diffuser",
+      "material": "Bathroom - warm lamp glass",
+      "type": "disc",
+      "position": [
+        4.2,
+        22.448999,
+        -25.223999
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "radius": 0.075,
+      "area": 0.042306,
+      "emissiveStrength": 3,
+      "color": [
+        1,
+        0.766744,
+        0.415148
+      ],
+      "intensity": 0.126917,
+      "bounds": {
+        "min": [
+          4.125,
+          22.441499,
+          -25.298999
+        ],
+        "max": [
+          4.275,
+          22.456499,
+          -25.148999
+        ]
+      }
+    },
+    {
+      "name": "Bathroom photo / canopy spotlight diffuser.001",
+      "material": "Bathroom - warm lamp glass",
+      "type": "disc",
+      "position": [
+        6.12,
+        22.448999,
+        -25.223999
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "radius": 0.075,
+      "area": 0.042306,
+      "emissiveStrength": 3,
+      "color": [
+        1,
+        0.766744,
+        0.415148
+      ],
+      "intensity": 0.126917,
+      "bounds": {
+        "min": [
+          6.045,
+          22.441499,
+          -25.298999
+        ],
+        "max": [
+          6.195,
+          22.456499,
+          -25.148999
+        ]
+      }
+    },
+    {
+      "name": "Bathroom photo / niche downlight",
+      "material": "Bathroom - warm lamp glass",
+      "type": "disc",
+      "position": [
+        1.98,
+        23.193001,
+        -20.369999
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "radius": 0.072,
+      "area": 0.040616,
+      "emissiveStrength": 3,
+      "color": [
+        1,
+        0.766744,
+        0.415148
+      ],
+      "intensity": 0.121849,
+      "bounds": {
+        "min": [
+          1.908,
+          23.184001,
+          -20.441999
+        ],
+        "max": [
+          2.052,
+          23.202001,
+          -20.297999
+        ]
+      }
+    },
+    {
+      "name": "Dining ceiling lamp / ring 1 luminous underside",
+      "material": "Dining ceiling lamp / warm white LED diffuser",
+      "type": "disc",
+      "position": [
+        17.208,
+        14.896501,
+        -17.3748
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "radius": 0.636,
+      "area": 0.439565,
+      "emissiveStrength": 5,
+      "color": [
+        1,
+        0.76,
+        0.43
+      ],
+      "intensity": 2.197823,
+      "bounds": {
+        "min": [
+          16.572,
+          14.892001,
+          -18.0108
+        ],
+        "max": [
+          17.844,
+          14.901001,
+          -16.7388
+        ]
+      }
+    },
+    {
+      "name": "Dining ceiling lamp / ring 2 luminous underside",
+      "material": "Dining ceiling lamp / warm white LED diffuser",
+      "type": "disc",
+      "position": [
+        17.418,
+        14.869501,
+        -18.4278
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "radius": 0.486,
+      "area": 0.331563,
+      "emissiveStrength": 5,
+      "color": [
+        1,
+        0.76,
+        0.43
+      ],
+      "intensity": 1.657817,
+      "bounds": {
+        "min": [
+          16.932,
+          14.865001,
+          -18.9138
+        ],
+        "max": [
+          17.904,
+          14.874001,
+          -17.9418
+        ]
+      }
+    },
+    {
+      "name": "Dining ceiling lamp / ring 3 luminous underside",
+      "material": "Dining ceiling lamp / warm white LED diffuser",
+      "type": "disc",
+      "position": [
+        17.208,
+        14.896501,
+        -19.4898
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "radius": 0.651,
+      "area": 0.450365,
+      "emissiveStrength": 5,
+      "color": [
+        1,
+        0.76,
+        0.43
+      ],
+      "intensity": 2.251823,
+      "bounds": {
+        "min": [
+          16.557,
+          14.892001,
+          -20.1408
+        ],
+        "max": [
+          17.859,
+          14.901001,
+          -18.8388
+        ]
+      }
+    },
+    {
+      "name": "Dining ceiling lamp / ring 4 luminous underside",
+      "material": "Dining ceiling lamp / warm white LED diffuser",
+      "type": "disc",
+      "position": [
+        17.418,
+        14.869501,
+        -20.5788
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "radius": 0.486,
+      "area": 0.331563,
+      "emissiveStrength": 5,
+      "color": [
+        1,
+        0.76,
+        0.43
+      ],
+      "intensity": 1.657816,
+      "bounds": {
+        "min": [
+          16.932,
+          14.865001,
+          -21.0648
+        ],
+        "max": [
+          17.904,
+          14.874001,
+          -20.0928
+        ]
+      }
+    },
+    {
+      "name": "Hall photo / lamp diffuser",
+      "material": "Hall photo - warm lamp diffuser",
+      "type": "disc",
+      "position": [
+        1.59,
+        5.703,
+        -6.735
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "radius": 0.171,
+      "area": 0.205075,
+      "emissiveStrength": 3,
+      "color": [
+        1,
+        0.645555,
+        0.259027
+      ],
+      "intensity": 0.615225,
+      "bounds": {
+        "min": [
+          1.419,
+          5.6925,
+          -6.906
+        ],
+        "max": [
+          1.761,
+          5.7135,
+          -6.564
+        ]
+      }
+    },
+    {
+      "name": "Hall photo / lamp diffuser.001",
+      "material": "Hall photo - warm lamp diffuser",
+      "type": "disc",
+      "position": [
+        1.59,
+        5.703,
+        -7.14
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "radius": 0.171,
+      "area": 0.205075,
+      "emissiveStrength": 3,
+      "color": [
+        1,
+        0.645555,
+        0.259027
+      ],
+      "intensity": 0.615225,
+      "bounds": {
+        "min": [
+          1.419,
+          5.6925,
+          -7.311
+        ],
+        "max": [
+          1.761,
+          5.7135,
+          -6.969
+        ]
+      }
+    },
+    {
+      "name": "Hall photo / lamp diffuser.002",
+      "material": "Hall photo - warm lamp diffuser",
+      "type": "disc",
+      "position": [
+        1.59,
+        5.703,
+        -7.545
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "radius": 0.171,
+      "area": 0.205075,
+      "emissiveStrength": 3,
+      "color": [
+        1,
+        0.645555,
+        0.259027
+      ],
+      "intensity": 0.615225,
+      "bounds": {
+        "min": [
+          1.419,
+          5.6925,
+          -7.716
+        ],
+        "max": [
+          1.761,
+          5.7135,
+          -7.374
+        ]
+      }
+    },
+    {
+      "name": "Kitchen photo pendant / opal underside disc",
+      "material": "Kitchen photo pendant / warm opal diffuser",
+      "type": "disc",
+      "position": [
+        5.89635,
+        12.0165,
+        -28.408432
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "radius": 0.585001,
+      "area": 2.206071,
+      "emissiveStrength": 3,
+      "color": [
+        1,
+        0.84,
+        0.65
+      ],
+      "intensity": 6.618212,
+      "bounds": {
+        "min": [
+          5.31135,
+          12.003,
+          -28.993432
+        ],
+        "max": [
+          6.48135,
+          12.030001,
+          -27.823431
+        ]
+      }
+    },
+    {
+      "name": "Laundry photo / ceiling lamp diffuser",
+      "material": "Laundry - lamp diffuser",
+      "type": "disc",
+      "position": [
+        4.83,
+        5.922,
+        -25.949999
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "radius": 0.438,
+      "area": 1.234953,
+      "emissiveStrength": 2,
+      "color": [
+        1,
+        0.899384,
+        0.701169
+      ],
+      "intensity": 2.469906,
+      "bounds": {
+        "min": [
+          4.392,
+          5.916,
+          -26.387999
+        ],
+        "max": [
+          5.268,
+          5.928,
+          -25.511999
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+TRAP HERWERKT NAAR FOTO'S
+Lichte beige open treden, donkere stalen middenkolom, gebogen buissteunen, slanke spijlen en doorlopende bronskleurige ovale leuningen. Geen kleding of losse spullen.
+Bestaande verdiepingsniveaus 0,00 / 2,41 / 5,31 m. Onderste trap 14 optredes van 17,21 cm; bovenste trap 16 optredes van 18,125 cm. De laatste optrede eindigt op een volwaardig vloerhoog bordes. De bordessen sluiten zonder verticale sprong aan op de bestaande afgewerkte vloeren.
+Middenas afgestemd op de afgeronde traphal (1,24 / 4,25 m). Beide oude excentrische trapgaten vervangen door gaten op diezelfde as, straal 89 cm. Treden circa 3,5 cm dik, buitenstraal 80,5 cm. Ronde kolom diameter 13,4 cm. Leuning en borstwering circa 95 cm hoog. Detailmaten en draairichting afgeleid van foto en bestaande modelgeometrie, geen nieuwe opmeting of uitvoeringsberekening.
+Scenes 38–40: eerste overloop, bovenste overloop en opengewerkt overzicht. Aansluitingen, vlakke bordessen en vrije trapgaten gecontroleerd met raycasts.
+Bron stair_reference_rework.py. Reservekopie Huis_before_stair_reference_rework.blend.

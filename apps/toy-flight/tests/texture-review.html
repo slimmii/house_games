@@ -1,0 +1,48 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>House texture comparison</title><link rel="icon" href="/favicon.svg">
+<style>
+body { margin: 0; background: #d8e2de; font: 14px system-ui; } canvas { display: block; }
+nav { position: fixed; top: 16px; left: 16px; padding: 12px 16px; border-radius: 10px; background: #fffffff0; box-shadow: 0 2px 16px #0002; }
+nav a, nav select { margin-left: 12px; color: #235b50; } nav a[aria-current] { font-weight: 700; }
+</style></head>
+<body><nav><strong>Texture comparison</strong><select aria-label="Room" id="view"><option value="living">Living room</option><option value="kitchen">Kitchen</option><option value="camber">Camber furniture</option></select><a id="compressed">Compressed</a><a id="original">Original</a></nav><script type="module">
+import * as THREE from 'three';
+import { createHouse } from '@huis/house/client/world';
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#d8e2de');
+const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
+renderer.setSize(1400, 900);
+renderer.setPixelRatio(1);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.AgXToneMapping;
+const camera = new THREE.PerspectiveCamera(65, 1400 / 900, .04, 200);
+const params = new URLSearchParams(location.search);
+const views = {
+  living: [[17.4, 12.75, -18.75], [11.1, 8.55, -18.45]],
+  kitchen: [[7.7, 9.2, -27.5], [4.3, 7.25, -25.2]],
+  camber: [[12.3, 11.1, -21.9], [20.1, 10.7, -20.8]],
+};
+const selector = document.querySelector('#view');
+selector.value = params.get('view') in views ? params.get('view') : 'living';
+function selectView() {
+  params.set('view', selector.value);
+  history.replaceState(null, '', `?${params}`);
+  const [position, target] = views[selector.value];
+  camera.position.set(...position);
+  camera.lookAt(...target);
+  for (const mode of ['original', 'compressed']) {
+    const query = new URLSearchParams(params);
+    query.set('textures', mode);
+    document.querySelector(`#${mode}`).href = `?${query}`;
+  }
+}
+selectView();
+selector.addEventListener('change', selectView);
+document.querySelector(params.get('textures') === 'original' ? '#original' : '#compressed').setAttribute('aria-current', 'page');
+document.body.append(renderer.domElement);
+await createHouse(scene, renderer).ready;
+window.review = { scene, camera, renderer };
+renderer.setAnimationLoop(() => renderer.render(scene, camera));
+document.body.dataset.ready = 'true';
+</script></body></html>

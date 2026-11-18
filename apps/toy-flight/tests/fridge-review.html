@@ -1,0 +1,10 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="icon" href="data:,"><title>Kitchen fridge review</title>
+<style>html,body{margin:0;background:#b8c4cb}canvas{display:block}#label{position:fixed;top:14px;left:16px;padding:9px 13px;border-radius:6px;background:#fffffff0;font:14px system-ui}</style></head>
+<body><div id="label">Loading full house…</div><script type="module">
+import * as THREE from 'three';import {createHouse} from '@huis/house/client/world';import {DOORS,createDoorStates,doorComponentCount,doorPartPose} from '@huis/house/shared/doors';
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setSize(1280,800);renderer.setPixelRatio(1);renderer.toneMapping=THREE.AgXToneMapping;renderer.outputColorSpace=THREE.SRGBColorSpace;document.body.append(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#b8c4cb');const camera=new THREE.PerspectiveCamera(60,1280/800,.04,120);const house=createHouse(scene,renderer);await house.ready;
+const states=createDoorStates(),index=DOORS.findIndex(door=>door.label==='Kitchen refrigerator door');
+window.fridgeReview={show(fraction){states[index].fraction=fraction;house.updateDoors(states);camera.position.set(8.35,10.95,-26.7);camera.lookAt(7.35,10.5,-21.25);camera.updateMatrixWorld();scene.updateMatrixWorld(true);renderer.render(scene,camera);document.getElementById('label').textContent=`Kitchen fridge · ${fraction?'open':'closed'}`;return scene.getObjectByName('operable-closets').userData.closetDiagnostics;}};
+window.fridgeReview.show(1);window.reviewReady=true;
+</script></body></html>

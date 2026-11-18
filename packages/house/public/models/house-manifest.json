@@ -1,0 +1,816 @@
+{
+  "source": "/Users/slimmii/Downloads/HUIS/output/blender/Huis_Oude_Terelststraat_15.blend",
+  "sourceSha256": "65e12d17c665efa0221ac94c16e53b013608673375488f66679d5c6f1b93667c",
+  "sourceScene": "01 | HOUSE - exterior",
+  "sourceCollections": [
+    "00 | GROUND - 2021",
+    "01 | FIRST - 2021 + Camber 2025",
+    "02 | SECOND - archive reconstruction",
+    "03 | ROOFS - removable",
+    "04 | SITE and rear stair - indicative extent"
+  ],
+  "restoredInteriorCeilings": [
+    "Kitchen ceiling for interior view",
+    "Bedroom 1 / room ceiling",
+    "Bedroom 2 / ceiling",
+    "Bathroom photo / bathroom ceiling",
+    "Small bedroom / ceiling"
+  ],
+  "interiorFinishRepairs": [
+    {
+      "name": "Kitchen ceiling for interior view",
+      "min": [
+        0.28,
+        6.54,
+        4.85
+      ],
+      "max": [
+        2.97,
+        10.68,
+        5.12
+      ],
+      "reason": "Close the lowered ceiling plenum and meet the kitchen entry partition and upper slab."
+    }
+  ],
+  "firstFloorCeilingLevel": {
+    "sourceHeight": 5.12,
+    "finishHeight": 5.07,
+    "slabs": [
+      "2 / floor slab",
+      "Reference spiral / 1 flush landing infill"
+    ],
+    "removedPanels": [
+      "Game interior finish / living ceiling",
+      "Game interior finish / office ceiling"
+    ],
+    "fixturePrefix": "Reference lighting / first WC spot"
+  },
+  "upperCeilingClearanceMeters": 0.003,
+  "upperLandingCapClearance": {
+    "sourceTopMeters": 5.31,
+    "exportTopMeters": 5.298,
+    "objects": [
+      "Stair photo / white plaster lintel above door",
+      "first / source masonry 038",
+      "first / source masonry 039",
+      "first / source masonry 040",
+      "first / source masonry 041",
+      "first / source masonry 042",
+      "first / source masonry 043",
+      "first / source masonry 044",
+      "first / source masonry 045",
+      "first / source masonry 046",
+      "first / source masonry 047",
+      "first / source masonry 048",
+      "first / source masonry 049",
+      "first / source masonry 050",
+      "first / source masonry 051",
+      "first / source masonry 052",
+      "first / source masonry 053",
+      "first / source masonry 054",
+      "first / source masonry 055",
+      "first / source masonry 056",
+      "first / source masonry 057",
+      "first / source masonry 058",
+      "first / source masonry 059",
+      "first / source masonry 060",
+      "first / source masonry 061",
+      "first / source masonry 062",
+      "first / source masonry 063",
+      "first / source masonry 064",
+      "first / source masonry 065",
+      "first / source masonry 066",
+      "first / source masonry 067",
+      "first / source masonry 068",
+      "first / source masonry 069"
+    ]
+  },
+  "firstLandingCapClearance": {
+    "sourceTopMeters": 2.41,
+    "exportTopMeters": 2.398,
+    "objects": [
+      "ground / source masonry 036",
+      "ground / source masonry 037",
+      "ground / source masonry 038",
+      "ground / source masonry 039",
+      "ground / source masonry 040",
+      "ground / source masonry 041",
+      "ground / source masonry 042",
+      "ground / source masonry 043",
+      "ground / source masonry 044",
+      "ground / source masonry 045",
+      "ground / source masonry 046",
+      "ground / source masonry 047",
+      "ground / source masonry 048",
+      "ground / source masonry 049",
+      "ground / source masonry 050",
+      "ground / source masonry 051",
+      "ground / source masonry 052",
+      "ground / source masonry 053",
+      "ground / source masonry 054",
+      "ground / source masonry 055",
+      "ground / source masonry 056",
+      "ground / source masonry 057",
+      "ground / source masonry 058",
+      "ground / source masonry 059",
+      "ground / source masonry 060",
+      "ground / source masonry 061",
+      "ground / source masonry 062",
+      "ground / source masonry 063",
+      "ground / source masonry 064",
+      "ground / source masonry 065",
+      "ground / source masonry 066",
+      "ground / source masonry 067",
+      "ground / source masonry 068",
+      "ground / source masonry 069",
+      "ground / source masonry 070",
+      "ground / source masonry 071",
+      "ground / source masonry 072",
+      "ground / source masonry 073",
+      "ground / source masonry 074",
+      "ground / source masonry 075",
+      "ground / source masonry 076",
+      "ground / source masonry 077",
+      "ground / source masonry 078",
+      "ground / source masonry 079",
+      "ground / source masonry 080",
+      "ground / source masonry 081",
+      "ground / source masonry 082",
+      "ground / source masonry 083"
+    ]
+  },
+  "coordinateTransform": "(x, z, -y) * 3",
+  "uniformScale": 3,
+  "sourceFloorElevationsMeters": [
+    0,
+    2.41,
+    5.31
+  ],
+  "gameFloorElevations": [
+    0,
+    7.23,
+    15.93
+  ],
+  "canonicalObjectCount": 8864,
+  "visualObjectCount": 6660,
+  "collisionObjectCount": 6716,
+  "collisionTriangleCount": 1282996,
+  "collisionSha256": "0da97b23b48ce7419f9b06cfa5a0740f1c096b5d47f2fe0cd3addd284ac89611",
+  "disabledBevelOrSubdivisionModifiers": 0,
+  "collisionOnlySimplifiedModifiers": 4531,
+  "visualDetail": "Authored modifiers, small parts, planting and original textures retained",
+  "repairedDuplicatePoleVertices": [
+    "Dining ceiling lamp / round ceiling canopy"
+  ],
+  "bakedProceduralMaterialCount": 51,
+  "bakedProceduralMaterials": [
+    {
+      "sourceMaterial": "Bathroom - cloudy cream marble wall tiles",
+      "exportMaterial": "Bathroom - cloudy cream marble wall tiles / game color bake",
+      "texture": "Bathroom - cloudy cream marble wall tiles / baked Base Color",
+      "resolution": 2048,
+      "sourceObjectParts": 545,
+      "triangleCount": 53410
+    },
+    {
+      "sourceMaterial": "Bathroom - polished black vanity stone",
+      "exportMaterial": "Bathroom - polished black vanity stone / game color bake",
+      "texture": "Bathroom - polished black vanity stone / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 1,
+      "triangleCount": 1461
+    },
+    {
+      "sourceMaterial": "Bedroom 1 / light oak horizontal headboard grain",
+      "exportMaterial": "Bedroom 1 / light oak horizontal headboard grain / game color bake",
+      "texture": "Bedroom 1 / light oak horizontal headboard grain / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 4,
+      "triangleCount": 1364
+    },
+    {
+      "sourceMaterial": "Bedroom 1 / light washed oak laminate",
+      "exportMaterial": "Bedroom 1 / light washed oak laminate / game color bake",
+      "texture": "Bedroom 1 / light washed oak laminate / baked Base Color",
+      "resolution": 2048,
+      "sourceObjectParts": 110,
+      "triangleCount": 16500
+    },
+    {
+      "sourceMaterial": "Bedroom 1 entry corner / deep blue corduroy",
+      "exportMaterial": "Bedroom 1 entry corner / deep blue corduroy / game color bake",
+      "texture": "Bedroom 1 entry corner / deep blue corduroy / baked Base Color",
+      "resolution": 2048,
+      "sourceObjectParts": 9,
+      "triangleCount": 13604
+    },
+    {
+      "sourceMaterial": "Bedroom 2 / light oak grain along length",
+      "exportMaterial": "Bedroom 2 / light oak grain along length / game color bake",
+      "texture": "Bedroom 2 / light oak grain along length / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 38,
+      "triangleCount": 5700
+    },
+    {
+      "sourceMaterial": "Bedroom 2 / light oak horizontal headboard grain",
+      "exportMaterial": "Bedroom 2 / light oak horizontal headboard grain / game color bake",
+      "texture": "Bedroom 2 / light oak horizontal headboard grain / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 7,
+      "triangleCount": 1050
+    },
+    {
+      "sourceMaterial": "Bedroom 2 / light oak vertical cupboard grain",
+      "exportMaterial": "Bedroom 2 / light oak vertical cupboard grain / game color bake",
+      "texture": "Bedroom 2 / light oak vertical cupboard grain / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 21,
+      "triangleCount": 3150
+    },
+    {
+      "sourceMaterial": "Bedroom 2 / warm honey oak bookcase",
+      "exportMaterial": "Bedroom 2 / warm honey oak bookcase / game color bake",
+      "texture": "Bedroom 2 / warm honey oak bookcase / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 10,
+      "triangleCount": 1500
+    },
+    {
+      "sourceMaterial": "Bedroom 2 / warm oak parquet",
+      "exportMaterial": "Bedroom 2 / warm oak parquet / game color bake",
+      "texture": "Bedroom 2 / warm oak parquet / baked Base Color",
+      "resolution": 2048,
+      "sourceObjectParts": 86,
+      "triangleCount": 12900
+    },
+    {
+      "sourceMaterial": "Camber - natural Casella oak H1385 ST40",
+      "exportMaterial": "Camber - natural Casella oak H1385 ST40 / game color bake",
+      "texture": "Camber - natural Casella oak H1385 ST40 / baked Base Color",
+      "resolution": 4096,
+      "sourceObjectParts": 13,
+      "triangleCount": 358
+    },
+    {
+      "sourceMaterial": "Camber - natural Casella oak H1385 ST40.003",
+      "exportMaterial": "Camber - natural Casella oak H1385 ST40.003 / game color bake",
+      "texture": "Camber - natural Casella oak H1385 ST40.003 / baked Base Color",
+      "resolution": 4096,
+      "sourceObjectParts": 4,
+      "triangleCount": 72
+    },
+    {
+      "sourceMaterial": "Camber drawing / natural Casella oak H1385 ST40",
+      "exportMaterial": "Camber drawing / natural Casella oak H1385 ST40 / game color bake",
+      "texture": "Camber drawing / natural Casella oak H1385 ST40 / baked Base Color",
+      "resolution": 4096,
+      "sourceObjectParts": 145,
+      "triangleCount": 7830
+    },
+    {
+      "sourceMaterial": "Dining photo / pale natural oak tabletop",
+      "exportMaterial": "Dining photo / pale natural oak tabletop / game color bake",
+      "texture": "Dining photo / pale natural oak tabletop / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 1,
+      "triangleCount": 898
+    },
+    {
+      "sourceMaterial": "Garden photo / clean pale sand",
+      "exportMaterial": "Garden photo / clean pale sand / game color bake",
+      "texture": "Garden photo / clean pale sand / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 1,
+      "triangleCount": 6
+    },
+    {
+      "sourceMaterial": "Garden photo / driveway grey concrete pavers",
+      "exportMaterial": "Garden photo / driveway grey concrete pavers / game color bake",
+      "texture": "Garden photo / driveway grey concrete pavers / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 2,
+      "triangleCount": 12
+    },
+    {
+      "sourceMaterial": "Garden photo / empty side street",
+      "exportMaterial": "Garden photo / empty side street / game color bake",
+      "texture": "Garden photo / empty side street / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 3,
+      "triangleCount": 18
+    },
+    {
+      "sourceMaterial": "Garden photo / mixed green lawn",
+      "exportMaterial": "Garden photo / mixed green lawn / game color bake",
+      "texture": "Garden photo / mixed green lawn / baked Base Color",
+      "resolution": 2048,
+      "sourceObjectParts": 4,
+      "triangleCount": 128639
+    },
+    {
+      "sourceMaterial": "Garden photo / small grey street pavers",
+      "exportMaterial": "Garden photo / small grey street pavers / game color bake",
+      "texture": "Garden photo / small grey street pavers / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 5,
+      "triangleCount": 282
+    },
+    {
+      "sourceMaterial": "Garden photo / tree bark",
+      "exportMaterial": "Garden photo / tree bark / game color bake",
+      "texture": "Garden photo / tree bark / baked Base Color",
+      "resolution": 2048,
+      "sourceObjectParts": 263,
+      "triangleCount": 8240
+    },
+    {
+      "sourceMaterial": "Garden photo / weathered concrete gravel boards",
+      "exportMaterial": "Garden photo / weathered concrete gravel boards / game color bake",
+      "texture": "Garden photo / weathered concrete gravel boards / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 17,
+      "triangleCount": 1242
+    },
+    {
+      "sourceMaterial": "Garden photo / weathered garden timber",
+      "exportMaterial": "Garden photo / weathered garden timber / game color bake",
+      "texture": "Garden photo / weathered garden timber / baked Base Color",
+      "resolution": 2048,
+      "sourceObjectParts": 153,
+      "triangleCount": 7646
+    },
+    {
+      "sourceMaterial": "Ground bathroom - pale oak vanity",
+      "exportMaterial": "Ground bathroom - pale oak vanity / game color bake",
+      "texture": "Ground bathroom - pale oak vanity / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 4,
+      "triangleCount": 392
+    },
+    {
+      "sourceMaterial": "Ground bathroom - pale wood-look floor tile",
+      "exportMaterial": "Ground bathroom - pale wood-look floor tile / game color bake",
+      "texture": "Ground bathroom - pale wood-look floor tile / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 1,
+      "triangleCount": 98
+    },
+    {
+      "sourceMaterial": "Ground straight doorway / laundry floor retained",
+      "exportMaterial": "Ground straight doorway / laundry floor retained / game color bake",
+      "texture": "Ground straight doorway / laundry floor retained / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 1,
+      "triangleCount": 6
+    },
+    {
+      "sourceMaterial": "Hall photo - charcoal mottled stone tiles 40cm",
+      "exportMaterial": "Hall photo - charcoal mottled stone tiles 40cm / game color bake",
+      "texture": "Hall photo - charcoal mottled stone tiles 40cm / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 5,
+      "triangleCount": 30
+    },
+    {
+      "sourceMaterial": "KYRRE leg lengthwise birch",
+      "exportMaterial": "KYRRE leg lengthwise birch / game color bake",
+      "texture": "KYRRE leg lengthwise birch / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 6,
+      "triangleCount": 2628
+    },
+    {
+      "sourceMaterial": "KYRRE pale birch veneer",
+      "exportMaterial": "KYRRE pale birch veneer / game color bake",
+      "texture": "KYRRE pale birch veneer / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 2,
+      "triangleCount": 724
+    },
+    {
+      "sourceMaterial": "KYRRE plywood edge",
+      "exportMaterial": "KYRRE plywood edge / game color bake",
+      "texture": "KYRRE plywood edge / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 18,
+      "triangleCount": 4632
+    },
+    {
+      "sourceMaterial": "Kitchen - pale warm speckled stone",
+      "exportMaterial": "Kitchen - pale warm speckled stone / game color bake",
+      "texture": "Kitchen - pale warm speckled stone / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 1,
+      "triangleCount": 98
+    },
+    {
+      "sourceMaterial": "Kitchen - reference ivory terrazzo black ochre and tan chips",
+      "exportMaterial": "Kitchen - reference ivory terrazzo black ochre and tan chips / game color bake",
+      "texture": "Kitchen - reference ivory terrazzo black ochre and tan chips / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 3,
+      "triangleCount": 1568
+    },
+    {
+      "sourceMaterial": "Laundry - pale grey worktop",
+      "exportMaterial": "Laundry - pale grey worktop / game color bake",
+      "texture": "Laundry - pale grey worktop / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 5,
+      "triangleCount": 490
+    },
+    {
+      "sourceMaterial": "Light timber living-room floor",
+      "exportMaterial": "Light timber living-room floor / game color bake",
+      "texture": "Light timber living-room floor / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 1,
+      "triangleCount": 8
+    },
+    {
+      "sourceMaterial": "Living coffee table - light oak look",
+      "exportMaterial": "Living coffee table - light oak look / game color bake",
+      "texture": "Living coffee table - light oak look / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 14,
+      "triangleCount": 1196
+    },
+    {
+      "sourceMaterial": "Niche photo / mossy square vase",
+      "exportMaterial": "Niche photo / mossy square vase / game color bake",
+      "texture": "Niche photo / mossy square vase / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 1,
+      "triangleCount": 98
+    },
+    {
+      "sourceMaterial": "Office - reference warm buff brick and dark recessed mortar",
+      "exportMaterial": "Office - reference warm buff brick and dark recessed mortar / game color bake",
+      "texture": "Office - reference warm buff brick and dark recessed mortar / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 12,
+      "triangleCount": 45
+    },
+    {
+      "sourceMaterial": "Rear photo / blue grey stone treads",
+      "exportMaterial": "Rear photo / blue grey stone treads / game color bake",
+      "texture": "Rear photo / blue grey stone treads / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 21,
+      "triangleCount": 2289
+    },
+    {
+      "sourceMaterial": "Rear photo / dark square natural stone terrace",
+      "exportMaterial": "Rear photo / dark square natural stone terrace / game color bake",
+      "texture": "Rear photo / dark square natural stone terrace / baked Base Color",
+      "resolution": 2048,
+      "sourceObjectParts": 152,
+      "triangleCount": 14896
+    },
+    {
+      "sourceMaterial": "Rear photo / painted charcoal brick below veranda",
+      "exportMaterial": "Rear photo / painted charcoal brick below veranda / game color bake",
+      "texture": "Rear photo / painted charcoal brick below veranda / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 15,
+      "triangleCount": 40
+    },
+    {
+      "sourceMaterial": "Rear photo / painted charcoal return brick",
+      "exportMaterial": "Rear photo / painted charcoal return brick / game color bake",
+      "texture": "Rear photo / painted charcoal return brick / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 3,
+      "triangleCount": 18
+    },
+    {
+      "sourceMaterial": "Rear photo / smooth orange red rear brick",
+      "exportMaterial": "Rear photo / smooth orange red rear brick / game color bake",
+      "texture": "Rear photo / smooth orange red rear brick / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 24,
+      "triangleCount": 144
+    },
+    {
+      "sourceMaterial": "Rear photo / warm taupe slatted table",
+      "exportMaterial": "Rear photo / warm taupe slatted table / game color bake",
+      "texture": "Rear photo / warm taupe slatted table / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 70,
+      "triangleCount": 6860
+    },
+    {
+      "sourceMaterial": "Red-brown brick - archive facade",
+      "exportMaterial": "Red-brown brick - archive facade / game color bake",
+      "texture": "Red-brown brick - archive facade / baked Base Color",
+      "resolution": 2048,
+      "sourceObjectParts": 120,
+      "triangleCount": 125
+    },
+    {
+      "sourceMaterial": "Reference spiral / landing matches floor 2 timber coordinates",
+      "exportMaterial": "Reference spiral / landing matches floor 2 timber coordinates / game color bake",
+      "texture": "Reference spiral / landing matches floor 2 timber coordinates / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 1,
+      "triangleCount": 25
+    },
+    {
+      "sourceMaterial": "September29 / name trains natural unfinished beech",
+      "exportMaterial": "September29 / name trains natural unfinished beech / game color bake",
+      "texture": "September29 / name trains natural unfinished beech / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 39,
+      "triangleCount": 1466
+    },
+    {
+      "sourceMaterial": "Shelf plant / pothos deep green",
+      "exportMaterial": "Shelf plant / pothos deep green / game color bake",
+      "texture": "Shelf plant / pothos deep green / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 14,
+      "triangleCount": 1792
+    },
+    {
+      "sourceMaterial": "Small bedroom / pale grey whitewashed oak floor",
+      "exportMaterial": "Small bedroom / pale grey whitewashed oak floor / game color bake",
+      "texture": "Small bedroom / pale grey whitewashed oak floor / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 56,
+      "triangleCount": 8400
+    },
+    {
+      "sourceMaterial": "Sofas - muted aubergine from photos",
+      "exportMaterial": "Sofas - muted aubergine from photos / game color bake",
+      "texture": "Sofas - muted aubergine from photos / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 11,
+      "triangleCount": 3312
+    },
+    {
+      "sourceMaterial": "Soft upholstery cushions",
+      "exportMaterial": "Soft upholstery cushions / game color bake",
+      "texture": "Soft upholstery cushions / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 9,
+      "triangleCount": 2646
+    },
+    {
+      "sourceMaterial": "Stair brick - metre-scale curved and planar mapping",
+      "exportMaterial": "Stair brick - metre-scale curved and planar mapping / game color bake",
+      "texture": "Stair brick - metre-scale curved and planar mapping / baked Base Color",
+      "resolution": 2048,
+      "sourceObjectParts": 100,
+      "triangleCount": 276
+    },
+    {
+      "sourceMaterial": "Street photo / rough reddish facade brick",
+      "exportMaterial": "Street photo / rough reddish facade brick / game color bake",
+      "texture": "Street photo / rough reddish facade brick / baked Base Color",
+      "resolution": 1024,
+      "sourceObjectParts": 40,
+      "triangleCount": 240
+    }
+  ],
+  "unbakedLinkedBaseColorMaterials": [],
+  "removedDoorLeaves": [
+    "Entrance photo / door bottom rail",
+    "Entrance photo / door horizontal transom",
+    "Entrance photo / door horizontal transom.001",
+    "Entrance photo / door pane 1 clear substrate",
+    "Entrance photo / door pane 1 frosted layer",
+    "Entrance photo / door pane 1 gasket horizontal",
+    "Entrance photo / door pane 1 gasket horizontal.001",
+    "Entrance photo / door pane 1 gasket vertical",
+    "Entrance photo / door pane 1 gasket vertical.001",
+    "Entrance photo / door pane 2 clear substrate",
+    "Entrance photo / door pane 2 frosted layer",
+    "Entrance photo / door pane 2 gasket horizontal",
+    "Entrance photo / door pane 2 gasket horizontal.001",
+    "Entrance photo / door pane 2 gasket vertical",
+    "Entrance photo / door pane 2 gasket vertical.001",
+    "Entrance photo / door pane 3 clear substrate",
+    "Entrance photo / door pane 3 frosted layer",
+    "Entrance photo / door pane 3 gasket horizontal",
+    "Entrance photo / door pane 3 gasket horizontal.001",
+    "Entrance photo / door pane 3 gasket vertical",
+    "Entrance photo / door pane 3 gasket vertical.001",
+    "Entrance photo / door top rail",
+    "Entrance photo / door vertical stile",
+    "Entrance photo / door vertical stile.001",
+    "Entrance photo / hinge fixing tab",
+    "Entrance photo / hinge fixing tab.001",
+    "Entrance photo / hinge fixing tab.002",
+    "Entrance photo / inside handle rosette",
+    "Entrance photo / inside key rosette",
+    "Entrance photo / inside key slot",
+    "Entrance photo / inside lever",
+    "Entrance photo / inside lever stem",
+    "Entrance photo / outside key rosette",
+    "Entrance photo / outside key slot",
+    "Entrance photo / white hinge barrel",
+    "Entrance photo / white hinge barrel.001",
+    "Entrance photo / white hinge barrel.002",
+    "Ground bathroom photo / bathroom door handle rose",
+    "Ground bathroom photo / bathroom door handle rose.001",
+    "Ground bathroom photo / bathroom door hinge",
+    "Ground bathroom photo / bathroom door hinge.001",
+    "Ground bathroom photo / bathroom door hinge.002",
+    "Ground bathroom photo / bathroom door lever",
+    "Ground bathroom photo / bathroom door lever.001",
+    "Ground bathroom photo / bathroom door privacy rose",
+    "Ground bathroom photo / bathroom door privacy rose.001",
+    "Ground bathroom photo / bathroom entry flush leaf",
+    "Ground room doors / Laundry / handle rose",
+    "Ground room doors / Laundry / handle rose.001",
+    "Ground room doors / Laundry / handle spindle",
+    "Ground room doors / Laundry / handle spindle.001",
+    "Ground room doors / Laundry / hinge",
+    "Ground room doors / Laundry / hinge.001",
+    "Ground room doors / Laundry / hinge.002",
+    "Ground room doors / Laundry / key rose",
+    "Ground room doors / Laundry / key rose.001",
+    "Ground room doors / Laundry / key slot",
+    "Ground room doors / Laundry / key slot.001",
+    "Ground room doors / Laundry / reveal",
+    "Ground room doors / Laundry / silver lever",
+    "Ground room doors / Laundry / silver lever.001",
+    "Ground room doors / Laundry / white flush door leaf",
+    "Ground straight doorway / bedroom door leaf",
+    "Ground straight doorway / handle rose",
+    "Ground straight doorway / handle rose.001",
+    "Ground straight doorway / handle spindle",
+    "Ground straight doorway / handle spindle.001",
+    "Ground straight doorway / horizontal lever",
+    "Ground straight doorway / horizontal lever.001",
+    "Ground straight doorway / key slot",
+    "Ground straight doorway / key slot.001",
+    "Ground straight doorway / privacy rose",
+    "Ground straight doorway / privacy rose.001",
+    "Rear photo / black door hinge",
+    "Rear photo / black door hinge.001",
+    "Rear photo / black door hinge.002",
+    "Rear photo / black laundry door leaf",
+    "Rear photo / door handle rosette",
+    "Rear photo / door handle rosette.001",
+    "Rear photo / door lever",
+    "Rear photo / door lever.001",
+    "Rear photo / veranda two panel sliding doors glass",
+    "Rear photo / veranda two panel sliding doors glass.001",
+    "Rear photo / veranda two panel sliding doors sash",
+    "Rear photo / veranda two panel sliding doors sash rail",
+    "Rear photo / veranda two panel sliding doors sash rail.001",
+    "Rear photo / veranda two panel sliding doors sash rail.002",
+    "Rear photo / veranda two panel sliding doors sash rail.003",
+    "Rear photo / veranda two panel sliding doors sash.001",
+    "Rear photo / veranda two panel sliding doors sash.002",
+    "Rear photo / veranda two panel sliding doors sash.003",
+    "Stair photo / dark door reveal",
+    "Stair photo / handle spindle",
+    "Stair photo / handle spindle.001",
+    "Stair photo / key slot",
+    "Stair photo / key slot.001",
+    "Stair photo / left hinge",
+    "Stair photo / left hinge.001",
+    "Stair photo / left hinge.002",
+    "Stair photo / plain flush ivory door leaf",
+    "Stair photo / round handle rose",
+    "Stair photo / round handle rose.001",
+    "Stair photo / round key escutcheon",
+    "Stair photo / round key escutcheon.001",
+    "Stair photo / silver lever",
+    "Stair photo / silver lever.001",
+    "Street photo / garage horizontal section 1",
+    "Street photo / garage horizontal section 2",
+    "Street photo / garage horizontal section 3",
+    "Street photo / garage horizontal section 4",
+    "Street photo / garage horizontal section 5",
+    "Street photo / garage recessed backing",
+    "Street photo / long vertical stainless door pull",
+    "Street photo / pull handle stand-off",
+    "Street photo / pull handle stand-off.001",
+    "Upper reference door / Bathroom / dark round key escutcheon",
+    "Upper reference door / Bathroom / dark round key escutcheon.001",
+    "Upper reference door / Bathroom / flush pale oak leaf",
+    "Upper reference door / Bathroom / handle spindle",
+    "Upper reference door / Bathroom / handle spindle.001",
+    "Upper reference door / Bathroom / key slot",
+    "Upper reference door / Bathroom / key slot.001",
+    "Upper reference door / Bathroom / right hinge",
+    "Upper reference door / Bathroom / right hinge.001",
+    "Upper reference door / Bathroom / right hinge.002",
+    "Upper reference door / Bathroom / round handle rose",
+    "Upper reference door / Bathroom / round handle rose.001",
+    "Upper reference door / Bathroom / straight satin lever",
+    "Upper reference door / Bathroom / straight satin lever.001",
+    "Upper reference door / Bedroom 1 / dark round key escutcheon",
+    "Upper reference door / Bedroom 1 / dark round key escutcheon.001",
+    "Upper reference door / Bedroom 1 / flush pale oak leaf",
+    "Upper reference door / Bedroom 1 / handle spindle",
+    "Upper reference door / Bedroom 1 / handle spindle.001",
+    "Upper reference door / Bedroom 1 / key slot",
+    "Upper reference door / Bedroom 1 / key slot.001",
+    "Upper reference door / Bedroom 1 / right hinge",
+    "Upper reference door / Bedroom 1 / right hinge.001",
+    "Upper reference door / Bedroom 1 / right hinge.002",
+    "Upper reference door / Bedroom 1 / round handle rose",
+    "Upper reference door / Bedroom 1 / round handle rose.001",
+    "Upper reference door / Bedroom 1 / straight satin lever",
+    "Upper reference door / Bedroom 1 / straight satin lever.001",
+    "Upper reference door / Bedroom 2 / dark round key escutcheon",
+    "Upper reference door / Bedroom 2 / dark round key escutcheon.001",
+    "Upper reference door / Bedroom 2 / flush pale oak leaf",
+    "Upper reference door / Bedroom 2 / handle spindle",
+    "Upper reference door / Bedroom 2 / handle spindle.001",
+    "Upper reference door / Bedroom 2 / key slot",
+    "Upper reference door / Bedroom 2 / key slot.001",
+    "Upper reference door / Bedroom 2 / right hinge",
+    "Upper reference door / Bedroom 2 / right hinge.001",
+    "Upper reference door / Bedroom 2 / right hinge.002",
+    "Upper reference door / Bedroom 2 / round handle rose",
+    "Upper reference door / Bedroom 2 / round handle rose.001",
+    "Upper reference door / Bedroom 2 / straight satin lever",
+    "Upper reference door / Bedroom 2 / straight satin lever.001",
+    "Upper reference door / Bedroom 3 / dark round key escutcheon",
+    "Upper reference door / Bedroom 3 / dark round key escutcheon.001",
+    "Upper reference door / Bedroom 3 / flush pale oak leaf",
+    "Upper reference door / Bedroom 3 / handle spindle",
+    "Upper reference door / Bedroom 3 / handle spindle.001",
+    "Upper reference door / Bedroom 3 / key slot",
+    "Upper reference door / Bedroom 3 / key slot.001",
+    "Upper reference door / Bedroom 3 / right hinge",
+    "Upper reference door / Bedroom 3 / right hinge.001",
+    "Upper reference door / Bedroom 3 / right hinge.002",
+    "Upper reference door / Bedroom 3 / round handle rose",
+    "Upper reference door / Bedroom 3 / round handle rose.001",
+    "Upper reference door / Bedroom 3 / straight satin lever",
+    "Upper reference door / Bedroom 3 / straight satin lever.001",
+    "Upper reference door / Storage / dark round key escutcheon",
+    "Upper reference door / Storage / dark round key escutcheon.001",
+    "Upper reference door / Storage / flush pale oak leaf",
+    "Upper reference door / Storage / handle spindle",
+    "Upper reference door / Storage / handle spindle.001",
+    "Upper reference door / Storage / key slot",
+    "Upper reference door / Storage / key slot.001",
+    "Upper reference door / Storage / right hinge",
+    "Upper reference door / Storage / right hinge.001",
+    "Upper reference door / Storage / right hinge.002",
+    "Upper reference door / Storage / round handle rose",
+    "Upper reference door / Storage / round handle rose.001",
+    "Upper reference door / Storage / straight satin lever",
+    "Upper reference door / Storage / straight satin lever.001"
+  ],
+  "omissions": [
+    "labels/helpers/review ceilings",
+    "cameras/lights",
+    "operable room door leaves and attached hardware"
+  ],
+  "houseBounds": {
+    "min": [
+      0,
+      -0.6,
+      -32.8803
+    ],
+    "max": [
+      22.14245,
+      27.84,
+      0
+    ]
+  },
+  "continuousStairBrick": {
+    "repairedVertices": 1104,
+    "maximumPositionError": 6.08218530835796e-8,
+    "maximumHeightError": 2.3523966470823197e-7,
+    "bounds": [
+      -0.12000000000000001,
+      6.52,
+      -0.02,
+      8.219999999999999
+    ],
+    "textureResolution": [
+      4096,
+      4096
+    ],
+    "method": "Match original Blender metric UV corners by world position and face normal. Preserve geometry and corrected cap heights."
+  },
+  "visualSha256": "2df2457516d5a244e9953a59059c4a4e8a93fc74450379465333709fd7466111",
+  "transparentDecalMaterials": [
+    "Small bedroom - detailed bear wall decal",
+    "Bedroom 1 - detailed dragon wall decal"
+  ],
+  "materialOverrides": {
+    "Reference floor / warm greige oak wide staggered planks": [
+      0.55,
+      0.55,
+      0.55,
+      1
+    ]
+  },
+  "optimization": {
+    "method": "lossless deduplication and meshopt buffer compression; original textures and float vertices",
+    "beforeBytes": 237817456,
+    "afterBytes": 158427276
+  },
+  "removedDoorDetails": []
+}

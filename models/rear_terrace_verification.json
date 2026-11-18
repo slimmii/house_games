@@ -1,0 +1,50 @@
+{
+  "rear_brick": "smooth orange red stretcher bond, 205 x 61 mm module",
+  "stair": {
+    "risers": 14,
+    "rise_m": 0.17214285714285715,
+    "curved_winders": 3,
+    "straight_treads": 10,
+    "width_m": 0.86,
+    "straight_going_m": 0.25,
+    "upper_level_m": 2.41,
+    "patio_level_m": 0,
+    "connections_checked": true,
+    "steel_support_seats": 26,
+    "steel_stringer_top_below_top_tread_m": 0.0179
+  },
+  "terrace": {
+    "square_tile_module_m": 0.6,
+    "joints_m": 0.004,
+    "tile_objects": 152
+  },
+  "dining_table_m": [
+    2.2,
+    1.0,
+    0.765
+  ],
+  "chairs": 6,
+  "second_floor_shutters": {
+    "front_left_slats": 55,
+    "front_right_slats": 56,
+    "rear_bedroom_slats": 60,
+    "all_existing_window_openings_covered": true,
+    "bathroom_former_window_stays_closed": true
+  },
+  "laundry_door": {
+    "black": true,
+    "existing_side_opening_y_m": [
+      9.16,
+      10.0
+    ],
+    "opening_head_m": 2.04,
+    "leaf_m": [
+      0.726,
+      1.974
+    ],
+    "sink_and_cabinets_clear": true
+  },
+  "previous_front_door_and_indoor_stair_preserved": true,
+  "photo_detail_dimensions_estimated": true,
+  "saved_file_reopened_and_checked": true
+}

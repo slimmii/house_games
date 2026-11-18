@@ -1,0 +1,45 @@
+{
+  "spotlights": 10,
+  "sconces": 3,
+  "strips": 3,
+  "mounts": [
+    {
+      "name": "lower stair sconce",
+      "wall": "ground / source masonry 052",
+      "position": [
+        0.800000011920929,
+        5.057286739349365,
+        1.649999976158142
+      ],
+      "height": 1.65
+    },
+    {
+      "name": "middle stair sconce",
+      "wall": "first / source masonry 056",
+      "position": [
+        0.800000011920929,
+        5.057382583618164,
+        4.150000095367432
+      ],
+      "height": 4.15
+    },
+    {
+      "name": "upper stair sconce",
+      "wall": "Upper correction / rounded north stair surround",
+      "position": [
+        0.800000011920929,
+        5.046454429626465,
+        7.099999904632568
+      ],
+      "height": 7.1
+    }
+  ],
+  "meshCount": 57,
+  "lightCount": 16,
+  "ceilingHeights": {
+    "kitchen": 4.85,
+    "firstWC": 5.12,
+    "groundWC": 2.22
+  },
+  "layout": "Estimated, six kitchen spots and two per WC; original kitchen pendant retained."
+}

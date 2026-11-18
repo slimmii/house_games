@@ -1,0 +1,4 @@
+{
+  "note": "Proposed fixtures, evaluated live with ?drafts=live before adding them to the Blender model with output/blender/game_light_fixtures.py. Same schema as house-light-fixtures.json; `fixture` picks the generated visual, `heads` lists several beams. Accepted drafts are removed here once they exist in the model.",
+  "drafts": []
+}

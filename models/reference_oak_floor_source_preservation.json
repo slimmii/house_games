@@ -1,0 +1,12 @@
+{
+  "objectsCompared": 9272,
+  "missing": [],
+  "added": [],
+  "unexpectedChanges": [],
+  "allowedMaterialUvChanges": [
+    "1 / floor finish",
+    "Kitchen floor finish - continuous with living",
+    "Reference spiral / 0 landing timber finish",
+    "Reference spiral / section floor 1"
+  ]
+}

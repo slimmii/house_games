@@ -1,0 +1,13 @@
+SLAAPKAMER 1 — gedeelde kamer, elf gebruikersfoto’s van 24 september 2026.
+Scenes 28–31: tentbed en kastwand; afscheiding en kast; SMÅSTAD-zijde; beide delen van boven.
+Bestaand kamervolume behouden: x 2.92–7.101 m, y 0.28–4.98 m, vloer +5.31 m, hoogte 2.80 m.
+De gebruikersschets van 24 september om 21:17 bepaalt de gecorrigeerde indeling: het tentbed ligt langs de groene wand; de SMÅSTAD staat er dwars op en steekt vanaf diezelfde wand de kamer in. De hoge vakkenwand met panelen volgt de hoogslaper. Kast en poppenhuis staan tegen de tegenoverliggende wand, met een doorgang tussen deze meubels en het vrije uiteinde van de hoogslaper. De eerdere parallelle plaatsing is vervallen.
+Het bovenaanzicht is in dezelfde richting als de schets: bed linksboven, hoogslaper bovenaan in het midden/rechts, kast en poppenhuis onderaan, deur linksonder, raam rechts. De kastwand langs de linker schetsrand is behouden. De schets bepaalt de onderlinge plaatsing; meubelmaten en precieze afstanden blijven schattingen.
+IKEA SMÅSTAD: buitenmaat 207 x 104 x 182 cm, matras 90 x 200 cm, onderbedruimte 142 cm; bureau 148 x 60 x 73 cm. Componentdetails zijn vereenvoudigd, opgesteld voor de fotoreconstructie. De extra kastenwand en panelen horen niet bij het standaardproduct.
+Bron: https://www.ikea.com/be/nl/p/smastad-hoogslaper-wit-wit-met-bureau-met-2-planken-s89520158/
+Groene accent- en raamwand, overige wanden warm ivoor. Lichte laminaatvloer. Witte raamprofielen, rolluik, radiator en gordijnen met vereenvoudigd kleurpatroon.
+Apart wit halfhoog tentbed, open ruimte eronder, ladder, opgemaakt bed en gebogen stoffen kap met botanisch patroon. Roze draak met bloemen en sterren als ingepakte referentietextuur op de groene wand.
+Witte kastwand met bovenkasten en groene grepen. Lage witte kast en vakkenwand met lege open vakken en enkele lege roze bakken. Geel maanlampje. Houten poppenhuiskast als lege rekstructuur. Speelgoed, knuffels, kleding en losse spullen weggelaten.
+Alle kastdeuren en laden standaard gesloten, alle zichtbare binnenvakken leeg. Maatwerkafscheiding in eigen collectie: 02 / Bedroom 1 custom divider. De vrije verbinding rond het uiteinde van de afscheiding is gecontroleerd. Meubelmaten zijn visuele schattingen; nog niet ter plaatse opgemeten.
+De slaapkamer-2 correcties en vijf vakken hoogte in de kleinste slaapkamer zijn behouden.
+Broncode: bedroom1_split.py. Reservekopie vóór schetscorrectie: Huis_before_bedroom1_sketch.blend.

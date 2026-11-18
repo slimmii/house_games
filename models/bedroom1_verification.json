@@ -1,0 +1,26 @@
+{
+  "two_separate_beds": true,
+  "smastad_outer_m": [
+    1.04,
+    2.07,
+    1.82
+  ],
+  "mattress_m": [
+    0.9,
+    2.0
+  ],
+  "desk_m": [
+    1.48,
+    0.6,
+    0.73
+  ],
+  "custom_divider_separate": true,
+  "layout": "user sketch: perpendicular beds, cupboard and dollhouse opposite",
+  "reference_sketch": "Screenshot 2026-09-24 at 21.17.04.png",
+  "inner_end_connection_m": 0.8,
+  "perpendicular_beds_verified": true,
+  "closed_storage": true,
+  "empty_open_shelves": true,
+  "prior_small_bedroom_rows": 5,
+  "prior_bedroom2_bedsides_equal": true
+}

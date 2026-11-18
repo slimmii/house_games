@@ -1,0 +1,11 @@
+<!doctype html><html><head><meta charset="UTF-8"><style>body{margin:0}canvas{display:block}</style></head><body><script type="module">
+import * as THREE from 'three';
+import {createHouse} from '@huis/house/client/world';
+import {DOORS,createDoorStates} from '@huis/house/shared/doors';
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setSize(1100,850);renderer.setPixelRatio(1);renderer.toneMapping=THREE.AgXToneMapping;document.body.append(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#d8d7d2');scene.add(new THREE.HemisphereLight(0xffffff,0x777777,2));
+const camera=new THREE.PerspectiveCamera(64,1100/850,.04,80);camera.position.set(3.9,21,-5.3);camera.lookAt(7.3,18.9,-3.55);camera.updateMatrixWorld();
+const house=createHouse(scene,renderer);await house.ready;const states=createDoorStates();const bins=DOORS.map((d,i)=>({d,i})).filter(({d})=>d.unitId?.startsWith('small-bedroom-fabric-bin-'));
+window.binReview={show(fraction){for(const {i} of bins){states[i].fraction=fraction;states[i].opening=fraction>0;}house.updateDoors(states);scene.updateMatrixWorld(true);renderer.render(scene,camera);return bins.map(({d})=>({id:d.id,meshes:(()=>{let n=0;scene.getObjectByName('closet-pivot:'+d.id)?.traverse(o=>{if(o.isMesh)n++});return n})()}));},diagnostics(){const root=scene.getObjectByName('operable-closets');return root.userData.closetDiagnostics;}};
+window.binReview.show(0);window.reviewReady=true;
+</script></body></html>

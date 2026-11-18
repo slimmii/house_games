@@ -1,0 +1,20 @@
+{
+  "name": "@huis/tower-defense",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Little Defenders: a single-player toy tower defense on the living-room floor of the house. Runs entirely in the browser.",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && npm run verify:grid && vite build",
+    "test": "node --import tsx --import @huis/house/node/setupCollision --test tests/defense-*.test.ts",
+    "test:browser": "node --import tsx tests/defense.browser.ts",
+    "bake:grid": "node --import tsx scripts/bake-defense-grid.ts",
+    "verify:grid": "node --import tsx scripts/bake-defense-grid.ts --verify"
+  },
+  "dependencies": {
+    "@huis/house": "0.1.0",
+    "three": "^0.180.0"
+  }
+}

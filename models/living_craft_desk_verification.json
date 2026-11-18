@@ -1,0 +1,38 @@
+{
+  "collection": "01 / Furniture / living craft desk",
+  "objectCount": 163,
+  "deskWidthMeters": 1.68,
+  "deskDepthMeters": 0.53,
+  "deskHeightMeters": 0.745,
+  "dimensionsStatus": "Estimated from supplied photos and existing wall span",
+  "wall": "living side of kitchen/WC wall, between spiral stair and kitchen opening",
+  "sourceBounds": {
+    "min": [
+      2.981,
+      5.355,
+      2.41
+    ],
+    "max": [
+      3.511,
+      7.035,
+      3.6550000000000002
+    ]
+  },
+  "painting": "Original supplied photograph sampled through canvas-only UVs; original raster unchanged",
+  "keptClutter": [
+    "two storage boxes",
+    "marker caddy",
+    "notebooks and drawing",
+    "loose pencils",
+    "lidded tub",
+    "blue basket"
+  ],
+  "gameCollisionObjects": [
+    "Living craft desk / left pedestal carcass",
+    "Living craft desk / right pedestal carcass",
+    "Living craft desk / white desktop",
+    "Living craft desk / back modesty panel",
+    "Living craft desk / front support below desktop",
+    "Living craft desk / mushroom stool seat rim"
+  ]
+}

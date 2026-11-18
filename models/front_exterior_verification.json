@@ -1,0 +1,16 @@
+{
+  "door_exterior": "anthracite",
+  "door_interior": "white",
+  "clear_15_preserved": true,
+  "door_recess_shift_m": 0.1,
+  "pull_handle_length_m": 0.87,
+  "facade_brick_module_m": [
+    0.205,
+    0.059
+  ],
+  "closed_shutter_slats": 56,
+  "balcony_fine_vertical_spindles": 43,
+  "stair_28_treads_preserved": true,
+  "photo_unseen_geometry": "existing model retained",
+  "dimensions_estimated_from_photos": true
+}

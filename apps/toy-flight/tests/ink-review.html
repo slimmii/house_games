@@ -1,0 +1,53 @@
+<!doctype html><html><head><meta charset="UTF-8"><title>Unlimited ink visual review</title>
+<style>html,body{margin:0;background:#d8dcde;overflow:hidden}canvas{display:block}#label{position:fixed;left:14px;top:14px;padding:9px 12px;border-radius:7px;background:#fff;color:#28252d;font:12px system-ui;box-shadow:0 5px 20px #0002}</style>
+</head><body><div id="label">Loading ink review…</div><script type="module">
+import * as THREE from 'three';
+import {createHouse} from '@huis/house/client/world';
+import {PaintBatch} from '../src/client/paintBatch';
+import {ProjectileBatch} from '../src/client/projectileBatch';
+import {InkEffects} from '../src/client/inkEffects';
+
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+renderer.setSize(960,640);renderer.setPixelRatio(1);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.AgXToneMapping;renderer.toneMappingExposure=1;
+document.body.append(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#d8dcde');
+const camera=new THREE.PerspectiveCamera(52,960/640,.04,80);
+const house=createHouse(scene,renderer),paint=new PaintBatch(scene),projectiles=new ProjectileBatch(scene),effects=new InkEffects(scene);await house.ready;
+scene.add(new THREE.HemisphereLight('#ffffff','#87959c',1.7));
+const colors=['#f27654','#58bdb0','#b096e7'];
+function mark(index){
+ const column=index%11,row=Math.floor(index/11)%9;
+ return {id:index+1,position:{x:.867,y:18.15+row*.34,z:-8.7+column*.34},normal:{x:1,y:0,z:0},color:colors[index%3],size:.18+(index%7)*.016};
+}
+const gallery=Array.from({length:99},(_,index)=>mark(index));
+const spray=[];
+let spraySeed=0x8f31a2c7;const sprayRandom=()=>{spraySeed=Math.imul(spraySeed^spraySeed>>>16,0x21f0aaad);spraySeed=Math.imul(spraySeed^spraySeed>>>15,0x735a2d97);spraySeed^=spraySeed>>>15;return(spraySeed>>>0)/0x100000000;};
+for(let index=0;index<42;index++){
+ const clustered=index>=14,t=clustered?(index-14)/28:index/14;
+ const y=clustered?19.65+Math.sin(t*Math.PI*2.4)*.48+(sprayRandom()-.5)*.4:18.45+t*1.18+(sprayRandom()-.5)*.16;
+ const z=clustered?-8.15+Math.cos(t*Math.PI*3.2)*.62+(sprayRandom()-.5)*.46:-10.57+t*2.25+(sprayRandom()-.5)*.11;
+ spray.push({id:300+index,position:{x:.867,y,z},normal:{x:1,y:0,z:0},color:'#f27654',size:.18+sprayRandom()*.1});
+}
+camera.position.set(4.2,19.55,-7.05);camera.lookAt(.867,19.55,-7.05);camera.updateMatrixWorld();
+function render(label){document.getElementById('label').textContent=label;renderer.render(scene,camera);return {calls:renderer.info.render.calls,triangles:renderer.info.render.triangles,objects:scene.children.length};}
+window.inkReview={
+ show(mode){
+  const sprayView=mode==='spray'||mode==='spray-clean';
+  camera.position.set(4.2,19.55,sprayView?-8.8:-7.05);camera.lookAt(.867,19.55,sprayView?-8.8:-7.05);camera.updateMatrixWorld();
+  paint.reconcile(mode==='clean'||mode==='spray-clean'?[]:mode==='spray'?spray:gallery);projectiles.reconcile([]);effects.reset();
+  return render(mode==='clean'?'BEFORE · clean Bedroom 3 wall':mode==='spray-clean'?'BEFORE · clean edge':mode==='spray'?'AIMED SPRAY · sparse trail → glossy overlap':'LAYERING STRESS · three colors');
+ },
+ stress(){
+  paint.reconcile([]);effects.reset();effects.reconcile([]);const marks=[],active=Array.from({length:72},(_,index)=>({id:index+1,owner:`p${index%3}`,color:colors[index%3],position:{x:2+(index%9)*.08,y:19+(index%5)*.05,z:-8},velocity:{x:0,y:.2,z:90},bornAt:0}));
+  let maxObjects=scene.children.length,maxCalls=0;const started=performance.now();
+  for(let frame=0;frame<600;frame++){
+   for(const projectile of active){projectile.position.z+=1.5;if(projectile.position.z>-4)projectile.position.z=-9;}
+   projectiles.reconcile(active);
+   if(frame%8===0){marks.push(mark(marks.length));paint.reconcile(marks);effects.reconcile(marks,colors[0]);}
+   effects.update(1/60);renderer.render(scene,camera);maxObjects=Math.max(maxObjects,scene.children.length);maxCalls=Math.max(maxCalls,renderer.info.render.calls);
+  }
+  const elapsed=performance.now()-started;return {...render('10s UNLIMITED FIRE · bounded client pools'),elapsed,averageFrame:elapsed/600,maxObjects,maxCalls,marks:marks.length};
+ },
+};
+window.inkReview.show('clean');window.reviewReady=true;
+</script></body></html>

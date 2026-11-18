@@ -1,0 +1,17 @@
+{
+  "revision": "Equal bedside cabinets; shifted cabinet block; shortened wardrobe at bedside end",
+  "bedsides_equal": true,
+  "bedside_carcass_width_m": 0.49,
+  "bedside_top_size_m": [
+    0.485,
+    0.514,
+    0.034
+  ],
+  "cabinet_shift_toward_door_m": 0.325,
+  "wardrobe_width_m": 2.05,
+  "wardrobe_bedside_clearance_m": 0.031,
+  "door_sweep_degrees_checked": 90,
+  "conservative_door_clearance_m": 0.02,
+  "doors_closed": true,
+  "storage_empty": true
+}

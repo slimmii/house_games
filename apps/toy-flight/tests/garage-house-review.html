@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="icon" href="data:,"><title>Full-house garage review</title>
+<style>html,body{margin:0;background:#b8c4cb}canvas{display:block}#label{position:fixed;top:14px;left:16px;padding:9px 13px;border-radius:6px;background:#fffffff0;font:14px system-ui}</style></head>
+<body><div id="label">Loading full house…</div><script type="module">
+import * as THREE from 'three';import {createHouse} from '@huis/house/client/world';import {DOORS,createDoorStates,doorComponentCount,doorPartPose} from '@huis/house/shared/doors';
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setSize(1280,800);renderer.setPixelRatio(1);renderer.toneMapping=THREE.AgXToneMapping;renderer.outputColorSpace=THREE.SRGBColorSpace;document.body.append(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#b8c4cb');const camera=new THREE.PerspectiveCamera(60,1280/800,.04,120);const house=createHouse(scene,renderer);await house.ready;
+const states=createDoorStates(),index=DOORS.findIndex(door=>door.label==='Garage'),count=doorComponentCount(index);
+function show(fraction,view){states[index].fraction=fraction;states[index].opening=fraction>0;house.updateDoors(states);scene.updateMatrixWorld(true);
+ if(view==='inside'){camera.position.set(18.4,2.3,-1.45);camera.lookAt(15.05,6.55,-5.1);}else{camera.position.set(22.5,3.6,11);camera.lookAt(15.05,3,-.25);}camera.updateMatrixWorld();renderer.render(scene,camera);
+ const root=scene.getObjectByName('blender-house'),errors=[];for(let partIndex=0;partIndex<count;partIndex++){const object=root.getObjectByName(`garage-section:${partIndex}`),pose=doorPartPose(index,fraction,partIndex);if(!object){errors.push(`missing:${partIndex}`);continue;}const error=Math.hypot(...object.position.toArray().map((value,axis)=>value-pose.position[axis]));if(error>1e-7)errors.push(`pose:${partIndex}:${error}`);}
+ document.getElementById('label').textContent=`Full production house · sectional garage ${Math.round(fraction*100)}% · ${view}`;
+ return {fraction,view,count,errors,rails:root.getObjectsByProperty('name','garage-sectional-guide-rail').length,motor:Boolean(root.getObjectByName('garage-ceiling-motor'))};}
+window.garageHouseReview={show};show(.55,'outside');window.reviewReady=true;
+</script></body></html>

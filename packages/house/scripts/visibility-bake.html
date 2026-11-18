@@ -1,0 +1,199 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>House visibility bake</title></head><body>
+<!--
+  Driven by scripts/bake-visibility.mjs through a Vite dev server. Loads the
+  house exactly as the game does (default toy style), then for every point of
+  a lattice over the house renders a 6-face cube of batch IDs and records which
+  architecture batches each voxel can see.
+-->
+<script type="module">
+import * as THREE from 'three';
+import { createHouse } from '/src/client/world.ts';
+import { houseBatches, batchFingerprint } from '/src/client/visibility.ts';
+import { HOUSE_BOUNDS } from '/src/shared/world.ts';
+
+const params = new URLSearchParams(location.search);
+const CELL = Number(params.get('cell')) || 2;
+const FACE = Number(params.get('face')) || 256;
+
+const renderer = new THREE.WebGLRenderer({ antialias: false });
+renderer.setPixelRatio(1);
+renderer.setSize(64, 64);
+document.body.append(renderer.domElement);
+const scene = new THREE.Scene();
+const house = createHouse(scene, renderer);
+await house.ready;
+const architecture = scene.getObjectByName('Oude Terelststraat 15');
+const batches = houseBatches(architecture);
+
+/** Glass, cut-outs and blended surfaces never hide what is behind them. */
+function occludes(material) {
+  return !(material.transparent || material.alphaTest > 0 || material.alphaMap || material.transmission > 0
+    || material.opacity < 1 || !material.depthWrite || !material.colorWrite || material.alphaHash);
+}
+
+// Occluders: one merged geometry per face-culling mode, batch index + 1 as a flat RGB colour.
+const idScene = new THREE.Scene();
+const merged = new Map();
+const glassScene = new THREE.Scene();
+const glassMeshes = [];
+const depthOnly = side => new THREE.MeshBasicMaterial({ side, colorWrite: false, depthWrite: false });
+batches.forEach((mesh, index) => {
+  const material = Array.isArray(mesh.material) ? mesh.material[0] : mesh.material;
+  if (!occludes(material)) {
+    const probe = new THREE.Mesh(mesh.geometry, depthOnly(material.side));
+    probe.userData.index = index;
+    probe.matrixAutoUpdate = false;
+    probe.matrix.copy(mesh.matrixWorld);
+    probe.matrixWorld.copy(mesh.matrixWorld);
+    glassMeshes.push(probe);
+    return;
+  }
+  let group = merged.get(material.side);
+  if (!group) merged.set(material.side, group = []);
+  group.push({ mesh, index });
+});
+const idMaterial = side => new THREE.ShaderMaterial({
+  glslVersion: THREE.GLSL3,
+  side,
+  vertexShader: `in vec3 batchColor; flat out vec3 vBatch;
+    void main() { vBatch = batchColor; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+  fragmentShader: `flat in vec3 vBatch; out vec4 outColor; void main() { outColor = vec4(vBatch, 1.0); }`,
+});
+for (const [side, group] of merged) {
+  let vertices = 0, indices = 0;
+  for (const { mesh } of group) { vertices += mesh.geometry.getAttribute('position').count; indices += mesh.geometry.index.count; }
+  const position = new Float32Array(vertices * 3);
+  const color = new Uint8Array(vertices * 3);
+  const index = new Uint32Array(indices);
+  let v = 0, i = 0;
+  const point = new THREE.Vector3();
+  for (const { mesh, index: batch } of group) {
+    const source = mesh.geometry.getAttribute('position');
+    const id = batch + 1;
+    for (let k = 0; k < source.count; k += 1) {
+      point.fromBufferAttribute(source, k).applyMatrix4(mesh.matrixWorld);
+      position.set([point.x, point.y, point.z], (v + k) * 3);
+      color.set([id & 255, (id >> 8) & 255, (id >> 16) & 255], (v + k) * 3);
+    }
+    const sourceIndex = mesh.geometry.index;
+    for (let k = 0; k < sourceIndex.count; k += 1) index[i + k] = sourceIndex.getX(k) + v;
+    v += source.count;
+    i += sourceIndex.count;
+  }
+  const geometry = new THREE.BufferGeometry();
+  geometry.setAttribute('position', new THREE.BufferAttribute(position, 3));
+  geometry.setAttribute('batchColor', new THREE.BufferAttribute(color, 3, true));
+  geometry.setIndex(new THREE.BufferAttribute(index, 1));
+  const mesh = new THREE.Mesh(geometry, idMaterial(side));
+  mesh.frustumCulled = false;
+  idScene.add(mesh);
+}
+
+// All six cube faces share one 3×2 atlas, so each point needs a single readback.
+const target = new THREE.WebGLRenderTarget(FACE * 3, FACE * 2, { depthBuffer: true });
+const pixels = new Uint8Array(FACE * FACE * 6 * 4);
+const pixelWords = new Uint32Array(pixels.buffer);
+const camera = new THREE.PerspectiveCamera(90, 1, 0.05, 120);
+const FACES = [[1, 0, 0, 0, -1, 0], [-1, 0, 0, 0, -1, 0], [0, 1, 0, 0, 0, 1], [0, -1, 0, 0, 0, -1], [0, 0, 1, 0, -1, 0], [0, 0, -1, 0, -1, 0]];
+const gl = renderer.getContext();
+const frustum = new THREE.Frustum();
+const projection = new THREE.Matrix4();
+const sphere = new THREE.Sphere();
+renderer.autoClear = false;
+renderer.setClearColor(0x000000, 0);
+
+/** Batches visible from one point, as a Uint8Array of flags. */
+async function sample(x, y, z) {
+  const seen = new Uint8Array(batches.length);
+  const queries = [];
+  target.viewport.set(0, 0, FACE * 3, FACE * 2);
+  renderer.setRenderTarget(target);
+  renderer.clear(true, true, false);
+  FACES.forEach(([dx, dy, dz, ux, uy, uz], face) => {
+    camera.position.set(x, y, z);
+    camera.up.set(ux, uy, uz);
+    camera.lookAt(x + dx, y + dy, z + dz);
+    camera.updateMatrixWorld();
+    target.viewport.set((face % 3) * FACE, Math.floor(face / 3) * FACE, FACE, FACE);
+    renderer.setRenderTarget(target);
+    renderer.render(idScene, camera);
+    // Non-occluders: an occlusion query against the occluder depth just drawn.
+    frustum.setFromProjectionMatrix(projection.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse));
+    for (const probe of glassMeshes) {
+      sphere.copy(probe.geometry.boundingSphere).applyMatrix4(probe.matrixWorld);
+      if (!frustum.intersectsSphere(sphere)) continue;
+      const query = gl.createQuery();
+      gl.beginQuery(gl.ANY_SAMPLES_PASSED_CONSERVATIVE, query);
+      renderer.render(probe, camera);
+      gl.endQuery(gl.ANY_SAMPLES_PASSED_CONSERVATIVE);
+      queries.push([query, probe.userData.index]);
+    }
+  });
+  renderer.readRenderTargetPixels(target, 0, 0, FACE * 3, FACE * 2, pixels);
+  renderer.setRenderTarget(null);
+  for (let p = 0; p < pixelWords.length; p += 1) {
+    const id = pixelWords[p] & 0xffffff; // little-endian RGBA: R is the low byte
+    if (id) seen[id - 1] = 1;
+  }
+  while (queries.length) {
+    await new Promise(resolve => setTimeout(resolve, 0));
+    for (let q = queries.length - 1; q >= 0; q -= 1) {
+      const [query, index] = queries[q];
+      if (!gl.getQueryParameter(query, gl.QUERY_RESULT_AVAILABLE)) continue;
+      if (gl.getQueryParameter(query, gl.QUERY_RESULT)) seen[index] = 1;
+      gl.deleteQuery(query);
+      queries.splice(q, 1);
+    }
+  }
+  return seen;
+}
+
+window.bakeVisibility = async () => {
+  const started = performance.now();
+  const origin = [HOUSE_BOUNDS.min.x, HOUSE_BOUNDS.min.y, HOUSE_BOUNDS.min.z];
+  const dims = ['x', 'y', 'z'].map(axis => Math.ceil((HOUSE_BOUNDS.max[axis] - HOUSE_BOUNDS.min[axis]) / CELL));
+  const [nx, ny, nz] = dims;
+  const count = batches.length;
+  const voxels = nx * ny * nz;
+  // Points on a lattice at half the voxel size: each voxel unions its 3×3×3
+  // points (corners, edge and face midpoints, centre), shared with neighbours.
+  const own = Array.from({ length: voxels }, () => new Uint8Array(count));
+  const merge = (into, from) => { for (let i = 0; i < count; i += 1) into[i] |= from[i]; };
+  const at = (x, y, z) => x + nx * (y + ny * z);
+  const step = CELL / 2;
+  const total = (2 * nx + 1) * (2 * ny + 1) * (2 * nz + 1);
+  let done = 0;
+  for (let z = 0; z <= 2 * nz; z += 1) for (let y = 0; y <= 2 * ny; y += 1) for (let x = 0; x <= 2 * nx; x += 1) {
+    const seen = await sample(origin[0] + x * step, origin[1] + y * step, origin[2] + z * step);
+    // Lattice point x belongs to voxel x/2 (and x/2 - 1 on a shared boundary).
+    const range = v => (v % 2 ? [(v - 1) / 2] : [v / 2 - 1, v / 2]);
+    for (const cz of range(z)) for (const cy of range(y)) for (const cx of range(x)) {
+      if (cx >= 0 && cy >= 0 && cz >= 0 && cx < nx && cy < ny && cz < nz) merge(own[at(cx, cy, cz)], seen);
+    }
+    done += 1;
+    if (done % 1000 === 0) console.log(`visibility ${done}/${total} points, ${((performance.now() - started) / 1000).toFixed(0)} s`);
+  }
+  // Safety margin: each voxel also draws what its six neighbours see.
+  const stride = Math.ceil(count / 8);
+  const bits = new Uint8Array(voxels * stride);
+  let visibleTotal = 0;
+  for (let z = 0; z < nz; z += 1) for (let y = 0; y < ny; y += 1) for (let x = 0; x < nx; x += 1) {
+    const set = own[at(x, y, z)].slice();
+    for (const [dx, dy, dz] of [[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1]]) {
+      const [ax, ay, az] = [x + dx, y + dy, z + dz];
+      if (ax >= 0 && ay >= 0 && az >= 0 && ax < nx && ay < ny && az < nz) merge(set, own[at(ax, ay, az)]);
+    }
+    const offset = at(x, y, z) * stride;
+    for (let i = 0; i < count; i += 1) if (set[i]) { bits[offset + (i >> 3)] |= 1 << (i & 7); visibleTotal += 1; }
+  }
+  let binary = '';
+  for (let i = 0; i < bits.length; i += 0x8000) binary += String.fromCharCode(...bits.subarray(i, i + 0x8000));
+  return {
+    origin, cellSize: CELL, dims, batchCount: count, fingerprint: batchFingerprint(batches),
+    occluders: count - glassMeshes.length, meanVisible: visibleTotal / voxels,
+    seconds: Math.round((performance.now() - started) / 1000), bits: btoa(binary),
+  };
+};
+document.body.dataset.ready = 'true';
+</script></body></html>

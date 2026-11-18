@@ -1,0 +1,6 @@
+LIVING — SALONTAFEL EN ZETEL HERZIEN NA 17 FOTO'S
+Tafel: doorlopend vlak eiklook blad en onderplaat, vier licht schuine taps toelopende houten poten, witte zijpanelen, open vak naast gesloten lade met horizontale houten greep. De eerdere interpretatie als heftafel met lager zijplateau is vervallen.
+Tafelhoogte door gebruiker bevestigd: 33 cm vanaf de vloer. Breedte en diepte voorlopig geschat op 90 x 90 cm; greep steekt ca. 2,6 cm uit. Vrije afstand tot beide binnenzijden van de L-zetel gekozen op 35 cm.
+Zetel: gecorrigeerde gebruikersmaten 265 x 235 cm vervangen 250 x 227 cm. De vrije afstand tot het voorvlak van het tv-meubel is 83 cm, tot de binnenzijde van het raamkader 64 cm. Geschatte diepte 100 cm. Zithoogte 45 cm, rughoogte 98 cm, brede armleuningen, verbonden zitvlakken, dubbele stiknaden en lage metalen voeten volgen de referentiefoto's.
+Vorige zetel was 121,5 cm hoog met zithoogte 58,5 cm; de vorige tafelhoek stond slechts 13,1 cm van de zetel. Die aannames zijn gecorrigeerd. Maatvoering in scene 55 maakt het verschil controleerbaar zonder perspectiefvertekening.
+Scenes 54 (perspectief), 55 (bovenaanzicht). Bronnen: living_coffee_table.py en sofa_measured.py. Backup: Huis_before_living_seating_refinement.blend.

@@ -1,0 +1,8 @@
+[
+  {
+    "name": "Kitchen ceiling for interior view",
+    "min": [0.28, 6.54, 4.85],
+    "max": [2.97, 10.68, 5.12],
+    "reason": "Close the lowered ceiling plenum and meet the kitchen entry partition and upper slab."
+  }
+]

@@ -1,0 +1,6 @@
+TRAPHAL — correctie baksteenprojectie.
+Het oorspronkelijke materiaal projecteerde alle stenen via de wereld-Y-as. Daardoor werden stenen breder wanneer de gebogen muur parallel aan die richting kwam te liggen. Dit was ook zichtbaar in echte renders.
+De gebogen binnenvlakken gebruiken nu UV-coördinaten in meters langs de omtrek van de muur. De verticale coördinaat blijft de wereldhoogte, zodat de voegen horizontaal en op dezelfde hoogte doorlopen. Vlakke aansluitingen gebruiken hun eigen juiste horizontale richting.
+Bestaande materiaalmodule behouden: 22,5 cm breed en 6,3 cm per rij, inclusief voegindeling. Dit zijn modelwaarden, geen nieuwe opmeting van de stenen. De textuurschaal is op alle behandelde gebogen randen geometrisch gecontroleerd.
+De correctie geldt voor de gebogen gemetselde delen over de drie verdiepingen en de ronde trapgatranden. Baksteenkleuren blijven behouden. De koepel- en traphalrenders zijn opnieuw gemaakt.
+Bron: stair_brick_mapping.py. Reservekopie: Huis_before_stair_brick_mapping.blend.

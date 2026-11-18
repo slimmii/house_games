@@ -1,0 +1,32 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="icon" href="data:,"><title>Sectional garage production review</title>
+<style>html,body{margin:0;background:#b9c2c8}canvas{display:block}#label{position:fixed;top:14px;left:16px;padding:9px 13px;border-radius:6px;background:#fffffff0;font:14px system-ui}</style></head>
+<body><div id="label">Loading sectional garage…</div><script type="module">
+import * as THREE from 'three';
+import {createDoors} from '@huis/house/client/doors';
+import {DOORS,createDoorStates,doorComponentCount,doorPartPose} from '@huis/house/shared/doors';
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setSize(1280,800);renderer.setPixelRatio(1);renderer.toneMapping=THREE.AgXToneMapping;renderer.outputColorSpace=THREE.SRGBColorSpace;document.body.append(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#b9c2c8');scene.add(new THREE.HemisphereLight('#ffffff','#58616a',2.2));
+const key=new THREE.DirectionalLight('#fff2d9',3);key.position.set(10,12,10);scene.add(key);
+const camera=new THREE.PerspectiveCamera(55,1280/800,.03,100);
+const parent=new THREE.Group();scene.add(parent);const controller=await createDoors(parent);const states=createDoorStates();
+const index=DOORS.findIndex(door=>door.label==='Garage'),door=DOORS[index],count=doorComponentCount(index);
+// Hide unrelated authored room doors; the generated guide rails/motor remain.
+for(let room=0;room<DOORS.findIndex(value=>value.kind!=='door');room++){if(room===index)continue;const object=parent.getObjectByName(DOORS[room].id);if(object)object.visible=false;}
+function render(fraction,view='outside'){
+ states[index].fraction=fraction;states[index].opening=fraction>0;controller.update(states);scene.updateMatrixWorld(true);
+ const centerX=(door.min[0]+door.max[0])/2,centerY=(door.min[1]+door.max[1])/2,centerZ=(door.min[2]+door.max[2])/2;
+ if(view==='inside'){camera.position.set(centerX+8,2.4,-14);camera.lookAt(centerX,6.55,-3.9);}else{camera.position.set(centerX+9,3.1,10.8);camera.lookAt(centerX,3,centerZ);}
+ camera.updateProjectionMatrix();renderer.render(scene,camera);
+ const errors=[];const parts=[];
+ for(let partIndex=0;partIndex<count;partIndex++){
+  const object=parent.getObjectByName(`garage-section:${partIndex}`),pose=doorPartPose(index,fraction,partIndex);
+  if(!object){errors.push(`missing:${partIndex}`);continue;}
+  const position=object.position.toArray();const error=Math.hypot(...position.map((value,axis)=>value-pose.position[axis]));
+  if(error>1e-7)errors.push(`pose:${partIndex}:${error}`);parts.push({partIndex,position,rotationX:object.rotation.x,error});
+ }
+ const visibleMeshes=[];parent.traverse(object=>{if(object.isMesh&&object.visible)visibleMeshes.push(object.name);});
+ document.getElementById('label').textContent=`Production sectional garage · ${Math.round(fraction*100)}% · ${view} · ${count} graphite panels`;
+ return {fraction,view,count,parts,errors,visibleMeshes,rails:parent.getObjectsByProperty('name','garage-sectional-guide-rail').length,motor:Boolean(parent.getObjectByName('garage-ceiling-motor'))};
+}
+window.garageReview={show:render};render(0,'outside');window.reviewReady=true;
+</script></body></html>

@@ -1,0 +1,31 @@
+{
+ "version": 1,
+ "houseGeometrySha256": "2fdfec01fe760cd6dea9f8f6272f0013b27cb5b5e41bf7a07513b9e25b878c7f",
+ "inputs": {
+  "src/client/architectureBatching.ts": "27e4d899596717637d1d832c74b3a2ddef73c3632282a253c29c2c3d4faebd83",
+  "src/client/architecture-backfaces.json": "b659ae6a4a7eb574bb2c95523c98269e75fb3e0f9b99620e858188154b60d9eb",
+  "scripts/door-details.json": "cda2bcc6d4c1fde0624bb50df2231052c5393cab89af3685d06d0e1a282b2884",
+  "src/shared/closets-manifest.json": "d83908514ed5361890f24aea842538c6e7b9b41e7b0d26a63c57196017e5c8be",
+  "src/shared/laundry-source-names.json": "3ae96386bf7cf5b128f5d6e38dcb44bb0bccccb91aaeda07a5b8472db5d96ea5",
+  "scripts/visibility-bake.html": "7dc6d19703050f5bd3e21e7180b8f0b70c8623cbc6016b9afd7095e84d8eaab0"
+ },
+ "data": "house-visibility.bin.gz",
+ "byteLength": 592704,
+ "dataSha256": "a7a22f1839a0a11f7e42ca535b8b51027f1761f35f033cd9fc48f7f235b94604",
+ "origin": [
+  -0.3,
+  -0.6,
+  -33.2
+ ],
+ "cellSize": 2,
+ "dims": [
+  12,
+  14,
+  18
+ ],
+ "batchCount": 1567,
+ "fingerprint": "ed1ff129",
+ "occluders": 1536,
+ "meanVisible": 494,
+ "seconds": 760
+}

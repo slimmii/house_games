@@ -1,0 +1,47 @@
+{
+  "material": "Reference floor / warm greige oak wide staggered planks",
+  "texture": "/Users/slimmii/Downloads/HUIS/output/blender/textures/reference_oak_floor.png",
+  "uvName": "ReferenceOakWorldUV",
+  "baseColorFactor": 0.55,
+  "tileSizeMeters": [
+    2.24,
+    2.0
+  ],
+  "plankWidthMeters": 0.28,
+  "longDirection": "house Y (parallel to craft desk wall)",
+  "dimensionsStatus": "Estimated from reference photos",
+  "objects": [
+    {
+      "name": "1 / floor finish",
+      "slots": [
+        0
+      ],
+      "vertices": 264,
+      "polygons": 136
+    },
+    {
+      "name": "Kitchen floor finish - continuous with living",
+      "slots": [
+        0
+      ],
+      "vertices": 8,
+      "polygons": 6
+    },
+    {
+      "name": "Reference spiral / 0 landing timber finish",
+      "slots": [
+        0
+      ],
+      "vertices": 46,
+      "polygons": 25
+    },
+    {
+      "name": "Reference spiral / section floor 1",
+      "slots": [
+        1
+      ],
+      "vertices": 512,
+      "polygons": 512
+    }
+  ]
+}

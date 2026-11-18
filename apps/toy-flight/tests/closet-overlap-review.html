@@ -1,0 +1,63 @@
+<!doctype html>
+<html><head><meta charset="UTF-8"><title>Cabinet overlap full-scene review</title><link rel="icon" href="data:,">
+<style>
+html,body{margin:0;background:#d8dcde}canvas{display:block}
+#label{position:fixed;top:16px;left:18px;background:#fff;padding:10px 14px;font:14px system-ui;border-radius:6px}
+</style></head><body><div id="label">Loading production house…</div><script type="module">
+import * as THREE from 'three';
+import {createHouse} from '@huis/house/client/world';
+import {DOORS,createDoorStates} from '@huis/house/shared/doors';
+import {CLOSET_DOORS} from '@huis/house/shared/closet-interiors';
+
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+renderer.setSize(1280,900);renderer.setPixelRatio(1);renderer.toneMapping=THREE.AgXToneMapping;
+renderer.toneMappingExposure=1;renderer.outputColorSpace=THREE.SRGBColorSpace;
+document.body.append(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#d8dcde');
+const camera=new THREE.PerspectiveCamera(58,1280/900,.035,150);
+const house=createHouse(scene,renderer);await house.ready;
+const states=createDoorStates();
+
+const views={
+  entrance:{unit:'hall-tall',camera:[5.8,3.55,-3.35],target:[1.095,3.35,-3.35],fov:57},
+  entranceNarrow:{unit:'hall-narrow',camera:[5.35,3.2,-9.82],target:[1.095,3.0,-9.82],fov:57},
+  smastad:{unit:'bedroom1-smastad',camera:[20.45,18.25,-1.2],target:[20.45,18.2,-4.15],fov:64},
+  camber:{unit:'camber-b-tall',camera:[16.0,11.2,-12.35],target:[20.796,11.2,-12.35],fov:55},
+  armoire:{unit:'bedroom2-armoire',camera:[13.3,18.9,-22.25],target:[8.904,18.9,-22.25],fov:55},
+  cubes:{unit:'small-bedroom-cubes',camera:[2.0,17.6,-5.1],target:[2.0,17.6,-9.555],fov:53},
+};
+
+function render(name,fraction){
+  const view=views[name];if(!view)throw Error(name);
+  for(const state of states){state.fraction=0;state.opening=false;}
+  for(const entry of CLOSET_DOORS.filter(entry=>entry.unitId===view.unit)){
+    states[DOORS.findIndex(door=>door.id===entry.id)].fraction=fraction;
+  }
+  house.updateDoors(states);scene.updateMatrixWorld(true);
+  camera.fov=view.fov;camera.updateProjectionMatrix();camera.position.fromArray(view.camera);
+  camera.lookAt(new THREE.Vector3().fromArray(view.target));camera.updateMatrixWorld();
+  renderer.render(scene,camera);
+  document.getElementById('label').textContent=`${name} · full production scene · ${fraction?'open':'closed'}`;
+  return {name,fraction,camera:view.camera,target:view.target};
+}
+
+function pixelPatch(world,radius=14){
+  const projected=new THREE.Vector3().fromArray(world).project(camera);
+  const x=Math.round((projected.x*.5+.5)*renderer.domElement.width);
+  const y=Math.round((projected.y*.5+.5)*renderer.domElement.height);
+  const gl=renderer.getContext(),size=radius*2+1;
+  const pixels=new Uint8Array(size*size*4);
+  gl.readPixels(Math.max(0,x-radius),Math.max(0,y-radius),size,size,gl.RGBA,gl.UNSIGNED_BYTE,pixels);
+  let light=0,brown=0,luma=0;
+  for(let index=0;index<pixels.length;index+=4){
+    const r=pixels[index],g=pixels[index+1],b=pixels[index+2];
+    luma+=(r+g+b)/3;if(r+g+b>540&&Math.max(r,g,b)-Math.min(r,g,b)<55)light+=1;
+    if(r>g*1.12&&g>b*1.05)brown+=1;
+  }
+  const count=pixels.length/4;
+  return {x,y,lightRatio:light/count,brownRatio:brown/count,meanLuma:luma/count};
+}
+
+window.closetOverlapReview={views,render,pixelPatch};
+render('entrance',0);window.reviewReady=true;
+</script></body></html>

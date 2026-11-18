@@ -1,0 +1,864 @@
+{
+  "sourceSha256": "dc055c0391d29679adc55a6aa7ae99b67416869cfd4e8e7ca4397fe67e22c975",
+  "targets": {
+    "door_0": [
+      {
+        "min": [
+          7.398,
+          18.947998,
+          -19.385999
+        ],
+        "max": [
+          7.452,
+          19.001998,
+          -19.220999
+        ],
+        "sourceName": "Upper reference door / Bathroom / handle spindle.002"
+      },
+      {
+        "min": [
+          7.398,
+          18.947998,
+          -19.718999
+        ],
+        "max": [
+          7.452,
+          19.001998,
+          -19.554
+        ],
+        "sourceName": "Upper reference door / Bathroom / handle spindle.003"
+      },
+      {
+        "min": [
+          7.341,
+          18.890998,
+          -19.385999
+        ],
+        "max": [
+          7.509,
+          19.058998,
+          -19.353
+        ],
+        "sourceName": "Upper reference door / Bathroom / round handle rose.002"
+      },
+      {
+        "min": [
+          7.341,
+          18.890998,
+          -19.586999
+        ],
+        "max": [
+          7.509,
+          19.058998,
+          -19.554
+        ],
+        "sourceName": "Upper reference door / Bathroom / round handle rose.003"
+      },
+      {
+        "min": [
+          7.425,
+          18.947998,
+          -19.248001
+        ],
+        "max": [
+          7.8,
+          19.001998,
+          -19.194001
+        ],
+        "sourceName": "Upper reference door / Bathroom / straight satin lever.002"
+      },
+      {
+        "min": [
+          7.425,
+          18.947998,
+          -19.746
+        ],
+        "max": [
+          7.8,
+          19.001998,
+          -19.692
+        ],
+        "sourceName": "Upper reference door / Bathroom / straight satin lever.003"
+      }
+    ],
+    "door_1": [
+      {
+        "min": [
+          8.604,
+          18.947998,
+          -11.982
+        ],
+        "max": [
+          8.769001,
+          19.001998,
+          -11.928
+        ],
+        "sourceName": "Upper reference door / Bedroom 1 / handle spindle.002"
+      },
+      {
+        "min": [
+          8.271,
+          18.947998,
+          -11.982
+        ],
+        "max": [
+          8.436,
+          19.001998,
+          -11.928
+        ],
+        "sourceName": "Upper reference door / Bedroom 1 / handle spindle.003"
+      },
+      {
+        "min": [
+          8.604,
+          18.890998,
+          -12.039
+        ],
+        "max": [
+          8.636999,
+          19.058998,
+          -11.871
+        ],
+        "sourceName": "Upper reference door / Bedroom 1 / round handle rose.002"
+      },
+      {
+        "min": [
+          8.403,
+          18.890998,
+          -12.039
+        ],
+        "max": [
+          8.436,
+          19.058998,
+          -11.871
+        ],
+        "sourceName": "Upper reference door / Bedroom 1 / round handle rose.003"
+      },
+      {
+        "min": [
+          8.742,
+          18.947998,
+          -12.33
+        ],
+        "max": [
+          8.796,
+          19.001999,
+          -11.955
+        ],
+        "sourceName": "Upper reference door / Bedroom 1 / straight satin lever.002"
+      },
+      {
+        "min": [
+          8.244,
+          18.947998,
+          -12.33
+        ],
+        "max": [
+          8.298,
+          19.001999,
+          -11.955
+        ],
+        "sourceName": "Upper reference door / Bedroom 1 / straight satin lever.003"
+      }
+    ],
+    "door_2": [
+      {
+        "min": [
+          8.604,
+          18.947998,
+          -17.142
+        ],
+        "max": [
+          8.769001,
+          19.001998,
+          -17.088
+        ],
+        "sourceName": "Upper reference door / Bedroom 2 / handle spindle.002"
+      },
+      {
+        "min": [
+          8.271,
+          18.947998,
+          -17.142
+        ],
+        "max": [
+          8.436,
+          19.001998,
+          -17.088
+        ],
+        "sourceName": "Upper reference door / Bedroom 2 / handle spindle.003"
+      },
+      {
+        "min": [
+          8.604,
+          18.890998,
+          -17.199
+        ],
+        "max": [
+          8.636999,
+          19.058998,
+          -17.031
+        ],
+        "sourceName": "Upper reference door / Bedroom 2 / round handle rose.002"
+      },
+      {
+        "min": [
+          8.403,
+          18.890998,
+          -17.199
+        ],
+        "max": [
+          8.436,
+          19.058998,
+          -17.031
+        ],
+        "sourceName": "Upper reference door / Bedroom 2 / round handle rose.003"
+      },
+      {
+        "min": [
+          8.742,
+          18.947998,
+          -17.49
+        ],
+        "max": [
+          8.796,
+          19.001999,
+          -17.115
+        ],
+        "sourceName": "Upper reference door / Bedroom 2 / straight satin lever.002"
+      },
+      {
+        "min": [
+          8.244,
+          18.947998,
+          -17.49
+        ],
+        "max": [
+          8.298,
+          19.001999,
+          -17.115
+        ],
+        "sourceName": "Upper reference door / Bedroom 2 / straight satin lever.003"
+      }
+    ],
+    "door_3": [
+      {
+        "min": [
+          7.338,
+          18.947998,
+          -9.786
+        ],
+        "max": [
+          7.392,
+          19.001998,
+          -9.621
+        ],
+        "sourceName": "Upper reference door / Bedroom 3 / handle spindle.002"
+      },
+      {
+        "min": [
+          7.338,
+          18.947998,
+          -10.119
+        ],
+        "max": [
+          7.392,
+          19.001998,
+          -9.954
+        ],
+        "sourceName": "Upper reference door / Bedroom 3 / handle spindle.003"
+      },
+      {
+        "min": [
+          7.281,
+          18.890998,
+          -9.786
+        ],
+        "max": [
+          7.449,
+          19.058998,
+          -9.753
+        ],
+        "sourceName": "Upper reference door / Bedroom 3 / round handle rose.002"
+      },
+      {
+        "min": [
+          7.281,
+          18.890998,
+          -9.987001
+        ],
+        "max": [
+          7.449,
+          19.058998,
+          -9.954001
+        ],
+        "sourceName": "Upper reference door / Bedroom 3 / round handle rose.003"
+      },
+      {
+        "min": [
+          7.365,
+          18.947998,
+          -9.648
+        ],
+        "max": [
+          7.74,
+          19.001998,
+          -9.594
+        ],
+        "sourceName": "Upper reference door / Bedroom 3 / straight satin lever.002"
+      },
+      {
+        "min": [
+          7.365,
+          18.947998,
+          -10.145999
+        ],
+        "max": [
+          7.74,
+          19.001998,
+          -10.091999
+        ],
+        "sourceName": "Upper reference door / Bedroom 3 / straight satin lever.003"
+      }
+    ],
+    "door_4": [
+      {
+        "min": [
+          4.587718,
+          3.051,
+          -0.975
+        ],
+        "max": [
+          4.764592,
+          3.189,
+          -0.927
+        ],
+        "sourceName": "Entrance photo / inside handle rosette.001"
+      },
+      {
+        "min": [
+          4.641549,
+          3.093,
+          -1.08
+        ],
+        "max": [
+          4.710761,
+          3.147,
+          -0.951
+        ],
+        "sourceName": "Entrance photo / inside lever stem.001"
+      },
+      {
+        "min": [
+          4.729817,
+          3.093,
+          -1.114606
+        ],
+        "max": [
+          5.110817,
+          3.147,
+          -1.045394
+        ],
+        "sourceName": "Entrance photo / inside lever.001"
+      },
+      {
+        "min": [
+          4.644655,
+          1.86,
+          -0.2925
+        ],
+        "max": [
+          4.707655,
+          4.47,
+          -0.2295
+        ],
+        "sourceName": "Street photo / long vertical stainless door pull.001"
+      },
+      {
+        "min": [
+          4.646155,
+          2.25,
+          -0.522
+        ],
+        "max": [
+          4.706155,
+          2.31,
+          -0.27
+        ],
+        "sourceName": "Street photo / pull handle stand-off.002"
+      },
+      {
+        "min": [
+          4.646155,
+          4.02,
+          -0.522
+        ],
+        "max": [
+          4.706155,
+          4.08,
+          -0.27
+        ],
+        "sourceName": "Street photo / pull handle stand-off.003"
+      }
+    ],
+    "door_5": [
+      {
+        "min": [
+          9.87,
+          -0.315,
+          -0.435
+        ],
+        "max": [
+          20.219999,
+          6,
+          -0.18
+        ],
+        "sourceName": "Garage panel"
+      }
+    ],
+    "door_6": [
+      {
+        "min": [
+          11.259,
+          2.979,
+          -17.166001
+        ],
+        "max": [
+          11.421,
+          3.141,
+          -17.130001
+        ],
+        "sourceName": "Ground bathroom photo / bathroom door handle rose.002"
+      },
+      {
+        "min": [
+          11.259,
+          2.979,
+          -17.369999
+        ],
+        "max": [
+          11.421,
+          3.141,
+          -17.333999
+        ],
+        "sourceName": "Ground bathroom photo / bathroom door handle rose.003"
+      },
+      {
+        "min": [
+          11.338876,
+          3.033024,
+          -17.175001
+        ],
+        "max": [
+          11.701125,
+          3.101977,
+          -17.121001
+        ],
+        "sourceName": "Ground bathroom photo / bathroom door lever.002"
+      },
+      {
+        "min": [
+          11.338876,
+          3.033024,
+          -17.378999
+        ],
+        "max": [
+          11.701125,
+          3.101977,
+          -17.324999
+        ],
+        "sourceName": "Ground bathroom photo / bathroom door lever.003"
+      }
+    ],
+    "door_7": [
+      {
+        "min": [
+          8.7,
+          2.988,
+          -19.164
+        ],
+        "max": [
+          8.727,
+          3.132,
+          -19.019999
+        ],
+        "sourceName": "Ground straight doorway / handle rose.002"
+      },
+      {
+        "min": [
+          8.853,
+          2.988,
+          -19.164
+        ],
+        "max": [
+          8.88,
+          3.132,
+          -19.019999
+        ],
+        "sourceName": "Ground straight doorway / handle rose.003"
+      },
+      {
+        "min": [
+          8.58,
+          3.039,
+          -19.112999
+        ],
+        "max": [
+          8.727,
+          3.081,
+          -19.071
+        ],
+        "sourceName": "Ground straight doorway / handle spindle.002"
+      },
+      {
+        "min": [
+          8.853,
+          3.039,
+          -19.112999
+        ],
+        "max": [
+          9,
+          3.081,
+          -19.071
+        ],
+        "sourceName": "Ground straight doorway / handle spindle.003"
+      },
+      {
+        "min": [
+          8.559,
+          3.039,
+          -19.092
+        ],
+        "max": [
+          8.601,
+          3.081,
+          -18.792
+        ],
+        "sourceName": "Ground straight doorway / horizontal lever.002"
+      },
+      {
+        "min": [
+          8.979,
+          3.039,
+          -19.092
+        ],
+        "max": [
+          9.021,
+          3.081,
+          -18.792
+        ],
+        "sourceName": "Ground straight doorway / horizontal lever.003"
+      }
+    ],
+    "door_8": [
+      {
+        "min": [
+          7.815,
+          2.982,
+          -19.8
+        ],
+        "max": [
+          7.971,
+          3.138,
+          -19.769999
+        ],
+        "sourceName": "Ground room doors / Laundry / handle rose.002"
+      },
+      {
+        "min": [
+          7.815,
+          2.982,
+          -19.967999
+        ],
+        "max": [
+          7.971,
+          3.138,
+          -19.937999
+        ],
+        "sourceName": "Ground room doors / Laundry / handle rose.003"
+      },
+      {
+        "min": [
+          7.866,
+          3.033,
+          -19.800001
+        ],
+        "max": [
+          7.92,
+          3.087,
+          -19.65
+        ],
+        "sourceName": "Ground room doors / Laundry / handle spindle.002"
+      },
+      {
+        "min": [
+          7.866,
+          3.033,
+          -20.088
+        ],
+        "max": [
+          7.92,
+          3.087,
+          -19.938001
+        ],
+        "sourceName": "Ground room doors / Laundry / handle spindle.003"
+      },
+      {
+        "min": [
+          7.546594,
+          3.033037,
+          -19.677002
+        ],
+        "max": [
+          7.894407,
+          3.104963,
+          -19.623002
+        ],
+        "sourceName": "Ground room doors / Laundry / silver lever.002"
+      },
+      {
+        "min": [
+          7.546594,
+          3.033037,
+          -20.115001
+        ],
+        "max": [
+          7.894407,
+          3.104963,
+          -20.061001
+        ],
+        "sourceName": "Ground room doors / Laundry / silver lever.003"
+      }
+    ],
+    "door_9": [
+      {
+        "min": [
+          9.042,
+          2.955,
+          -29.61
+        ],
+        "max": [
+          9.066,
+          3.105,
+          -29.460002
+        ],
+        "sourceName": "Rear photo / door handle rosette.002"
+      },
+      {
+        "min": [
+          9.387,
+          2.955,
+          -29.61
+        ],
+        "max": [
+          9.411,
+          3.105,
+          -29.460002
+        ],
+        "sourceName": "Rear photo / door handle rosette.003"
+      },
+      {
+        "min": [
+          8.934,
+          3.006,
+          -29.559002
+        ],
+        "max": [
+          9.054,
+          3.054,
+          -29.160001
+        ],
+        "sourceName": "Rear photo / door lever.002"
+      },
+      {
+        "min": [
+          9.399,
+          3.006,
+          -29.559002
+        ],
+        "max": [
+          9.519,
+          3.054,
+          -29.160001
+        ],
+        "sourceName": "Rear photo / door lever.003"
+      }
+    ],
+    "door_10": [
+      {
+        "min": [
+          5.649,
+          18.947998,
+          -18.012001
+        ],
+        "max": [
+          5.814,
+          19.001998,
+          -17.958001
+        ],
+        "sourceName": "Upper reference door / Storage / handle spindle.002"
+      },
+      {
+        "min": [
+          5.316,
+          18.947998,
+          -18.012001
+        ],
+        "max": [
+          5.481,
+          19.001998,
+          -17.958001
+        ],
+        "sourceName": "Upper reference door / Storage / handle spindle.003"
+      },
+      {
+        "min": [
+          5.649,
+          18.890998,
+          -18.069001
+        ],
+        "max": [
+          5.682,
+          19.058998,
+          -17.901001
+        ],
+        "sourceName": "Upper reference door / Storage / round handle rose.002"
+      },
+      {
+        "min": [
+          5.448,
+          18.890998,
+          -18.069001
+        ],
+        "max": [
+          5.481001,
+          19.058998,
+          -17.901001
+        ],
+        "sourceName": "Upper reference door / Storage / round handle rose.003"
+      },
+      {
+        "min": [
+          5.787,
+          18.947998,
+          -18.360001
+        ],
+        "max": [
+          5.841,
+          19.001999,
+          -17.985001
+        ],
+        "sourceName": "Upper reference door / Storage / straight satin lever.002"
+      },
+      {
+        "min": [
+          5.289,
+          18.947998,
+          -18.360001
+        ],
+        "max": [
+          5.343,
+          19.001999,
+          -17.985001
+        ],
+        "sourceName": "Upper reference door / Storage / straight satin lever.003"
+      }
+    ],
+    "door_11": [],
+    "door_12": [
+      {
+        "min": [
+          9.144,
+          7.374,
+          -32.6463
+        ],
+        "max": [
+          14.969999,
+          14.226,
+          -32.505301
+        ],
+        "sourceName": "Veranda slider panel"
+      }
+    ],
+    "door_13": [
+      {
+        "min": [
+          7.863,
+          10.233,
+          -15.531001
+        ],
+        "max": [
+          7.917,
+          10.287,
+          -15.369001
+        ],
+        "sourceName": "Stair photo / handle spindle.002"
+      },
+      {
+        "min": [
+          7.863,
+          10.233,
+          -15.861001
+        ],
+        "max": [
+          7.917,
+          10.287,
+          -15.699
+        ],
+        "sourceName": "Stair photo / handle spindle.003"
+      },
+      {
+        "min": [
+          7.809,
+          10.179,
+          -15.531
+        ],
+        "max": [
+          7.971,
+          10.341,
+          -15.504
+        ],
+        "sourceName": "Stair photo / round handle rose.002"
+      },
+      {
+        "min": [
+          7.809,
+          10.179,
+          -15.726001
+        ],
+        "max": [
+          7.971,
+          10.341,
+          -15.699
+        ],
+        "sourceName": "Stair photo / round handle rose.003"
+      },
+      {
+        "min": [
+          7.511357,
+          10.233913,
+          -15.395559
+        ],
+        "max": [
+          7.893643,
+          10.340086,
+          -15.312441
+        ],
+        "sourceName": "Stair photo / silver lever.002"
+      },
+      {
+        "min": [
+          7.511357,
+          10.233913,
+          -15.917558
+        ],
+        "max": [
+          7.893643,
+          10.340086,
+          -15.834441
+        ],
+        "sourceName": "Stair photo / silver lever.003"
+      }
+    ]
+  }
+}

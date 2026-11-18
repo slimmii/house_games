@@ -1,0 +1,123 @@
+{
+  "paint": "WE M198 Brave Green",
+  "manufacturer": "Colora / BOSS paints",
+  "source_url": "https://colora.be/nl/kleuren/we-m198-brave-green",
+  "published_srgb_hex": "#74846D",
+  "source_field": "props.pageProps.color.rgb in official page HTML, read 2026-09-24",
+  "wall_objects": [
+    {
+      "wall": "first / source masonry 003",
+      "painted_faces": 1
+    },
+    {
+      "wall": "first / source masonry 016",
+      "painted_faces": 1
+    },
+    {
+      "wall": "first / source masonry 017",
+      "painted_faces": 1
+    },
+    {
+      "wall": "first / source masonry 020",
+      "painted_faces": 1
+    },
+    {
+      "wall": "first / source masonry 021",
+      "painted_faces": 1
+    },
+    {
+      "wall": "first / source masonry 001",
+      "painted_faces": 2
+    },
+    {
+      "wall": "first / source masonry 002",
+      "painted_faces": 1
+    },
+    {
+      "wall": "first / source masonry 004",
+      "painted_faces": 1
+    },
+    {
+      "wall": "Kitchen rear",
+      "painted_faces": 1
+    },
+    {
+      "wall": "Kitchen rear.001",
+      "painted_faces": 1
+    },
+    {
+      "wall": "Kitchen rear.002",
+      "painted_faces": 1
+    },
+    {
+      "wall": "Kitchen rear.003",
+      "painted_faces": 1
+    },
+    {
+      "wall": "Kitchen rear.004",
+      "painted_faces": 1
+    },
+    {
+      "wall": "Kitchen rear.005",
+      "painted_faces": 2
+    },
+    {
+      "wall": "Kitchen rear.006",
+      "painted_faces": 2
+    },
+    {
+      "wall": "Kitchen rear.007",
+      "painted_faces": 2
+    },
+    {
+      "wall": "first / source masonry 005",
+      "painted_faces": 1
+    },
+    {
+      "wall": "first / source masonry 008",
+      "painted_faces": 1
+    },
+    {
+      "wall": "first / source masonry 009",
+      "painted_faces": 1
+    },
+    {
+      "wall": "first / source masonry 012",
+      "painted_faces": 1
+    },
+    {
+      "wall": "first / source masonry 013",
+      "painted_faces": 1
+    },
+    {
+      "wall": "first / source masonry 018",
+      "painted_faces": 1
+    },
+    {
+      "wall": "first / source masonry 019",
+      "painted_faces": 1
+    },
+    {
+      "wall": "first / source masonry 022",
+      "painted_faces": 1
+    },
+    {
+      "wall": "first / source masonry 023",
+      "painted_faces": 1
+    },
+    {
+      "wall": "first / source masonry 024",
+      "painted_faces": 1
+    },
+    {
+      "wall": "Kitchen veranda window breast wall",
+      "painted_faces": 1
+    },
+    {
+      "wall": "Kitchen veranda window lintel",
+      "painted_faces": 1
+    }
+  ],
+  "cabinet_and_stone_materials_unchanged": true,
+  "backsplash": "Original warm beige/white beneath upper cabinets on both runs"
+}

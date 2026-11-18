@@ -1,0 +1,1 @@
+BENEDENVERDIEPING — gebruikerscorrectie 28 september 2026: opening tussen waskot en slaapkamer volledig dichtgemetseld over 85 cm, wanddikte 15 cm en hoogte 222 cm. De afzonderlijke toegangen vanuit de hal blijven behouden. Dressing heeft een echte open doorgang van 85 cm breed en 203 cm hoog, zonder deur of kozijn. Badkamerdeur behouden. Scene 63; ground_openings_correction.py.

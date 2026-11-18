@@ -1,0 +1,26 @@
+{
+  "product": "IKEA PS L\u00d6MSK 104.071.36",
+  "source": "https://www.ikea.com/be/nl/p/ikea-ps-loemsk-draaifauteuil-wit-rood-10407136/",
+  "construction": "White bucket, red plastic seat, white fabric canopy and flared pedestal",
+  "model_dimensions_m": [
+    0.59,
+    0.62,
+    0.82
+  ],
+  "bounds": [
+    [
+      5.744999408721924,
+      2.4700000286102295,
+      2.4100000858306885
+    ],
+    [
+      6.335000514984131,
+      3.0899999141693115,
+      3.2300000190734863
+    ]
+  ],
+  "clearance_to_sofa_m": 0.11499940872192393,
+  "clearance_to_tv_m": 0.1249994850158691,
+  "geometry_status": "Photo-based reconstruction, not official IKEA CAD",
+  "scene": "70 | LIVING - IKEA PS LOMSK chair"
+}

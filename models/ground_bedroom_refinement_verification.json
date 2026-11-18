@@ -1,0 +1,13 @@
+{
+  "bed_rotated_deg": -90,
+  "headboard_outer_x_m": 6.98,
+  "solid_wall_inner_x_m": 7.001,
+  "headboard_wall_gap_m": 0.021,
+  "single_framed_door": true,
+  "full_opening_reveal_plane_removed": true,
+  "door_handle_relocated_away_from_laundry": true,
+  "door_default_angle_deg": 0,
+  "hall_side_wall_white": true,
+  "laundry_partition_closed": true,
+  "dressing_still_doorless": true
+}

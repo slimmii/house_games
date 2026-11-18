@@ -1,0 +1,17 @@
+{
+  "identity": "dollhouse",
+  "not_a_cupboard": true,
+  "storeys": 3,
+  "low_pitched_gable_header": true,
+  "open_front": true,
+  "pink_balconies": true,
+  "miniature_rooms_furnished": true,
+  "estimated_footprint_m": [
+    0.93,
+    0.40
+  ],
+  "height_m": 1.58,
+  "scene": "59 | SLAAPKAMER 1 - photographed dollhouse",
+  "reference": "Seven detail photos supplied 2026-09-28; bedroom1_entry_corner.py supersedes the first dollhouse reconstruction",
+  "current_verification": "bedroom1_entry_corner_verification.json"
+}

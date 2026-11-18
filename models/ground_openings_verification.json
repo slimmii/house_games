@@ -1,0 +1,23 @@
+{
+  "laundry_bedroom_wall_closed": true,
+  "infill_bounds_m": [
+    [
+      2.8004,
+      2.9506
+    ],
+    [
+      7.0398,
+      7.8901
+    ],
+    [
+      0,
+      2.22
+    ]
+  ],
+  "dressing_door_removed": true,
+  "dressing_clear_opening_m": 0.85,
+  "dressing_opening_height_m": 2.03,
+  "wall_and_passage_ray_checks_passed": true,
+  "hall_room_doors_retained": true,
+  "bathroom_door_retained": true
+}

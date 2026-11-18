@@ -1,0 +1,24 @@
+{
+  "table_outline": "barrel / softly squared oval",
+  "table_estimated_dimensions_m": [
+    1,
+    2.6,
+    0.03
+  ],
+  "chair_count": 5,
+  "chairs": "white continuous moulded shells, inset ivory cushion, four splayed oak legs",
+  "keyboard": "61 keys, silver and charcoal body, black X stand",
+  "keyboard_estimated_dimensions_m": [
+    1.08,
+    0.37,
+    0.84
+  ],
+  "organiser": "white side panels, 3 tiers x 3 tilted open tubs",
+  "organiser_estimated_dimensions_m": [
+    0.65,
+    0.32,
+    0.8
+  ],
+  "preserved_original_transforms": 8830,
+  "dimension_status": "Photo-based estimates, prior tabletop width and length retained"
+}

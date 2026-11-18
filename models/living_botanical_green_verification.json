@@ -1,0 +1,21 @@
+{
+  "paint": "WE M187 Botanical Green",
+  "manufacturer": "Colora / BOSS paints",
+  "source_url": "https://colora.be/nl/kleuren/we-m187-botanical-green",
+  "published_srgb_hex": "#445940",
+  "source_field": "props.pageProps.color.rgb in official page HTML, read 2026-09-27",
+  "scope": "Living-room wall behind TV, Camber S=5.395..8.297 m",
+  "world_bounds_m": {
+    "x": 6.951,
+    "y": [
+      0.3006,
+      3.2026000000000012
+    ],
+    "z": [
+      2.411,
+      5.069
+    ]
+  },
+  "camber_cabinet_materials_unchanged": true,
+  "other_living_walls_unchanged": true
+}

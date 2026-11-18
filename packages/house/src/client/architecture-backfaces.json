@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "assets": {
+    "/models/house.glb": "1199183a39d3789bd70a4c8768e33a5f507a82597a41d4370f109781bcf0c0c9",
+    "/models/house-gpu.glb": "d20625d6da00ded901a56a0d479dddde9e4e84af66e5e6ff955619218dea0f17"
+  },
+  "structureFingerprint": "e7f6ec79b3b55124",
+  "meshCount": 6795,
+  "eligibleMeshCount": 4790,
+  "eligibleTriangles": 1358834,
+  "eligibleBitset": "AwAAAAAEAACA/fyfcwD/AfiH///w////////z3P///////////////////9/P7+yn//7AwAAAAAAAP/////////////x//////////////////////////9vAPj//7///f/7/wAAAAAAAAAAAAAAAAAA+P/jhwD/////////////////////////////////////////////////////////////////////////////////////7//////////////+/9//f///H2D//38A4P/+f///////////////////8/P/+P///wP//xXg////////////////////9///+f9wOBwOh//z8PDhfzgcDv/hcDj8T/Xv//7v//7v//PhBzgAAABw4Ah+AAAAAAAAAAAAgP8BjPv/7u77AQAAAACA/v/////////b7///B/z//////x8I9P//fwAAAACA/////+8DH3AAAP7+/v8A8rxrVQcAAAAAAFD1//+r+//h//////////////////////u+67qu6/p/////+77/fx8AAAAEBgEAAAACAAAAAAAAAAAAAAAAAACA/x8AAAAGAID//+/j/+f/////+P/////gAP7//////z/u//7//////wH//4f//wO/gwMMAAD///////////9/AOB/AAAAAAAAAPL//////////48BAAAAAAAOAAAAAABwAAAAAACAQb8fAAIAAAAAABwAAAAAAOAAAAAAAAAHAAAAAAA4AAAAAADA/z/w////////////////////////////////////////////////////////5P//6f/////+////z/3///////////7/////////fwDw/0v//v////////////8BAP//0r//////////////4///////////7wAeAAAA4Pf//////x/gAwAAAAAAAAAAAICB+///////BwD4/8///wAAAMD//7/w////////HwAAAAAA9v////8APPD/////////////////////////////2///////////////////////////////////////////////9/sHAAD/////////7///////////////////Aw=="
+}

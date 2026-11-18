@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+test-results/
+__pycache__/
+.chart-data-*/
+.DS_Store
+*.blend1

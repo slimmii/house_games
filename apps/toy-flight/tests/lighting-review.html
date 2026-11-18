@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>House lighting review</title><link rel="icon" href="/favicon.svg">
+<style>body{margin:0;background:#222}canvas{display:block}</style></head><body>
+<script type="module">
+import * as THREE from 'three';
+import { createHouse } from '@huis/house/client/world';
+import { COMIC_STYLE, TOY_STYLE, configureToneMapping, createOutlinePass, installComicShading } from '@huis/house/client/comicStyle';
+import { LOW_QUALITY } from '@huis/house/client/quality';
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#b9d8d4');
+if (new URLSearchParams(location.search).get('fog') === 'old') {
+  scene.fog = new THREE.Fog('#b9d8d4', 23, 56);
+}
+const renderer = new THREE.WebGLRenderer({ antialias: !LOW_QUALITY, powerPreference: 'high-performance' });
+const reviewQuery = new URLSearchParams(location.search);
+const W = Number(reviewQuery.get('w')) || 1280, H = Number(reviewQuery.get('h')) || 800;
+renderer.setSize(W, H);
+renderer.setPixelRatio(1);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+configureToneMapping(renderer);
+if (COMIC_STYLE) { installComicShading(); renderer.shadowMap.enabled = false; }
+if (TOY_STYLE) renderer.shadowMap.enabled = false;
+const comic = createOutlinePass() ?? null;
+const draw = () => comic ? comic.render(renderer, scene, camera) : renderer.render(scene, camera);
+renderer.transmissionResolutionScale = 0.5;
+const camera = new THREE.PerspectiveCamera(70, W / H, 0.06, 90);
+camera.position.set(15, 12, -17);
+camera.lookAt(21, 15.2, -20.8);
+document.body.append(renderer.domElement);
+const house = createHouse(scene, renderer);
+await house.ready;
+window.review = { scene, camera, renderer, house, THREE, draw };
+renderer.setAnimationLoop(draw);
+document.body.dataset.ready = 'true';
+</script></body></html>

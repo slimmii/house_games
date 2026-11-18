@@ -1,0 +1,14 @@
+{
+  "center_xy": [
+    1.9654499888420105,
+    9.46947717666626
+  ],
+  "shade_diameter_m": 0.4,
+  "shade_height_m": 0.086,
+  "tabletop_z": 3.200000047683716,
+  "diffuser_bottom_z": 4.000000047683716,
+  "clearance_above_table_m": 0.8,
+  "ceiling_z": 4.85,
+  "dimensions": "Estimated from user photograph",
+  "preserved_objects": 7809
+}

@@ -1,0 +1,49 @@
+{
+  "center_xy_m": [
+    1.24,
+    4.25
+  ],
+  "tread_outer_radius_m": 0.805,
+  "hole_radius_m": 0.89,
+  "rail_outer_radius_m": 0.856,
+  "clearance_to_nominal_curved_wall_m": 0.05400000000000005,
+  "flights": [
+    {
+      "flight": 0,
+      "start_z_m": 0,
+      "landing_z_m": 2.41,
+      "risers": 14,
+      "riser_m": 0.17214285714285715,
+      "individual_treads": 13,
+      "sweep_degrees": 304.0,
+      "landing_meets_floor": true
+    },
+    {
+      "flight": 1,
+      "start_z_m": 2.41,
+      "landing_z_m": 5.31,
+      "risers": 16,
+      "riser_m": 0.18124999999999997,
+      "individual_treads": 15,
+      "sweep_degrees": 304.0,
+      "landing_meets_floor": true
+    }
+  ],
+  "connections": [
+    {
+      "floor": 1,
+      "finished_z": 2.41,
+      "landing_flush": true,
+      "hole_open": true,
+      "landing_spans_to_floor": true
+    },
+    {
+      "floor": 2,
+      "finished_z": 5.31,
+      "landing_flush": true,
+      "hole_open": true,
+      "landing_spans_to_floor": true
+    }
+  ],
+  "dimensions_from_model_and_photo_estimates": true
+}

@@ -1,0 +1,110 @@
+{
+  "photo_reference_count": 7,
+  "dimensions": "Estimates from photographs",
+  "furniture_bounds_m": {
+    "Bedroom 1 entry corner / white wardrobe CONTROL": [
+      [
+        3.44,
+        4.057
+      ],
+      [
+        1.84,
+        2.72
+      ],
+      [
+        5.31,
+        7.41
+      ]
+    ],
+    "Bedroom 1 entry corner / horse photo cupboard CONTROL": [
+      [
+        2.98,
+        3.42
+      ],
+      [
+        1.7696,
+        2.72
+      ],
+      [
+        5.31,
+        7.41
+      ]
+    ],
+    "Bedroom 1 entry corner / dollhouse CONTROL": [
+      [
+        2.9615,
+        3.9085
+      ],
+      [
+        2.76,
+        3.193
+      ],
+      [
+        5.313,
+        6.8928
+      ]
+    ],
+    "Bedroom 1 entry corner / blue beanbag armchair CONTROL": [
+      [
+        3.4484,
+        4.3914
+      ],
+      [
+        0.4956,
+        1.7675
+      ],
+      [
+        5.325,
+        6.19
+      ]
+    ],
+    "Bedroom 1 entry corner / metal three drawer cabinet CONTROL": [
+      [
+        2.983,
+        3.407
+      ],
+      [
+        0.433,
+        0.817
+      ],
+      [
+        5.3115,
+        5.9845
+      ]
+    ],
+    "Bedroom 1 entry corner / leaning oak mirror CONTROL": [
+      [
+        2.9543,
+        3.0615
+      ],
+      [
+        0.955,
+        1.385
+      ],
+      [
+        5.3344,
+        6.9235
+      ]
+    ]
+  },
+  "door_clear_y": [
+    3.38,
+    4.2
+  ],
+  "dollhouse_right_of_entry": true,
+  "white_wardrobe_drawers": 3,
+  "dollhouse_open_levels": 3,
+  "steel_mesh_drawers": 3,
+  "separate_ottoman": true,
+  "scenes": [
+    "60 | SLAAPKAMER 1 - entry corner photos",
+    "61 | SLAAPKAMER 1 - blue seat and metal drawers",
+    "62 | SLAAPKAMER 1 - entry corner plan"
+  ],
+  "saved_file_reopened": true,
+  "unrelated_original_objects_missing": [],
+  "white_stair_wall_preserved": true,
+  "ground_bathroom_scene_preserved": true,
+  "reference_textures_packed": true,
+  "new_corner_object_count": 683
+}

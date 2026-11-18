@@ -1,0 +1,109 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Defense toys review</title><link rel="icon" href="/favicon.svg">
+<style>
+  body{margin:0;background:#2f2a25;overflow:hidden;font:12px/1.2 ui-monospace,Menlo,monospace}
+  canvas{display:block}
+  .label{position:absolute;transform:translate(-50%,0);color:#fff;background:rgba(0,0,0,.55);padding:1px 5px;border-radius:3px;white-space:nowrap;pointer-events:none}
+</style></head><body>
+<script type="module">
+// Turntable for the procedural toys, without the house (loads in under a second).
+//   ?only=rifleman,tank   show only these toy ids (default: all)
+//   ?tint=green|tan|grey|none   plastic colour applied to tinted toys (default green)
+//   ?yaw=35&pitch=28      camera angles in degrees;  ?zoom=1.4 moves the camera closer
+//   ?turret=40            turret angle in degrees;   ?t=1.3 time in seconds for spinning parts
+//   ?w=1280&h=800         canvas size
+import * as THREE from 'three';
+import { configureToneMapping } from '@huis/house/client/comicStyle';
+import { skyEnvironment } from '@huis/house/client/skyEnvironment';
+import { installProbeShader } from '@huis/house/client/probeLighting';
+import { createToyMaterials } from '/src/render/toyMaterial.ts';
+import { ToyBatch } from '/src/render/toyBatch.ts';
+import { ShadowBatch } from '/src/render/shadows.ts';
+import { TOY_IDS, getToy } from '/src/render/toys/index.ts';
+import { triangleCount } from '/src/render/toys/kit.ts';
+
+const query = new URLSearchParams(location.search);
+const W = Number(query.get('w')) || 1280, H = Number(query.get('h')) || 800;
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(W, H);
+renderer.setPixelRatio(1);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+configureToneMapping(renderer);
+document.body.append(renderer.domElement);
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#3a342e');
+const environment = skyEnvironment(renderer).environment;
+const floorMaterial = new THREE.MeshStandardMaterial({ color: '#8a6f55', roughness: 0.8 });
+installProbeShader(floorMaterial);
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(60, 60).rotateX(-Math.PI / 2), floorMaterial);
+scene.add(floor);
+// Floor grid: one square is 0.5 units, the height of a soldier.
+const grid = new THREE.GridHelper(60, 120, '#6b563f', '#7c644c');
+grid.position.y = 0.002;
+scene.add(grid);
+
+const only = query.get('only')?.split(',').filter(Boolean);
+const ids = TOY_IDS.filter(id => !only || only.includes(id));
+const tints = { green: '#4f9a3c', tan: '#c9a66b', grey: '#8f98a0', none: '#ffffff' };
+const tint = new THREE.Color(tints[query.get('tint') ?? 'green'] ?? tints.green);
+const untinted = new THREE.Color('#ffffff');
+/** Toys moulded in one colour take the tint; the rest carry their own colours. */
+const TINTED = new Set(['rifleman', 'scout', 'shield', 'medic', 'bugler', 'paratrooper', 'colonel', 'jeep', 'tank', 'helicopter', 'transport', 'general']);
+
+const batch = new ToyBatch(scene, createToyMaterials(environment));
+const shadows = new ShadowBatch(scene);
+const models = ids.map(id => getToy(id));
+// Rows of about 7 units; each toy gets a cell as wide as it needs.
+const places = [];
+let cursorX = 0, cursorZ = 0, rowDepth = 0, maxX = 0;
+models.forEach((model, index) => {
+  const cell = Math.max(0.95, model.radius * 2.5);
+  if (cursorX > 0 && cursorX + cell > 7) { cursorX = 0; cursorZ += rowDepth + 0.35; rowDepth = 0; }
+  places.push({ id: ids[index], model, x: cursorX + cell / 2, z: cursorZ + cell / 2 });
+  cursorX += cell;
+  rowDepth = Math.max(rowDepth, cell);
+  maxX = Math.max(maxX, cursorX);
+});
+const maxZ = cursorZ + rowDepth;
+for (const place of places) { place.x -= maxX / 2; place.z -= maxZ / 2; }
+const camera = new THREE.PerspectiveCamera(32, W / H, 0.05, 200);
+const yaw = THREE.MathUtils.degToRad(Number(query.get('yaw') ?? 35));
+const pitch = THREE.MathUtils.degToRad(Number(query.get('pitch') ?? 28));
+const span = Math.max(maxX, maxZ * 1.5, 1.2);
+const distance = span * 1.75 / (Number(query.get('zoom')) || 1);
+const lookY = Math.max(...models.map(model => model.height)) * 0.4;
+camera.position.set(Math.sin(yaw) * Math.cos(pitch) * distance, lookY + Math.sin(pitch) * distance, Math.cos(yaw) * Math.cos(pitch) * distance);
+camera.lookAt(0, lookY, 0);
+const labels = places.map(place => {
+  const label = document.createElement('div');
+  label.className = 'label';
+  label.textContent = place.id;
+  label.title = `${Math.round(triangleCount(place.model))} triangles, height ${place.model.height.toFixed(2)}`;
+  document.body.append(label);
+  return label;
+});
+const matrix = new THREE.Matrix4();
+const projected = new THREE.Vector3();
+const fixedTime = query.has('t') ? Number(query.get('t')) : undefined;
+const turret = THREE.MathUtils.degToRad(Number(query.get('turret') ?? 0));
+function draw(now) {
+  const time = fixedTime ?? now / 1000;
+  batch.begin();
+  shadows.begin();
+  places.forEach((place, index) => {
+    matrix.makeTranslation(place.x, 0, place.z);
+    batch.add(place.model, matrix, TINTED.has(place.id) ? tint : untinted, turret, time);
+    shadows.add(place.x, 0, place.z, place.model.radius);
+    projected.set(place.x, 0, place.z + place.model.radius + 0.1).project(camera);
+    labels[index].style.left = `${(projected.x * 0.5 + 0.5) * W}px`;
+    labels[index].style.top = `${(-projected.y * 0.5 + 0.5) * H + 4}px`;
+  });
+  batch.end();
+  shadows.end();
+  renderer.render(scene, camera);
+}
+renderer.setAnimationLoop(draw);
+window.review = { scene, camera, renderer, THREE, ids, stats: places.map(place => ({ id: place.id, triangles: Math.round(triangleCount(place.model)), height: +place.model.height.toFixed(2), radius: +place.model.radius.toFixed(2) })) };
+draw(0);
+document.body.dataset.ready = 'true';
+</script></body></html>

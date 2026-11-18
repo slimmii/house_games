@@ -1,0 +1,727 @@
+[
+  {
+    "name": "Game lighting / blue bedroom spiral spots head 1 light",
+    "type": "spot",
+    "position": [
+      14.943799,
+      23.9,
+      -21.019499
+    ],
+    "direction": [
+      -0.219061,
+      -0.857492,
+      -0.465531
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 30,
+    "distance": 9.0,
+    "angle": 0.44999998807907104,
+    "penumbra": 0.550000011920929
+  },
+  {
+    "name": "Game lighting / blue bedroom spiral spots head 2 light",
+    "type": "spot",
+    "position": [
+      15.5499,
+      23.9,
+      -20.7226
+    ],
+    "direction": [
+      0.514432,
+      -0.857493,
+      0.00808
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 30,
+    "distance": 9.0,
+    "angle": 0.44999998807907104,
+    "penumbra": 0.550000011920929
+  },
+  {
+    "name": "Game lighting / blue bedroom spiral spots head 3 light",
+    "type": "spot",
+    "position": [
+      14.7985,
+      23.9,
+      -20.177599
+    ],
+    "direction": [
+      -0.23358,
+      -0.857491,
+      0.458421
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 30,
+    "distance": 9.0,
+    "angle": 0.44999998807907104,
+    "penumbra": 0.550000011920929
+  },
+  {
+    "name": "Game lighting / dressing spot east light",
+    "type": "spot",
+    "position": [
+      19.8,
+      6.58,
+      -14.55
+    ],
+    "direction": [
+      0.0,
+      -1.0,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 36.8,
+    "distance": 9.3,
+    "angle": 0.6629999876022339,
+    "penumbra": 0.6499999761581421
+  },
+  {
+    "name": "Game lighting / dressing spot west light",
+    "type": "spot",
+    "position": [
+      16.8,
+      6.58,
+      -14.55
+    ],
+    "direction": [
+      0.0,
+      -1.0,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 36.8,
+    "distance": 9.3,
+    "angle": 0.6629999876022339,
+    "penumbra": 0.6499999761581421
+  },
+  {
+    "name": "Game lighting / ground bedroom spiral spots head 1 light",
+    "type": "spot",
+    "position": [
+      17.7438,
+      6.24,
+      -21.589499
+    ],
+    "direction": [
+      -0.219061,
+      -0.857492,
+      -0.465531
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 30,
+    "distance": 9.0,
+    "angle": 0.44999998807907104,
+    "penumbra": 0.550000011920929
+  },
+  {
+    "name": "Game lighting / ground bedroom spiral spots head 2 light",
+    "type": "spot",
+    "position": [
+      18.3499,
+      6.24,
+      -21.2926
+    ],
+    "direction": [
+      0.514432,
+      -0.857493,
+      0.00808
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 30,
+    "distance": 9.0,
+    "angle": 0.44999998807907104,
+    "penumbra": 0.550000011920929
+  },
+  {
+    "name": "Game lighting / ground bedroom spiral spots head 3 light",
+    "type": "spot",
+    "position": [
+      17.5985,
+      6.24,
+      -20.747599
+    ],
+    "direction": [
+      -0.23358,
+      -0.857491,
+      0.458421
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 30,
+    "distance": 9.0,
+    "angle": 0.44999998807907104,
+    "penumbra": 0.550000011920929
+  },
+  {
+    "name": "Game lighting / office wall washer head 1 light",
+    "type": "spot",
+    "position": [
+      1.115,
+      13.250001,
+      -5.5
+    ],
+    "direction": [
+      0.14834,
+      0.988937,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 16,
+    "distance": 6.0,
+    "angle": 0.8500000238418579,
+    "penumbra": 0.699999988079071
+  },
+  {
+    "name": "Game lighting / office wall washer head 2 light",
+    "type": "spot",
+    "position": [
+      1.115,
+      12.75,
+      -5.5
+    ],
+    "direction": [
+      0.14834,
+      -0.988936,
+      0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 16,
+    "distance": 6.0,
+    "angle": 0.8500000238418579,
+    "penumbra": 0.699999988079071
+  },
+  {
+    "name": "Game lighting / small bedroom spiral spots head 1 light",
+    "type": "spot",
+    "position": [
+      4.5138,
+      23.9,
+      -5.5995
+    ],
+    "direction": [
+      -0.219061,
+      -0.857492,
+      -0.465531
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 30,
+    "distance": 9.0,
+    "angle": 0.44999998807907104,
+    "penumbra": 0.550000011920929
+  },
+  {
+    "name": "Game lighting / small bedroom spiral spots head 2 light",
+    "type": "spot",
+    "position": [
+      5.1199,
+      23.9,
+      -5.3026
+    ],
+    "direction": [
+      0.514432,
+      -0.857493,
+      0.00808
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 30,
+    "distance": 9.0,
+    "angle": 0.44999998807907104,
+    "penumbra": 0.550000011920929
+  },
+  {
+    "name": "Game lighting / small bedroom spiral spots head 3 light",
+    "type": "spot",
+    "position": [
+      4.3685,
+      23.9,
+      -4.7576
+    ],
+    "direction": [
+      -0.23358,
+      -0.857491,
+      0.458421
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 30,
+    "distance": 9.0,
+    "angle": 0.44999998807907104,
+    "penumbra": 0.550000011920929
+  },
+  {
+    "name": "Game lighting / upper storage spot light",
+    "type": "spot",
+    "position": [
+      3.15,
+      24.249999,
+      -17.65
+    ],
+    "direction": [
+      0.0,
+      -1.0,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 36.8,
+    "distance": 9.3,
+    "angle": 0.6629999876022339,
+    "penumbra": 0.6499999761581421
+  },
+  {
+    "name": "Game lighting / veranda toy kitchen sconce light",
+    "type": "spot",
+    "position": [
+      9.781001,
+      12.85,
+      -31.199999
+    ],
+    "direction": [
+      0.33035,
+      0.943859,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 22,
+    "distance": 7.0,
+    "angle": 0.949999988079071,
+    "penumbra": 0.699999988079071
+  },
+  {
+    "name": "Reference lighting / first WC spot 1 light",
+    "type": "spot",
+    "position": [
+      3.15,
+      15.156,
+      -17.460001
+    ],
+    "direction": [
+      0.0,
+      -1.0,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 36.8,
+    "distance": 9.3,
+    "angle": 0.6632251143455505,
+    "penumbra": 0.6499999761581421
+  },
+  {
+    "name": "Reference lighting / first WC spot 2 light",
+    "type": "spot",
+    "position": [
+      6.9,
+      15.156,
+      -17.460001
+    ],
+    "direction": [
+      0.0,
+      -1.0,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 36.8,
+    "distance": 9.3,
+    "angle": 0.6632251143455505,
+    "penumbra": 0.6499999761581421
+  },
+  {
+    "name": "Reference lighting / ground WC spot 1 light",
+    "type": "spot",
+    "position": [
+      12.900001,
+      6.606,
+      -13.349999
+    ],
+    "direction": [
+      0.0,
+      -1.0,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 36.8,
+    "distance": 9.3,
+    "angle": 0.6632251143455505,
+    "penumbra": 0.6499999761581421
+  },
+  {
+    "name": "Reference lighting / ground WC spot 2 light",
+    "type": "spot",
+    "position": [
+      12.900001,
+      6.606,
+      -16.05
+    ],
+    "direction": [
+      0.0,
+      -1.0,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 36.8,
+    "distance": 9.3,
+    "angle": 0.6632251143455505,
+    "penumbra": 0.6499999761581421
+  },
+  {
+    "name": "Reference lighting / kitchen spot 1 light",
+    "type": "spot",
+    "position": [
+      3.15,
+      14.495999,
+      -22.95
+    ],
+    "direction": [
+      0.0,
+      -1.0,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 36.8,
+    "distance": 9.3,
+    "angle": 0.6632251143455505,
+    "penumbra": 0.6499999761581421
+  },
+  {
+    "name": "Reference lighting / kitchen spot 2 light",
+    "type": "spot",
+    "position": [
+      6.96,
+      14.495999,
+      -22.95
+    ],
+    "direction": [
+      0.0,
+      -1.0,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 36.8,
+    "distance": 9.3,
+    "angle": 0.6632251143455505,
+    "penumbra": 0.6499999761581421
+  },
+  {
+    "name": "Reference lighting / kitchen spot 3 light",
+    "type": "spot",
+    "position": [
+      3.15,
+      14.495999,
+      -25.949999
+    ],
+    "direction": [
+      0.0,
+      -1.0,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 36.8,
+    "distance": 9.3,
+    "angle": 0.6632251143455505,
+    "penumbra": 0.6499999761581421
+  },
+  {
+    "name": "Reference lighting / kitchen spot 4 light",
+    "type": "spot",
+    "position": [
+      6.96,
+      14.495999,
+      -25.949999
+    ],
+    "direction": [
+      0.0,
+      -1.0,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 36.8,
+    "distance": 9.3,
+    "angle": 0.6632251143455505,
+    "penumbra": 0.6499999761581421
+  },
+  {
+    "name": "Reference lighting / kitchen spot 5 light",
+    "type": "spot",
+    "position": [
+      3.15,
+      14.495999,
+      -30.150001
+    ],
+    "direction": [
+      0.0,
+      -1.0,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 36.8,
+    "distance": 9.3,
+    "angle": 0.6632251143455505,
+    "penumbra": 0.6499999761581421
+  },
+  {
+    "name": "Reference lighting / kitchen spot 6 light",
+    "type": "spot",
+    "position": [
+      6.96,
+      14.495999,
+      -30.150001
+    ],
+    "direction": [
+      0.0,
+      -1.0,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 36.8,
+    "distance": 9.3,
+    "angle": 0.6632251143455505,
+    "penumbra": 0.6499999761581421
+  },
+  {
+    "name": "Reference lighting / living acoustic strip light",
+    "type": "area",
+    "position": [
+      20.295,
+      12.542999,
+      -19.455299
+    ],
+    "direction": [
+      0.0,
+      -1.0,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "width": 8.804999828338623,
+    "height": 0.13500000536441803,
+    "intensity": 25,
+    "right": [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  },
+  {
+    "name": "Reference lighting / long cabinet strip light",
+    "type": "area",
+    "position": [
+      1.995,
+      11.928,
+      -25.38
+    ],
+    "direction": [
+      0.0,
+      -1.0,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "width": 8.519999742507935,
+    "height": 0.13500000536441803,
+    "intensity": 80,
+    "right": [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  },
+  {
+    "name": "Reference lighting / lower stair sconce light",
+    "type": "spot",
+    "position": [
+      2.575898,
+      5.34,
+      -14.857759
+    ],
+    "direction": [
+      0.317578,
+      0.759962,
+      0.5671
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 20.7,
+    "distance": 7.199999999999999,
+    "angle": 1.0035643577575684,
+    "penumbra": 0.6499999761581421
+  },
+  {
+    "name": "Reference lighting / middle stair sconce light",
+    "type": "spot",
+    "position": [
+      2.575896,
+      12.840001,
+      -14.858045
+    ],
+    "direction": [
+      0.317574,
+      0.759962,
+      0.567102
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 20.7,
+    "distance": 7.199999999999999,
+    "angle": 1.0035643577575684,
+    "penumbra": 0.6499999761581421
+  },
+  {
+    "name": "Reference lighting / sink cabinet strip light",
+    "type": "area",
+    "position": [
+      4.29,
+      11.928,
+      -20.994
+    ],
+    "direction": [
+      0.0,
+      -1.0,
+      -0.0
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "width": 4.380000114440918,
+    "height": 0.13500000536441803,
+    "intensity": 80,
+    "right": [
+      1.0,
+      0.0,
+      -0.0
+    ]
+  },
+  {
+    "name": "Reference lighting / upper stair sconce light",
+    "type": "spot",
+    "position": [
+      2.569701,
+      21.69,
+      -14.82187
+    ],
+    "direction": [
+      0.306388,
+      0.759962,
+      0.573222
+    ],
+    "color": [
+      1.0,
+      0.8799999952316284,
+      0.6899999976158142
+    ],
+    "intensity": 20.7,
+    "distance": 7.199999999999999,
+    "angle": 1.0035643577575684,
+    "penumbra": 0.6499999761581421
+  }
+]

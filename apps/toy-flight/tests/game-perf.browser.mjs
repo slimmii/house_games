@@ -1,0 +1,41 @@
+// Measure real in-game frame pacing and the hottest JS functions.
+// GAME_URL=http://localhost:2567 GAME_QUERY='?style=comic' node tests/game-perf.browser.mjs
+import { writeFile, mkdir } from 'node:fs/promises';
+import { chromium } from '@playwright/test';
+const base = process.env.GAME_URL ?? 'http://localhost:2567';
+const query = process.env.GAME_QUERY ?? '?style=comic';
+const [vw, vh] = (process.env.GAME_SIZE ?? '1920x1080').split('x').map(Number);
+const browser = await chromium.launch({ channel: 'chrome', headless: true, args: ['--use-angle=metal', '--disable-gpu-vsync', '--disable-frame-rate-limit'] });
+const page = await browser.newPage({ viewport: { width: vw, height: vh } });
+const errors = [];
+page.on('pageerror', e => errors.push(e.message));
+await page.goto(`${base}/${query}`);
+await page.fill('#playerName', 'Perf');
+await page.waitForFunction(() => !document.querySelector('#joinButton').disabled, {}, { timeout: 240_000 });
+await page.click('#joinButton');
+await page.waitForFunction(() => !document.querySelector('#game').hidden, {}, { timeout: 60_000 });
+await page.waitForTimeout(4000);
+const sample = async (label, ms) => page.evaluate(async ({ label, ms }) => {
+  const deltas = []; let last = performance.now(); const end = last + ms;
+  await new Promise(resolve => { const tick = now => { deltas.push(now - last); last = now; if (now < end) requestAnimationFrame(tick); else resolve(); }; requestAnimationFrame(tick); });
+  deltas.sort((a, b) => a - b);
+  const pick = q => deltas[Math.min(deltas.length - 1, Math.floor(deltas.length * q))];
+  return { label, frames: deltas.length, fps: +(deltas.length / (ms / 1000)).toFixed(1), p50: +pick(0.5).toFixed(2), p95: +pick(0.95).toFixed(2), max: +pick(1).toFixed(2) };
+}, { label, ms });
+const cdp = await page.context().newCDPSession(page);
+await cdp.send('Profiler.enable'); await cdp.send('Profiler.setSamplingInterval', { interval: 200 }); await cdp.send('Profiler.start');
+const hover = await sample('hover', 5000);
+await page.keyboard.down('KeyW'); await page.keyboard.down('KeyE');
+const flying = await sample('flying+turning', 5000);
+await page.keyboard.up('KeyW'); await page.keyboard.up('KeyE');
+const { profile } = await cdp.send('Profiler.stop');
+const self = new Map(); const byId = new Map(profile.nodes.map(n => [n.id, n]));
+const dt = profile.timeDeltas; const total = dt.reduce((a, b) => a + b, 0);
+profile.samples.forEach((id, i) => { const n = byId.get(id); const key = `${n.callFrame.functionName || '(anon)'} ${n.callFrame.url.split('/').pop()}:${n.callFrame.lineNumber}`; self.set(key, (self.get(key) ?? 0) + (dt[i] ?? 0)); });
+const top = [...self.entries()].sort((a, b) => b[1] - a[1]).slice(0, 18).map(([k, v]) => `${(v / total * 100).toFixed(1).padStart(5)}%  ${k}`);
+const info = await page.evaluate(() => document.querySelector('#fpsValue')?.textContent);
+await mkdir('test-results/perf', { recursive: true });
+const result = { query, size: `${vw}x${vh}`, hover, flying, hud: info, errors, topSelfTime: top };
+await writeFile(`test-results/perf/game${query.replace(/[^a-z0-9]+/gi, '-')}.json`, JSON.stringify(result, null, 2));
+console.log(JSON.stringify({ hover, flying, hud: info, errors }, null, 1)); console.log(top.join('\n'));
+await browser.close();

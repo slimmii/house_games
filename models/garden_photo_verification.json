@@ -1,0 +1,41 @@
+{
+  "side_from_street": "right",
+  "garden_dimensions_estimated": true,
+  "side_lawn_width_front_m": 14.2,
+  "side_lawn_width_rear_m": 20.368,
+  "fence_and_hedge_reach_path": true,
+  "fence_to_path_inner_edge_m": 0.05,
+  "side_lawn_depth_m": 26,
+  "rear_lawn_from_y_m": 16.4,
+  "rear_lawn_to_y_m": 24.85,
+  "rear_lawn_width_m": 7.2908,
+  "rear_lawn_to_terrace_gap_m": 0,
+  "aerial_reference_used": true,
+  "side_street_divergence_degrees": 13.5,
+  "playhouse_centre_local_m": [
+    11.1,
+    20.0
+  ],
+  "picnic_centre_local_m": [
+    10.2,
+    17.3
+  ],
+  "driveway_restored": true,
+  "driveway_width_m": 7.3808,
+  "driveway_depth_m": 5.169,
+  "driveway_and_lawn_front_y_m": -5.2,
+  "front_open_lawn": true,
+  "fence_start_y_m": 0.0,
+  "curved_front_radius_m": 5.5,
+  "front_gate_aligned_with_facade": true,
+  "rear_side_gate": true,
+  "playhouse": true,
+  "swings": 2,
+  "trampoline_diameter_m": 3.2,
+  "picnic_table": true,
+  "pink_slide": true,
+  "sandbox": true,
+  "grass_blades": 128522,
+  "cars": 0,
+  "previous_house_and_terrace_preserved": true
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#f3ecde" />
+    <meta name="description" content="Little Defenders: a toy tower defense on the living-room floor." />
+    <link rel="icon" href="/favicon.svg" />
+    <title>Little Defenders</title>
+    <script>
+      // The shared house modules read these drone-game flags from the URL when
+      // they load. This page always runs the default toy style, so drop them first.
+      (function () {
+        var url = new URL(location.href), changed = false;
+        ['style', 'cells', 'textures', 'visibility', 'outline'].forEach(function (key) {
+          if (url.searchParams.has(key)) { url.searchParams.delete(key); changed = true; }
+        });
+        if (changed) history.replaceState(null, '', url);
+      })();
+    </script>
+  </head>
+  <body>
+    <main id="app">
+      <div id="stage" class="stage"></div>
+      <div id="hud" class="hud"></div>
+      <section id="loading" class="loading" aria-live="polite">
+        <div class="loading-card">
+          <p class="loading-eyebrow">Little Defenders</p>
+          <h1>Tidying the living room…</h1>
+          <div class="loading-bar"><span id="loadingFill"></span></div>
+          <p id="loadingText" class="loading-text">Opening the toy box</p>
+        </div>
+      </section>
+      <section id="fatal" class="loading" hidden>
+        <div class="loading-card">
+          <h1>This browser cannot show the room</h1>
+          <p class="loading-text">Little Defenders needs WebGL 2. Try a recent Chrome, Firefox, Safari or Edge.</p>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

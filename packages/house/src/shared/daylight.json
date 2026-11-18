@@ -1,0 +1,134 @@
+{
+  "sun": {
+    "direction": [
+      -0.45,
+      0.78,
+      0.43
+    ],
+    "color": [
+      1,
+      0.96,
+      0.9
+    ],
+    "irradiance": 1.8,
+    "angularRadius": 0.08
+  },
+  "sky": {
+    "color": [
+      0.78,
+      0.86,
+      1.0
+    ],
+    "irradiance": 10.0
+  },
+  "bounce": {
+    "gain": 1.9
+  },
+  "fixtureGain": 3.0,
+  "fixtureColor": [
+    1,
+    0.88,
+    0.69
+  ],
+  "lightPassingMaterials": [
+    "Bedroom 2 / pale grey roller shutter",
+    "Bedroom 1 / cream patterned curtains",
+    "Bedroom 2 / charcoal grey curtain fabric",
+    "Bathroom - cream shower curtain"
+  ],
+  "lightPassingNodePatterns": [
+    "dark backing",
+    "roller shutter slat",
+    "roller shutter"
+  ],
+  "exposure": 1.4,
+  "comic": {
+    "skyColor": [
+      0.86,
+      0.88,
+      0.92
+    ],
+    "groundColor": [
+      0.68,
+      0.66,
+      0.63
+    ],
+    "keyDirection": [
+      -0.55,
+      0.62,
+      0.56
+    ],
+    "keyColor": [
+      1.0,
+      0.95,
+      0.86
+    ],
+    "keyStrength": 0.42,
+    "fillDirection": [
+      0.7,
+      0.25,
+      -0.67
+    ],
+    "fillColor": [
+      0.82,
+      0.88,
+      1.0
+    ],
+    "fillStrength": 0.16,
+    "reflections": 0.3,
+    "outlineStrength": 1.0,
+    "inkColor": [
+      0.12,
+      0.11,
+      0.13
+    ],
+    "exposure": 1.0
+  },
+  "ambientFill": {
+    "color": [
+      1.0,
+      0.97,
+      0.92
+    ],
+    "strength": 0.5,
+    "note": "Even base light added on top of the bake in every room; no rebake needed. ?fill=0.5 overrides strength for testing."
+  },
+  "toy": {
+    "skyColor": [
+      0.96,
+      0.97,
+      1.0
+    ],
+    "groundColor": [
+      0.7,
+      0.68,
+      0.65
+    ],
+    "keyDirection": [
+      -0.55,
+      0.62,
+      0.56
+    ],
+    "keyColor": [
+      1.0,
+      0.96,
+      0.9
+    ],
+    "keyStrength": 0.3,
+    "fillDirection": [
+      0.7,
+      0.25,
+      -0.67
+    ],
+    "fillColor": [
+      0.85,
+      0.9,
+      1.0
+    ],
+    "fillStrength": 0.12,
+    "lampGain": 1.0,
+    "reflections": 0.35,
+    "exposure": 1.0,
+    "outlineStrength": 0.35
+  }
+}

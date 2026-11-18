@@ -1,0 +1,5 @@
+KEUKEN — WE M198 Brave Green van Colora / BOSS paints.
+Bron: https://colora.be/nl/kleuren/we-m198-brave-green
+De officiële pagina publiceert RGB #74846D in props.pageProps.color.rgb. Deze sRGB-kleur is naar lineaire Blender-waarden omgerekend en als matte muurverf toegepast op de keukenwanden.
+De verfvlakken volgen de bestaande binnenwandgeometrie en zijn tot de keuken begrensd. Kasten, terrazzo, raamprofielen, vloeren en aangrenzende kamers behouden hun materialen. De achterwand onder de bovenkasten blijft apart beige/wit in de oorspronkelijke kleur, zowel achter het kookgedeelte als de spoelbak. De uiteindelijke render wordt mede bepaald door de scèneverlichting.
+Scenes 05 en 06 tonen de twee keukenrichtingen. Bron: kitchen_brave_green.py. Reservekopie: Huis_before_kitchen_brave_green.blend.

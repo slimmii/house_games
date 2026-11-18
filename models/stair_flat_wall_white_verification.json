@@ -1,0 +1,11 @@
+{
+  "white_flat_wall_objects": [
+    "first / source masonry 038",
+    "first / source masonry 039",
+    "first / source masonry 040",
+    "first / source masonry 041"
+  ],
+  "curved_stair_objects_start_at": "first / source masonry 042",
+  "curved_stair_finish_preserved": "brick",
+  "source": "User viewport markup 2026-09-28"
+}

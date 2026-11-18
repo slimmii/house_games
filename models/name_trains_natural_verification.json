@@ -1,0 +1,238 @@
+{
+  "HANNA": {
+    "angles_degrees": [
+      -22,
+      -14,
+      -4,
+      9,
+      22,
+      30
+    ],
+    "bounds_m": [
+      [
+        6.661950588226318,
+        6.773585796356201
+      ],
+      [
+        3.2724976539611816,
+        3.6571691036224365
+      ],
+      [
+        4.296999931335449,
+        4.376999855041504
+      ]
+    ],
+    "all_wheels_on_shelf": true,
+    "carriage_groups": [
+      [
+        "September29 / Train HANNA / chimney",
+        "September29 / Train HANNA / engine cab",
+        "September29 / Train HANNA / engine cab roof",
+        "September29 / Train HANNA / locomotive chassis",
+        "September29 / Train HANNA / rounded wooden boiler",
+        "September29 / Train HANNA / wooden wheel",
+        "September29 / Train HANNA / wooden wheel.001",
+        "September29 / Train HANNA / wooden wheel.002",
+        "September29 / Train HANNA / wooden wheel.003"
+      ],
+      [
+        "September29 / Train HANNA / letter wagon 1",
+        "September29 / Train HANNA / solid wood H 1",
+        "September29 / Train HANNA / wooden wheel.004",
+        "September29 / Train HANNA / wooden wheel.005",
+        "September29 / Train HANNA / wooden wheel.006",
+        "September29 / Train HANNA / wooden wheel.007"
+      ],
+      [
+        "September29 / Train HANNA / letter wagon 2",
+        "September29 / Train HANNA / solid wood A 2",
+        "September29 / Train HANNA / wooden wheel.008",
+        "September29 / Train HANNA / wooden wheel.009",
+        "September29 / Train HANNA / wooden wheel.010",
+        "September29 / Train HANNA / wooden wheel.011"
+      ],
+      [
+        "September29 / Train HANNA / letter wagon 3",
+        "September29 / Train HANNA / solid wood N 3",
+        "September29 / Train HANNA / wooden wheel.012",
+        "September29 / Train HANNA / wooden wheel.013",
+        "September29 / Train HANNA / wooden wheel.014",
+        "September29 / Train HANNA / wooden wheel.015"
+      ],
+      [
+        "September29 / Train HANNA / letter wagon 4",
+        "September29 / Train HANNA / solid wood N 4",
+        "September29 / Train HANNA / wooden wheel.016",
+        "September29 / Train HANNA / wooden wheel.017",
+        "September29 / Train HANNA / wooden wheel.018",
+        "September29 / Train HANNA / wooden wheel.019"
+      ],
+      [
+        "September29 / Train HANNA / letter wagon 5",
+        "September29 / Train HANNA / solid wood A 5",
+        "September29 / Train HANNA / wooden wheel.020",
+        "September29 / Train HANNA / wooden wheel.021",
+        "September29 / Train HANNA / wooden wheel.022",
+        "September29 / Train HANNA / wooden wheel.023"
+      ]
+    ]
+  },
+  "LOTTE": {
+    "angles_degrees": [
+      24,
+      21,
+      14,
+      2,
+      -12,
+      -22
+    ],
+    "bounds_m": [
+      [
+        6.650399208068848,
+        6.767834663391113
+      ],
+      [
+        3.2396798133850098,
+        3.6248397827148438
+      ],
+      [
+        4.040999889373779,
+        4.120999813079834
+      ]
+    ],
+    "all_wheels_on_shelf": true,
+    "carriage_groups": [
+      [
+        "September29 / Train LOTTE / chimney",
+        "September29 / Train LOTTE / engine cab",
+        "September29 / Train LOTTE / engine cab roof",
+        "September29 / Train LOTTE / locomotive chassis",
+        "September29 / Train LOTTE / rounded wooden boiler",
+        "September29 / Train LOTTE / wooden wheel",
+        "September29 / Train LOTTE / wooden wheel.001",
+        "September29 / Train LOTTE / wooden wheel.002",
+        "September29 / Train LOTTE / wooden wheel.003"
+      ],
+      [
+        "September29 / Train LOTTE / letter wagon 1",
+        "September29 / Train LOTTE / solid wood L 1",
+        "September29 / Train LOTTE / wooden wheel.004",
+        "September29 / Train LOTTE / wooden wheel.005",
+        "September29 / Train LOTTE / wooden wheel.006",
+        "September29 / Train LOTTE / wooden wheel.007"
+      ],
+      [
+        "September29 / Train LOTTE / letter wagon 2",
+        "September29 / Train LOTTE / solid wood O 2",
+        "September29 / Train LOTTE / wooden wheel.008",
+        "September29 / Train LOTTE / wooden wheel.009",
+        "September29 / Train LOTTE / wooden wheel.010",
+        "September29 / Train LOTTE / wooden wheel.011"
+      ],
+      [
+        "September29 / Train LOTTE / letter wagon 3",
+        "September29 / Train LOTTE / solid wood T 3",
+        "September29 / Train LOTTE / wooden wheel.012",
+        "September29 / Train LOTTE / wooden wheel.013",
+        "September29 / Train LOTTE / wooden wheel.014",
+        "September29 / Train LOTTE / wooden wheel.015"
+      ],
+      [
+        "September29 / Train LOTTE / letter wagon 4",
+        "September29 / Train LOTTE / solid wood T 4",
+        "September29 / Train LOTTE / wooden wheel.016",
+        "September29 / Train LOTTE / wooden wheel.017",
+        "September29 / Train LOTTE / wooden wheel.018",
+        "September29 / Train LOTTE / wooden wheel.019"
+      ],
+      [
+        "September29 / Train LOTTE / letter wagon 5",
+        "September29 / Train LOTTE / solid wood E 5",
+        "September29 / Train LOTTE / wooden wheel.020",
+        "September29 / Train LOTTE / wooden wheel.021",
+        "September29 / Train LOTTE / wooden wheel.022",
+        "September29 / Train LOTTE / wooden wheel.023"
+      ]
+    ]
+  },
+  "LIENE": {
+    "angles_degrees": [
+      -34,
+      -25,
+      -9,
+      8,
+      20,
+      26
+    ],
+    "bounds_m": [
+      [
+        6.698061943054199,
+        6.815116882324219
+      ],
+      [
+        3.2653119564056396,
+        3.6452767848968506
+      ],
+      [
+        3.625,
+        3.7049999237060547
+      ]
+    ],
+    "all_wheels_on_shelf": true,
+    "carriage_groups": [
+      [
+        "September29 / Train LIENE / chimney",
+        "September29 / Train LIENE / engine cab",
+        "September29 / Train LIENE / engine cab roof",
+        "September29 / Train LIENE / locomotive chassis",
+        "September29 / Train LIENE / rounded wooden boiler",
+        "September29 / Train LIENE / wooden wheel",
+        "September29 / Train LIENE / wooden wheel.001",
+        "September29 / Train LIENE / wooden wheel.002",
+        "September29 / Train LIENE / wooden wheel.003"
+      ],
+      [
+        "September29 / Train LIENE / letter wagon 1",
+        "September29 / Train LIENE / solid wood L 1",
+        "September29 / Train LIENE / wooden wheel.004",
+        "September29 / Train LIENE / wooden wheel.005",
+        "September29 / Train LIENE / wooden wheel.006",
+        "September29 / Train LIENE / wooden wheel.007"
+      ],
+      [
+        "September29 / Train LIENE / letter wagon 2",
+        "September29 / Train LIENE / solid wood I 2",
+        "September29 / Train LIENE / wooden wheel.008",
+        "September29 / Train LIENE / wooden wheel.009",
+        "September29 / Train LIENE / wooden wheel.010",
+        "September29 / Train LIENE / wooden wheel.011"
+      ],
+      [
+        "September29 / Train LIENE / letter wagon 3",
+        "September29 / Train LIENE / solid wood E 3",
+        "September29 / Train LIENE / wooden wheel.012",
+        "September29 / Train LIENE / wooden wheel.013",
+        "September29 / Train LIENE / wooden wheel.014",
+        "September29 / Train LIENE / wooden wheel.015"
+      ],
+      [
+        "September29 / Train LIENE / letter wagon 4",
+        "September29 / Train LIENE / solid wood N 4",
+        "September29 / Train LIENE / wooden wheel.016",
+        "September29 / Train LIENE / wooden wheel.017",
+        "September29 / Train LIENE / wooden wheel.018",
+        "September29 / Train LIENE / wooden wheel.019"
+      ],
+      [
+        "September29 / Train LIENE / letter wagon 5",
+        "September29 / Train LIENE / solid wood E 5",
+        "September29 / Train LIENE / wooden wheel.020",
+        "September29 / Train LIENE / wooden wheel.021",
+        "September29 / Train LIENE / wooden wheel.022",
+        "September29 / Train LIENE / wooden wheel.023"
+      ]
+    ]
+  },
+  "unrelated_objects_unchanged": 7764,
+  "material": "Existing unpainted wood preserved on every component"
+}

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3ecde" />
+    <meta name="description" content="Little Rotors — hide and seek with tiny drones inside a very big house." />
+    <title>Little Rotors</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <main id="app">
+      <section class="lobby" id="lobby">
+        <div class="lobby-main">
+          <header class="brand" aria-label="Little Rotors">
+            <span class="brand-mark">LR</span>
+            <span>Little Rotors</span>
+          </header>
+
+          <div class="hero-copy">
+            <p class="eyebrow">BIG HOUSE. tiny pilots.</p>
+            <h1>Take the whole<br />house for a spin.</h1>
+          </div>
+
+          <form class="join-card" id="joinForm" autocomplete="off" onsubmit="return false">
+            <div class="field">
+              <label for="playerName">Pilot name</label>
+              <input id="playerName" name="name" maxlength="18" autocomplete="nickname" placeholder="Pocket Pilot" />
+            </div>
+
+            <div class="invite-banner" id="inviteBanner" hidden>
+              <span class="invite-dot" aria-hidden="true"></span>
+              <div><strong>You’re invited</strong><small>Room <b id="inviteCode">—</b> is waiting for you.</small></div>
+            </div>
+
+            <div class="field" id="roomNameField">
+              <label for="roomName">Room name <span class="optional">(optional)</span></label>
+              <input id="roomName" name="roomName" maxlength="24" autocomplete="off" spellcheck="false" placeholder="e.g. family-friday — joins it if it exists" />
+            </div>
+
+            <fieldset class="mode-picker" id="modePicker">
+              <legend>Game mode</legend>
+              <label class="mode-card mode-seek">
+                <input type="radio" name="mode" value="hideSeek" checked />
+                <span class="mode-art" aria-hidden="true"><i></i><i></i><i></i><b></b></span>
+                <span class="mode-copy">
+                  <strong>Hide &amp; Seek</strong>
+                  <small>One random seeker waits blindfolded while everyone hides. Follow the warm / cold radar and splat them with paint.</small>
+                  <em>2–6 pilots</em>
+                </span>
+              </label>
+              <label class="mode-card mode-free">
+                <input type="radio" name="mode" value="free" />
+                <span class="mode-art" aria-hidden="true"><i></i><i></i><i></i><b></b></span>
+                <span class="mode-copy">
+                  <strong>Free Play</strong>
+                  <small>No rules, no rounds. Explore every room, open doors and cupboards, and paint whatever you like.</small>
+                  <em>1–6 pilots</em>
+                </span>
+              </label>
+            </fieldset>
+
+            <button class="primary-button launch-button" id="joinButton" type="submit"><span id="joinLabel">Create room</span> <span aria-hidden="true">↗</span></button>
+
+            <button class="create-link" id="createButton" type="button" hidden>Start my own room instead</button>
+            <p class="form-note" id="joinHint" role="status"></p>
+          </form>
+        </div>
+
+        <aside class="lobby-visual" aria-hidden="true">
+          <div class="plan-stack" id="planStack"></div>
+          <div class="load-card" id="loadCard">
+            <div class="load-row"><strong id="loadTitle">Unpacking the house</strong><span id="loadPercent">0%</span></div>
+            <div class="load-track"><i id="loadBar"></i></div>
+            <small id="loadDetail">Downloading every room in the background…</small>
+          </div>
+        </aside>
+      </section>
+
+      <section class="game" id="game" hidden>
+        <div class="game-canvas" id="gameCanvas"></div>
+        <div class="game-shade"></div>
+
+        <header class="game-header">
+          <div class="game-brand"><span class="brand-mark">LR</span><span>Little Rotors</span></div>
+          <div class="room-pill"><span id="connectionDot"></span><span id="connectionText">Connecting</span><strong id="roomBadge">—</strong></div>
+          <button class="quiet-button" id="copyInvite" type="button">Copy invite</button>
+          <button class="quiet-button" id="leaveButton" type="button">Leave</button>
+        </header>
+
+        <aside class="roster-card panel">
+          <p class="panel-label">PILOTS <span id="pilotCount">0 / 6</span></p>
+          <div id="roster"></div>
+        </aside>
+
+        <aside class="map-card panel">
+          <div class="map-heading"><p class="panel-label">HOUSE MAP</p><span id="locationName">Hallway</span></div>
+          <canvas id="minimap" width="300" height="190"></canvas>
+        </aside>
+
+        <div class="seeker-blind" id="seekerBlind" hidden>
+          <div class="blind-card">
+            <p class="eyebrow">YOU ARE THE SEEKER</p>
+            <h2>Eyes closed.</h2>
+            <p id="blindBody">The others are hiding. Your screen clears once everyone is in place.</p>
+            <div class="blind-pilots" id="blindPilots"></div>
+            <small id="blindTimer"></small>
+          </div>
+        </div>
+
+        <div class="hud-center">
+        <section class="round-card" id="roundCard" hidden>
+          <div class="round-text">
+            <span class="round-tag" id="roundTag">HIDE &amp; SEEK</span>
+            <strong id="roundTitle">Waiting for pilots</strong>
+            <small id="roundDetail"></small>
+          </div>
+          <button class="round-action" id="roundAction" type="button" hidden>Start round</button>
+        </section>
+
+        <section class="proximity-meter" id="proximityMeter" role="meter" aria-label="Proximity to the nearest available pilot" aria-valuemin="0" aria-valuemax="100" aria-valuetext="Waiting for another pilot">
+          <div class="proximity-status"><span id="proximityTrend">WAITING</span><small id="proximityDetail">FOR ANOTHER PILOT</small></div>
+          <div class="proximity-scale" aria-hidden="true"><span>COLDER</span><div class="proximity-track"><i id="proximityThumb"></i></div><span>WARMER</span></div>
+        </section>
+        </div>
+
+        <div class="house-loading" id="houseLoading" hidden>
+          <span class="spinner" aria-hidden="true"></span>
+          <strong id="houseLoadingTitle">Unpacking the house</strong>
+          <div class="load-track"><i id="houseLoadingBar"></i></div>
+          <small id="houseLoadingDetail">Almost there…</small>
+        </div>
+
+        <div class="flight-readout">
+          <div><strong id="flightMode">HOVER</strong><span>ASSIST</span></div>
+          <i></i>
+          <div><strong id="speedValue">0.0</strong><span>SPEED</span></div>
+          <i></i>
+          <div><strong id="altitudeValue">0.0</strong><span>HEIGHT</span></div>
+        </div>
+
+        <button id="captureMouse" class="capture-mouse" type="button">Click to fly · mouse look <small>Esc releases the mouse</small></button>
+        <div class="view-mode"><span id="cameraMode">CHASE VIEW</span></div>
+        <div class="crosshair" aria-hidden="true"><i></i><i></i><b></b></div>
+        <div class="ink-muzzle-flash" id="inkMuzzleFlash" aria-hidden="true"></div>
+
+        <div class="instructions panel" id="instructions">
+          <button id="hideInstructions" type="button" aria-label="Hide controls">×</button>
+          <p class="panel-label">DRONE CONTROLS</p>
+          <div><kbd>W</kbd><kbd>S</kbd><span>forward / backward</span></div>
+          <div><kbd>A</kbd><kbd>D</kbd><span>slide left / right</span></div>
+          <div><kbd>MOUSE</kbd><span>look &amp; steer</span></div>
+          <div><kbd>SPACE</kbd><kbd>CTRL / C</kbd><span>rise / descend</span></div>
+          <div><kbd>⇧</kbd><span>hold for precision (slow flight)</span></div>
+          <div><kbd>G</kbd><span>aim at door / cupboard handle · open / close</span></div>
+          <div><kbd>ESC</kbd><span>release mouse</span></div>
+          <div><kbd>CLICK</kbd><kbd>F</kbd><span>spray ink</span></div>
+          <div><kbd>R</kbd><span>quick respawn</span></div>
+          <div class="seek-only"><kbd>H</kbd><span>hide &amp; seek: I’m hidden</span></div>
+          <div class="seek-only"><kbd>ENTER</kbd><span>press the round button (start / give up / play again)</span></div>
+          <p class="hover-hint">Release movement keys to hover. Q/E and arrow keys also steer. Fly near a door and press G to open or close it.</p>
+        </div>
+
+        <div class="telemetry"><span id="fpsValue">— FPS</span><span id="pingValue">— MS</span></div>
+        <div class="paint-wash" id="paintWash"></div>
+
+        <div class="notice" id="notice" hidden>
+          <p class="eyebrow" id="noticeEyebrow">CONNECTION LOST</p>
+          <h2 id="noticeTitle">The house went quiet.</h2>
+          <p id="noticeBody">Your drone is paused until we can hear the room again.</p>
+          <div class="notice-actions" id="noticeActions">
+            <button class="primary-button" id="retryButton" type="button">Reconnect</button>
+            <button class="text-button" id="lobbyButton" type="button">Back to lobby</button>
+          </div>
+        </div>
+
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      </section>
+
+      <div class="fatal-error" id="fatalError" hidden>
+        <span class="brand-mark">LR</span>
+        <h1>This little drone needs WebGL.</h1>
+        <p>Try a current version of Chrome, Safari, Firefox, or Edge with graphics acceleration enabled.</p>
+      </div>
+    </main>
+    <script type="module" src="/src/client/main.ts"></script>
+  </body>
+</html>

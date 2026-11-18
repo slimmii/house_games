@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<title>Little Defenders HUD review</title>
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/src/ui/defense.css">
+<style>
+  /* A busy stand-in for the 3D living room: floorboards, a rug, taped routes, furniture, soldiers. */
+  #room {
+    position: absolute; inset: 0; overflow: hidden;
+    background:
+      repeating-linear-gradient(90deg, rgba(60, 30, 10, 0.35) 0 2px, transparent 2px 120px),
+      repeating-linear-gradient(0deg, rgba(60, 30, 10, 0.18) 0 1px, transparent 1px 23px),
+      linear-gradient(100deg, #b98352, #9c6a3f 30%, #c08d5d 55%, #8f5f37 80%, #b07a4a);
+  }
+  #room .rug { position: absolute; left: 18%; top: 22%; width: 58%; height: 52%; border-radius: 40px;
+    background: repeating-radial-gradient(circle at 50% 50%, #7d3b3b 0 18px, #c9a46a 18px 26px, #375a6e 26px 44px, #e8dcc0 44px 50px);
+    box-shadow: 0 30px 60px rgba(0,0,0,.35); transform: rotate(-4deg); }
+  #room .sofa { position: absolute; right: -4%; top: 6%; width: 34%; height: 30%; background: #4b6b5c; border-radius: 30px;
+    box-shadow: inset 0 -30px 0 #3b5649, 0 25px 50px rgba(0,0,0,.45); }
+  #room .table { position: absolute; left: 4%; bottom: 8%; width: 26%; height: 22%; background: #6d4524; border-radius: 12px;
+    box-shadow: inset 0 0 0 10px #5a381c, 0 25px 40px rgba(0,0,0,.5); }
+  #room .fort { position: absolute; right: 12%; bottom: 28%; width: 120px; height: 90px; background: #e9a7a0; border-radius: 22px;
+    box-shadow: 30px -20px 0 #f2d58a, -26px -14px 0 #9cc7d9, 0 18px 30px rgba(0,0,0,.4); }
+  #room svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  #room .lamp { position: absolute; left: 50%; top: 40%; width: 60%; height: 60%; transform: translate(-50%, -50%);
+    background: radial-gradient(closest-side, rgba(255, 230, 170, 0.35), transparent); }
+  #log { position: fixed; left: 8px; bottom: 8px; max-width: 50vw; font: 11px/1.3 ui-monospace, monospace; color: #fff; background: rgba(0,0,0,.55);
+    padding: 3px 6px; border-radius: 4px; pointer-events: none; z-index: 100; opacity: 0; }
+  body.show-log #log { opacity: 1; }
+</style>
+</head>
+<body>
+<main id="app">
+  <div id="stage" class="stage">
+    <div id="room">
+      <div class="rug"></div><div class="sofa"></div><div class="table"></div><div class="fort"></div><div class="lamp"></div>
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-20 300 C 200 260, 260 520, 480 520 S 760 380, 1020 640" fill="none" stroke="#efe3bf" stroke-width="26" stroke-dasharray="70 14" opacity=".9"/>
+        <path d="M120 1020 C 200 800, 420 860, 520 700 S 700 520, 860 700" fill="none" stroke="#efe3bf" stroke-width="22" stroke-dasharray="60 12" opacity=".85"/>
+        <g fill="#4f9a3c" stroke="#1f3a14" stroke-width="3">
+          <circle cx="210" cy="300" r="9"/><circle cx="240" cy="318" r="9"/><circle cx="268" cy="350" r="9"/><circle cx="455" cy="512" r="9"/>
+          <circle cx="480" cy="520" r="9"/><circle cx="560" cy="710" r="9"/><circle cx="600" cy="660" r="9"/>
+        </g>
+        <g fill="#c9a66b" stroke="#5a4320" stroke-width="3"><circle cx="300" cy="400" r="10"/><circle cx="700" cy="470" r="10"/><circle cx="740" cy="560" r="10"/></g>
+        <g fill="#ddd" stroke="#333" stroke-width="3"><rect x="380" y="560" width="26" height="40" rx="6"/><rect x="640" y="380" width="26" height="40" rx="6"/></g>
+      </svg>
+    </div>
+  </div>
+  <div id="hud" class="hud"></div>
+</main>
+<div id="log"></div>
+<script type="module">
+// Review page for the Little Defenders HUD.  ?state=title|start|playing|selected|placing|ability|boss|paused|won|lost
+//   &log=1 shows the last action fired.
+import '/src/ui/defense.css';
+import { createHud } from '/src/ui/hud.ts';
+
+const query = new URLSearchParams(location.search);
+const state = query.get('state') || 'playing';
+if (query.has('log')) document.body.classList.add('show-log');
+const logNode = document.getElementById('log');
+window.hudLog = [];
+const log = name => (...args) => {
+  const line = `${name}(${args.map(a => JSON.stringify(a)).join(', ')})`;
+  window.hudLog.push(line);
+  console.log('[hud]', line);
+  logNode.textContent = line;
+};
+const actions = Object.fromEntries(
+  ['start', 'pickBuild', 'upgrade', 'sell', 'setMode', 'deselect', 'callWave', 'setSpeed', 'pause', 'resume', 'restart', 'quit', 'ability', 'toggleMute', 'continueEndless']
+    .map(name => [name, log(name)]),
+);
+
+// ---------------------------------------------------------------- mock icons (tiny inline SVGs)
+const svgUrl = body => `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">${body}</svg>`)}`;
+const S = 'stroke="#25231f" stroke-width="2.5" stroke-linejoin="round"';
+const towerIcon = {
+  popgun: svgUrl(`<rect x="12" y="22" width="24" height="20" rx="3" fill="#e9573f" ${S}/><rect x="20" y="8" width="8" height="18" rx="2" fill="#f7c948" ${S}/><circle cx="24" cy="8" r="4" fill="#c9a66b" ${S}/>`),
+  dart: svgUrl(`<rect x="8" y="20" width="26" height="12" rx="4" fill="#5aa9e0" ${S}/><rect x="30" y="23" width="12" height="6" rx="2" fill="#f27654" ${S}/><path d="M14 32v10h8V32" fill="#f7c948" ${S}/>`),
+  glue: svgUrl(`<path d="M16 18h16v22a4 4 0 0 1-4 4h-8a4 4 0 0 1-4-4z" fill="#fbf7ef" ${S}/><path d="M20 8h8l2 10H18z" fill="#f27654" ${S}/><path d="M16 30h16" stroke="#58bdb0" stroke-width="5"/>`),
+  mortar: svgUrl(`<path d="M10 40h28l-4-16H14z" fill="#8f98a0" ${S}/><rect x="18" y="10" width="12" height="18" rx="3" transform="rotate(20 24 20)" fill="#5f6870" ${S}/><circle cx="34" cy="8" r="4" fill="#5aa9e0" ${S}/>`),
+  ballista: svgUrl(`<path d="M6 16q18 14 36 0" fill="none" stroke="#a8733d" stroke-width="5"/><path d="M8 17 24 28 40 17" fill="none" stroke="#f27654" stroke-width="2"/><rect x="21" y="18" width="6" height="24" rx="2" fill="#e3b57c" ${S}/>`),
+  robot: svgUrl(`<rect x="12" y="10" width="24" height="18" rx="4" fill="#a9b4bd" ${S}/><circle cx="20" cy="19" r="3" fill="#f7c948" ${S}/><circle cx="28" cy="19" r="3" fill="#f7c948" ${S}/><rect x="14" y="28" width="20" height="14" rx="3" fill="#8f98a0" ${S}/>`),
+};
+const soldierIcon = (body = '') => svgUrl(`<circle cx="24" cy="12" r="6" fill="#fff" ${S}/><path d="M15 22h18l-3 16h-4l-1 6h-2l-1-6h-4z" fill="#fff" ${S}/>${body}`);
+const enemyIcon = {
+  rifleman: soldierIcon('<path d="M33 16l6-10" stroke="#25231f" stroke-width="3"/>'),
+  scout: soldierIcon('<path d="M10 30h8M8 36h8" stroke="#25231f" stroke-width="3"/>'),
+  shield: soldierIcon('<rect x="28" y="20" width="12" height="18" rx="3" fill="#fff" stroke="#25231f" stroke-width="2.5"/>'),
+  jeep: svgUrl(`<rect x="6" y="18" width="36" height="14" rx="4" fill="#fff" ${S}/><circle cx="14" cy="34" r="5" fill="#25231f"/><circle cx="34" cy="34" r="5" fill="#25231f"/>`),
+  helicopter: svgUrl(`<ellipse cx="22" cy="28" rx="14" ry="8" fill="#fff" ${S}/><path d="M6 14h32M22 14v6M34 28h10" stroke="#25231f" stroke-width="3"/>`),
+  colonel: soldierIcon('<path d="M16 8h16l-3-6h-10z" fill="#f7c948" stroke="#25231f" stroke-width="2"/>'),
+};
+const blank = '';
+
+// ---------------------------------------------------------------- mock views
+const TOWERS = [
+  ['popgun', 'Pop-gun tower', 'Cheap and steady. Corks hit one soldier at a time.', 100, true, false],
+  ['dart', 'Dart blaster', 'Sprays foam darts. Great against crowds, weak against armour.', 150, true, false],
+  ['glue', 'Glue bottle', 'Squirts sticky puddles that slow everything on foot or wheels.', 120, false, false],
+  ['mortar', 'Marble mortar', 'Lobs heavy marbles that burst on landing. Cracks armour; cannot hit aircraft.', 220, false, true],
+  ['ballista', 'Rubber-band ballista', 'Long range. Its bolt flies straight through a whole column.', 260, true, false],
+  ['robot', 'Tin robot', 'Its eye beam ignores armour and grows stronger the longer it holds a target.', 480, true, true],
+];
+const build = (money, selected = null, noIcon = null) => TOWERS.map(([kind, name, blurb, cost, hitsAir, heavy], i) => ({
+  kind, name, blurb, cost, hitsAir, heavy, hotkey: String(i + 1),
+  affordable: money >= cost, selected: kind === selected,
+  icon: kind === noIcon ? blank : towerIcon[kind],
+}));
+const abilities = (footsteps = { ready: true, remaining: 0 }, marbles = { ready: true, remaining: 0 }, armed = null) => [
+  { kind: 'footsteps', name: 'Footsteps!', blurb: 'Someone is coming: every soldier freezes stiff for a moment.', hotkey: 'Q', cooldown: 75, ...footsteps, armed: armed === 'footsteps' },
+  { kind: 'marbles', name: 'Marble spill', blurb: 'Tip a bag of marbles down a stretch of the route.', hotkey: 'E', cooldown: 45, ...marbles, armed: armed === 'marbles' },
+];
+const group = (kind, name, blurb, tier, count, lane, boss = false) => ({
+  kind, name, blurb, tier, tierName: ['Green', 'Tan', 'Grey'][tier], count, lane,
+  laneName: { east: 'Veranda', west: 'Stairs', air: 'Air' }[lane], boss, icon: enemyIcon[kind] ?? blank,
+});
+const difficulties = [
+  { id: 'easy', name: 'Playtime', blurb: 'Gentle soldiers and plenty of buttons.', lives: 25, bestWave: 20, bestStars: 3 },
+  { id: 'normal', name: 'Rainy Day', blurb: 'The proper campaign.', lives: 20, bestWave: 14, bestStars: 1 },
+  { id: 'hard', name: 'Past Bedtime', blurb: 'Lights low, soldiers tough, few cushions.', lives: 12, bestWave: 0, bestStars: 0 },
+];
+
+const base = {
+  screen: 'playing', difficulty: 'normal', difficultyName: 'Rainy Day',
+  lives: 20, maxLives: 20, money: 260, wave: 0, totalWaves: 20, endless: false, enemiesLeft: 0,
+  countdown: null, canCallWave: true, callBonus: 0, speed: 1, muted: false,
+  build: build(260), selection: null, placing: null, abilities: abilities(), nextWave: null, hint: null,
+  difficulties, result: null,
+};
+const wave6 = { number: 6, boss: false, groups: [
+  group('rifleman', 'Riflemen', 'Plain foot soldier.', 1, 12, 'east'),
+  group('scout', 'Scouts', 'Fast and fragile.', 0, 8, 'west'),
+  group('shield', 'Shield bearers', 'Armoured. Darts bounce off; marbles do not.', 1, 3, 'east'),
+  group('helicopter', 'Helicopters', 'Flies straight for the fort.', 0, 2, 'air'),
+] };
+const selection = {
+  id: 7, kind: 'popgun', name: 'Pop-gun tower', blurb: 'Cheap and steady. Corks hit one soldier at a time.', icon: towerIcon.popgun,
+  level: 2, maxLevel: 3,
+  stats: [
+    { label: 'Range', value: '3.5', next: '3.9' },
+    { label: 'Damage', value: '20', next: '34' },
+    { label: 'Shots per second', value: '1.4', next: '1.9' },
+    { label: 'Armour piercing', value: '25%' },
+  ],
+  upgradeCost: 180, canAffordUpgrade: true, sellValue: 133, mode: 'first', hasTargeting: true, kills: 41, high: true, stunned: false,
+};
+
+const views = {
+  title: { ...base, screen: 'title', wave: 0 },
+  start: {
+    ...base, wave: 0, money: 260, build: build(260),
+    nextWave: { number: 1, boss: false, groups: [group('rifleman', 'Riflemen', 'Plain foot soldier.', 0, 8, 'east')] },
+    hint: 'Pick a toy below, then click the floor beside a taped route to put it down.',
+  },
+  playing: {
+    ...base, wave: 5, lives: 17, money: 345, enemiesLeft: 23, countdown: 14, callBonus: 28, speed: 2,
+    build: build(345), nextWave: wave6, abilities: abilities({ ready: false, remaining: 31 }, { ready: true, remaining: 0 }),
+  },
+  selected: {
+    ...base, wave: 7, lives: 15, money: 410, enemiesLeft: 31, countdown: null, callBonus: 0,
+    build: build(410, null, 'robot'), selection, nextWave: { ...wave6, number: 8 },
+    abilities: abilities({ ready: false, remaining: 12 }, { ready: true, remaining: 0 }),
+  },
+  placing: {
+    ...base, wave: 3, lives: 20, money: 290, enemiesLeft: 0, countdown: 9, callBonus: 18,
+    build: build(290, 'mortar'), nextWave: { ...wave6, number: 4 },
+    placing: { kind: 'mortar', name: 'Marble mortar', valid: false, reason: 'Too heavy for furniture. Put it on the floor.' },
+  },
+  ability: {
+    ...base, wave: 9, lives: 12, money: 180, enemiesLeft: 42, countdown: null,
+    build: build(180), nextWave: { ...wave6, number: 10 },
+    abilities: abilities({ ready: true, remaining: 0 }, { ready: false, remaining: 33 }, 'footsteps'),
+    hint: 'Footsteps is ready: tap anywhere on the floor to freeze every soldier.',
+  },
+  boss: {
+    ...base, wave: 9, lives: 9, money: 620, enemiesLeft: 0, countdown: 20, callBonus: 40, speed: 1, muted: true,
+    build: build(620), nextWave: { number: 10, boss: true, groups: [
+      group('colonel', 'Colonel Bucket', 'Boss. His stomp jams nearby towers.', 2, 1, 'east', true),
+      group('rifleman', 'Riflemen', 'Plain foot soldier.', 2, 16, 'east'),
+      group('jeep', 'Jeeps', 'Quick. Three riflemen jump out when it is wrecked.', 1, 4, 'west'),
+    ] },
+  },
+  paused: { ...base, screen: 'paused', wave: 6, lives: 16, money: 300, enemiesLeft: 14, build: build(300), nextWave: { ...wave6, number: 7 } },
+  won: {
+    ...base, screen: 'won', wave: 20, lives: 14, money: 840, build: build(840),
+    result: { won: true, stars: 2, wave: 20, totalWaves: 20, kills: 612, leaked: 6, newBest: true, canContinue: true },
+  },
+  lost: {
+    ...base, screen: 'lost', wave: 12, lives: 0, money: 95, build: build(95),
+    result: { won: false, stars: 0, wave: 12, totalWaves: 20, kills: 287, leaked: 20, newBest: false, canContinue: false },
+  },
+};
+
+const view = views[state] ?? views.playing;
+const hud = createHud(document.getElementById('hud'), actions);
+window.hud = hud;
+
+// Live bits so the per-frame path is exercised: the countdown ticks, cooldowns sweep, money trickles in.
+const t0 = performance.now();
+let lostLife = false;
+function frame(now) {
+  const t = (now - t0) / 1000;
+  const v = { ...view };
+  if (state === 'playing') {
+    v.countdown = Math.max(0, 14 - Math.floor(t));
+    v.callBonus = v.countdown * 2;
+    v.money = view.money + Math.floor(t / 2) * 5;
+    v.build = build(v.money);
+    v.abilities = abilities({ ready: false, remaining: Math.max(0, 31 - t) }, { ready: true, remaining: 0 });
+    if (t > 1.2 && !lostLife) lostLife = true;
+    v.lives = lostLife ? 16 : 17;
+  } else if (state === 'ability') {
+    v.abilities = abilities({ ready: true, remaining: 0 }, { ready: false, remaining: Math.max(0, 33 - t) }, 'footsteps');
+  }
+  hud.update(v);
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+if (state === 'boss') {
+  hud.banner('Boss wave!', 'Colonel Bucket is marching on the Veranda', 'boss');
+  hud.toast('Wave 9 cleared: +94 buttons', 'good');
+  hud.toast('A soldier reached the fort: −1 cushion', 'bad');
+}
+
+document.fonts.ready.then(() => requestAnimationFrame(() => requestAnimationFrame(() => { document.body.dataset.ready = 'true'; })));
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "chair_count": 5,
+  "keyboard_keys": 61,
+  "organiser_bins": 9,
+  "crossed_steel_beams": 4,
+  "lamp_rings": 4,
+  "keyboard_sofa_gap_m": 0.007999897003173828,
+  "organiser_sofa_gap_m": 0.08749985694885254,
+  "keyboard_organiser_gap_m": 0.3229999542236328,
+  "table_dimensions_m": [
+    1.0,
+    2.5999999046325684,
+    0.029999999329447746
+  ],
+  "saved_scenes": [
+    "83 | EETTAFEL - tafel en kuipstoelen naar foto",
+    "84 | EETTAFEL - gebogen bladvorm",
+    "85 | LIVING - keyboard en bakjesrek achter zetel",
+    "86 | EETTAFEL - detail zwart kruisonderstel"
+  ]
+}
